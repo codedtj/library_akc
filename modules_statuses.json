@@ -1,4 +1,5 @@
 {
     "FileSystem": true,
-    "Shared": true
+    "Shared": true,
+    "Library": true
 }

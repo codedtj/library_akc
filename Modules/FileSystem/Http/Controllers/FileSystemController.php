@@ -5,6 +5,7 @@ namespace Modules\FileSystem\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Inertia\Inertia;
 
 class FileSystemController extends Controller
 {
@@ -14,7 +15,8 @@ class FileSystemController extends Controller
      */
     public function index()
     {
-        return view('filesystem::index');
+//        return view('filesystem::index');
+        return Inertia::render('Resource/ResourceEditor');
     }
 
     /**
