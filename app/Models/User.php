@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Shared\Traits\UsesUUID;
 
 class User extends Authenticatable
 {
@@ -17,6 +18,10 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use UsesUUID;
+    public $incrementing = false;
+    protected $primaryKey = 'id';
+    protected $keyType = 'uuid';
 
     /**
      * The attributes that are mass assignable.
