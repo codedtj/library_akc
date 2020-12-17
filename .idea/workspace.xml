@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="" />
+    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/library.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +17,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -130,9 +140,11 @@
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
       <path value="$PROJECT_DIR$/vendor/tightenco/ziggy" />
+      <path value="$PROJECT_DIR$/vendor/nwidart/laravel-modules" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lE9MAQtm5Dy5Eq2SGV5o4kau5P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -141,6 +153,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -174,37 +192,41 @@
       <option name="presentableId" value="Default" />
       <updated>1607151333040</updated>
       <workItem from="1607151334097" duration="622000" />
-      <workItem from="1607152307050" duration="295000" />
+      <workItem from="1607152307050" duration="1229000" />
+      <workItem from="1607231651644" duration="114000" />
+      <workItem from="1607231829379" duration="962000" />
+      <workItem from="1607236406514" duration="1148000" />
+      <workItem from="1607339942392" duration="1509000" />
+      <workItem from="1608128661456" duration="152000" />
+      <workItem from="1608204932770" duration="1092000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <created>1607153135622</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607153135622</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="451" y="220" key="#Composer" timestamp="1607151651450">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="451" y="220" key="#Composer/0.0.1280.680@0.0.1280.680" timestamp="1607151651450" />
-    <state width="1237" height="147" key="GridCell.Tab.0.bottom" timestamp="1607152440506">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="147" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607152440506" />
-    <state width="1237" height="147" key="GridCell.Tab.0.center" timestamp="1607152440506">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="147" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607152440506" />
-    <state width="1237" height="147" key="GridCell.Tab.0.left" timestamp="1607152440505">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="147" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607152440505" />
-    <state width="1237" height="147" key="GridCell.Tab.0.right" timestamp="1607152440506">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="147" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607152440506" />
-    <state x="303" y="1" key="search.everywhere.popup" timestamp="1607151850364">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="303" y="1" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1607151850364" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
 </project>
