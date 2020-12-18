@@ -29,7 +29,9 @@
             </b-navbar-nav>
         </b-navbar>
         <main>
-            <slot></slot>
+            <b-container fluid="md" class="py-5">
+                <slot></slot>
+            </b-container>
         </main>
     </div>
 

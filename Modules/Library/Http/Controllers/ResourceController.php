@@ -13,4 +13,8 @@ class ResourceController extends Controller
     {
         return Inertia::render('Resource/ResourceEditor');
     }
+
+    public function store(){
+
+    }
 }
