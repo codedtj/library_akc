@@ -9,7 +9,7 @@
                     </template>
                     <b-card-body>
                         <b-form>
-                            <b-form-group label="Название" required>
+                            <b-form-group label="*Название" required>
                                 <b-form-input v-model="resource.title"></b-form-input>
                             </b-form-group>
                             <b-form-group label="Описание">
@@ -17,9 +17,13 @@
 
                                 </b-form-textarea>
                             </b-form-group>
-                            <file-picker v-model="resource.file">
+                            <b-form-group label="*Прикрепить ресурс">
+                                <file-picker v-model="resource.file"></file-picker>
+                            </b-form-group>
 
-                            </file-picker>
+                            <b-form-group label="*Прикрепить обложку">
+                                <file-picker v-model="resource.cover"></file-picker>
+                            </b-form-group>
 
                             <b-form-checkbox class="my-3" v-model="resource.is_public" name="check-button" switch>
                                 Доступно всем
@@ -46,6 +50,7 @@ export default {
                 title: null,
                 description: null,
                 file: null,
+                cover:null,
                 is_public: true
             },
             submitting: false,
