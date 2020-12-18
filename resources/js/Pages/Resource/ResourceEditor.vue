@@ -4,7 +4,8 @@
             <b-card header="Добавить ресурс">
                 <b-overlay :show="submitting" rounded="lg">
                     <template #overlay class="w-100">
-                        <b-progress variant="info"  style="width: 250px" :value="uploadProgress" :max="resource.file.size" animated></b-progress>
+                        <b-progress variant="info" style="width: 250px" :value="uploadProgress"
+                                    :max="resource.file.size" animated></b-progress>
                     </template>
                     <b-card-body>
                         <b-form>
@@ -47,8 +48,8 @@ export default {
                 file: null,
                 is_public: true
             },
-            submitting:false,
-            uploadProgress:0
+            submitting: false,
+            uploadProgress: 0
         }
     },
     methods: {
@@ -60,9 +61,14 @@ export default {
             data.append('description', this.resource.description);
             data.append('file', this.resource.file);
             axios.post(route('resources.store').url(), data, {
-                onUploadProgress: progressEvent => {console.log(progressEvent.loaded);
-                this.uploadProgress = progressEvent.loaded}
-            }).finally(() => this.submitting = false)
+                onUploadProgress: progressEvent => {
+                    console.log(progressEvent.loaded);
+                    this.uploadProgress = progressEvent.loaded
+                }
+            }).finally(() => {
+                this.submitting = false;
+                this.uploadProgress = 0;
+            })
         }
     }
 }
