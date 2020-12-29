@@ -4,18 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="attach cover">
-      <change afterPath="$PROJECT_DIR$/Modules/Library/Dtos/ResourceDto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Library/Services/ResourceService.php" afterDir="false" />
+    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="Error validation messages in viwe">
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Interfaces/DirectoryProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Libs/DirectoryProviders/FileTypeDirectoryProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Libs/Helpers/FileHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Models/BaseFile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Models/File.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Services/FileService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/FileManager/Services/UploadedFileService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/ImageGallery/Libs/DirectoryProviders/ImageDirectoryProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/ImageGallery/Models/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Library/Models/Resource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Shared/Libs/Random.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/library.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Config/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Config/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Console/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Database/Migrations/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Database/Seeders/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Database/Seeders/FileSystemDatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Database/factories/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Http/Controllers/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Http/Controllers/FileSystemController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Http/Middleware/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Http/Requests/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Models/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Providers/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Providers/FileSystemServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Providers/RouteServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/assets/sass/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/lang/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/views/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/views/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Resources/views/layouts/master.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Routes/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Tests/Feature/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/Tests/Unit/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/module.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/FileSystem/webpack.mix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Library/Dtos/ResourceDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Library/Dtos/ResourceDto.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Library/Http/Controllers/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Library/Http/Controllers/ResourceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Library/Services/ResourceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Library/Services/ResourceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Shared/Models/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Shared/Models/BaseModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Resource/ResourceEditor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Resource/ResourceEditor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,12 +165,10 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
@@ -157,7 +200,11 @@
       <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
       <path value="$PROJECT_DIR$/vendor/tightenco/ziggy" />
       <path value="$PROJECT_DIR$/vendor/nwidart/laravel-modules" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/wildside/userstamps" />
       <path value="$PROJECT_DIR$/vendor/spatie/data-transfer-object" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lE9MAQtm5Dy5Eq2SGV5o4kau5P" />
@@ -169,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../echo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -178,9 +225,22 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\FileManager\Services" />
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\ImageGallery\Libs" />
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\ImageGallery\Services" />
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\FileManager\Http" />
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\ImageGallery\Http" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\FileManager\Models" />
+    </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -233,7 +293,11 @@
       <workItem from="1608275275185" duration="5332000" />
       <workItem from="1608977985810" duration="328000" />
       <workItem from="1608988298286" duration="6486000" />
-      <workItem from="1609069635167" duration="6761000" />
+      <workItem from="1609069635167" duration="11429000" />
+      <workItem from="1609082798569" duration="89000" />
+      <workItem from="1609084101861" duration="6354000" />
+      <workItem from="1609153667715" duration="9354000" />
+      <workItem from="1609171020079" duration="4615000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1607153135622</created>
@@ -291,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608285260718</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Error validation messages in viwe">
+      <created>1609077992929</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609077992929</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +389,8 @@
     <MESSAGE value="File Upload Progress" />
     <MESSAGE value="Uploader reset" />
     <MESSAGE value="attach cover" />
-    <option name="LAST_COMMIT_MESSAGE" value="attach cover" />
+    <MESSAGE value="Error validation messages in viwe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error validation messages in viwe" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

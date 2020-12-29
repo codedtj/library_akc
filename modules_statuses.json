@@ -1,5 +1,6 @@
 {
-    "FileSystem": true,
     "Shared": true,
-    "Library": true
+    "Library": true,
+    "FileManager": true,
+    "ImageGallery": true
 }

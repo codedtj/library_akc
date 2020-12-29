@@ -5,9 +5,12 @@ namespace Modules\Library\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Inertia\Response;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Http\Requests\CreateResourceRequest;
+use Modules\Library\Models\Resource;
 use Modules\Library\Services\ResourceService;
 
 class ResourceController extends Controller
@@ -20,13 +23,21 @@ class ResourceController extends Controller
         $this->service = $service;
     }
 
-    public function create()
+    public function show(Resource $resource)
+    {
+        return Inertia::render('Resource/ShowResource', [
+            'resource' => $resource
+        ]);
+    }
+
+    public function create(): Response
     {
         return Inertia::render('Resource/ResourceEditor');
     }
 
-    public function store(CreateResourceRequest $request){
-        dd(2);
-        $this->service->store(new ResourceDto($request->validated()));
+    public function store(CreateResourceRequest $request)
+    {
+        $resource = $this->service->store(new ResourceDto($request->validated()));
+        return Redirect::route('resources.show', $resource);
     }
 }
