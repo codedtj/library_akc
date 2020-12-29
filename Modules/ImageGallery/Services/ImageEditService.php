@@ -11,6 +11,8 @@ use Intervention\Image\Image;
 use Modules\ImageGallery\Libs\ImageEditOperation\EditOperation;
 use Modules\ImageGallery\Libs\ImageEditOperation\MakeImageOperation;
 use Modules\ImageGallery\Libs\ImageEditOperation\FitImageOperation;
+use Modules\ImageGallery\Libs\ImageEditOperation\ResizeImageOperation;
+use Modules\ImageGallery\Libs\ImageEditOperation\ResizeOperationFabric;
 
 class ImageEditService
 {
@@ -26,6 +28,10 @@ class ImageEditService
 
         if (isset($options['fit']))
             $decorator = new FitImageOperation($decorator, $options['fit']['width'], $options['fit']['height']);
+
+        if (isset($options['resize'])) {
+            $decorator = ResizeOperationFabric::make($decorator, $options['resize']);
+        }
 
         return $decorator;
     }

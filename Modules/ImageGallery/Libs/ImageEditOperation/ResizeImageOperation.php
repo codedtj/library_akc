@@ -10,15 +10,17 @@ namespace Modules\ImageGallery\Libs\ImageEditOperation;
 use Intervention\Image\Image;
 use Intervention\Image\Facades\Image as ImageFacade;
 
-class ResizeImageOperation implements ImageEditOperation
+class ResizeImageOperation extends EditOperation
 {
 
     private int $width;
 
     private int $height;
 
-    public function __construct(int $width, int $height)
+    public function __construct(ImageEditOperation $operation, int $width, int $height)
     {
+        parent::__construct($operation);
+
         $this->width = $width;
 
         $this->height = $height;
@@ -26,6 +28,6 @@ class ResizeImageOperation implements ImageEditOperation
 
     public function execute(string $path): Image
     {
-        ImageFacade::make($path)->resize($this->width, $this->height);
+        return ImageFacade::make($path)->resize($this->width, $this->height);
     }
 }

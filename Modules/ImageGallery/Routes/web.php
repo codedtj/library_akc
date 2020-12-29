@@ -11,6 +11,9 @@
 |
 */
 
-Route::prefix('imagegallery')->group(function() {
-    Route::get('/', 'ImageGalleryController@index');
+
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('image-gallery')->group(function() {
+    Route::get('/images/{image}', 'ImageFileController@show');
 });
