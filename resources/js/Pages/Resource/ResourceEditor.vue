@@ -8,7 +8,7 @@
                                     max="100" animated></b-progress>
                     </template>
                     <b-card-body>
-                        <b-form href="form" @submit.prevent="submit">
+                        <b-form id="form" href="form" @submit.prevent="submit">
                             <b-form-group label="*Название" :state="!form.error('title')"
                                           :invalid-feedback="form.error('title')">
                                 <b-form-input v-model="form.title"></b-form-input>
@@ -39,6 +39,38 @@
                                 Доступно всем
                             </b-form-checkbox>
 
+                            <b-form-group label="Теги">
+                                <suggestion-input displayPropertyName="name"
+                                                  ref="tagInput"
+                                                  @selected="onTagSelected"
+                                                  @notfound="addNewTag"
+                                                  action-url="/tags/filtered/"
+                                >
+                                </suggestion-input>
+                                <ul
+                                    class="list-unstyled d-inline-flex flex-wrap mb-0">
+                                    <b-card
+                                        v-for="tag in form.tags"
+                                        :key="tag.name"
+                                        :id="`tags_${tag.name.replace(/\s/g, '_')}_`"
+                                        tag="li"
+                                        class="mt-1 mr-1 bg-light"
+                                        body-class="py-1 pr-2 text-nowrap"
+                                    >
+                                        <strong>{{ tag.name }}</strong>
+                                        <b-button
+                                            @click="removeTag(tag.name)"
+                                            variant="link"
+                                            class="text-decoration-none"
+                                            size="sm"
+                                            :aria-controls="`albumsTagList__${tag.name.replace(/\s/g, '_')}_`"
+                                        >&times;
+                                        </b-button>
+                                    </b-card>
+                                </ul>
+
+                            </b-form-group>
+
                             <b-button type="submit" :disabled="form.processing" variant="info">Сохранить</b-button>
                         </b-form>
                     </b-card-body>
@@ -49,11 +81,12 @@
 </template>
 
 <script>
-import FilePicker from "@/Components/FilePicker";
+import FilePicker from "@/Components/Inputs/FilePicker";
+import SuggestionInput from "@/Components/Inputs/SuggestionInput";
 
 export default {
     name: "ResourceEditor",
-    components: {FilePicker},
+    components: {FilePicker, SuggestionInput},
     data() {
         return {
             form: this.$inertia.form({
@@ -64,7 +97,8 @@ export default {
                 file: null,
                 cover: null,
                 is_public: true,
-                progress: 0
+                progress: 0,
+                tags: []
             }, {
                 resetOnSuccess: true
             }),
@@ -76,7 +110,27 @@ export default {
                 this.form.progress = event.detail.progress.percentage
             });
 
-            this.form.post(route('resources.store').url()).finally(this.form.progress = 0)
+            this.form
+                .transform((data) => data.tags = data.tags.map(t => t.name))
+                .post(route('resources.store').url())
+                .finally(this.form.progress = 0)
+        },
+        addNewTag(name) {
+            if (!this.form.tags.find(t => t.name === name))
+                this.form.tags.push({name: name})
+            this.clearTagInput();
+        },
+        onTagSelected(tag) {
+            if (!this.form.tags.find(t => t.name === tag.name))
+                this.form.tags.push(tag)
+            this.clearTagInput();
+        },
+        clearTagInput() {
+            this.$refs['tagInput'].query = '';
+            this.$refs['tagInput'].options = [];
+        },
+        removeTag(name) {
+            this.form.tags = this.form.tags.filter(t => t.name !== name);
         }
     }
 }

@@ -2,5 +2,6 @@
     "Shared": true,
     "Library": true,
     "FileManager": true,
-    "ImageGallery": true
+    "ImageGallery": true,
+    "TagManager": true
 }

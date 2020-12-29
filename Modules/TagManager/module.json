@@ -1,0 +1,13 @@
+{
+    "name": "TagManager",
+    "alias": "tagmanager",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TagManager\\Providers\\TagManagerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

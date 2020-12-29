@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @author Sultonazar Mamadazizov <sultonazar.mamadazizov@mail.ru>
+ */
 
 namespace Modules\Shared\Libs;
 
