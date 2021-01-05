@@ -10,17 +10,21 @@ use Modules\FileManager\Services\UploadedFileService;
 use Modules\ImageGallery\Services\ImageService;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Models\Resource;
+use Modules\TagManager\Models\Tag;
+use Modules\TagManager\Services\TagService;
 
 class ResourceService
 {
 
     public UploadedFileService $fileService;
     public ImageService $imageService;
+    public TagService $tagService;
 
-    public function __construct(UploadedFileService $fileService, ImageService $imageService)
+    public function __construct(UploadedFileService $fileService, ImageService $imageService, TagService $tagService)
     {
         $this->fileService = $fileService;
         $this->imageService = $imageService;
+        $this->tagService = $tagService;
     }
 
     public function store(ResourceDto $data): Resource
@@ -40,6 +44,8 @@ class ResourceService
         $dirProvider->setFile($data->cover);
         $cover = $this->imageService->store($data->cover, $dirProvider);
         $resource->cover()->associate($cover);
+
+        $resource->tags()->sync($this->tagService->storeMany($data->tags)->pluck('id'));
 
         $resource->save();
 

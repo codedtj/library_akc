@@ -5,10 +5,10 @@
                 <b-card-body>
                     <b-row>
                         <b-col>
-                            <div>
+                            <div class="mb-4">
                                 <b-img :src="coverUrl"></b-img>
                             </div>
-                            <a href="#">Скачать ресурс</a>
+                            <a class="text-info" href="#">Скачать ресурс</a>
                         </b-col>
                         <b-col>
                             <div>
@@ -16,6 +16,14 @@
                                 <h3>Автор: {{ resource.author }}</h3>
                                 <p>Год: {{ resource.year }}</p>
                                 <p>{{ resource.description }}</p>
+                                <b-container fluid>
+                                    <b-row>
+                                        <b-tag v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove pill
+                                               variant="info">
+                                            {{ tag.name }}
+                                        </b-tag>
+                                    </b-row>
+                                </b-container>
                             </div>
                         </b-col>
                     </b-row>

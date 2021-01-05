@@ -50,7 +50,7 @@
                                 <ul
                                     class="list-unstyled d-inline-flex flex-wrap mb-0">
                                     <b-card
-                                        v-for="tag in form.tags"
+                                        v-for="tag in tags"
                                         :key="tag.name"
                                         :id="`tags_${tag.name.replace(/\s/g, '_')}_`"
                                         tag="li"
@@ -102,6 +102,7 @@ export default {
             }, {
                 resetOnSuccess: true
             }),
+            tags: []
         }
     },
     methods: {
@@ -110,19 +111,20 @@ export default {
                 this.form.progress = event.detail.progress.percentage
             });
 
+            this.form.tags = this.tags.map(t => t.name);
+
             this.form
-                .transform((data) => data.tags = data.tags.map(t => t.name))
                 .post(route('resources.store').url())
                 .finally(this.form.progress = 0)
         },
         addNewTag(name) {
-            if (!this.form.tags.find(t => t.name === name))
-                this.form.tags.push({name: name})
+            if (!this.tags.find(t => t.name === name))
+                this.tags.push({name: name})
             this.clearTagInput();
         },
         onTagSelected(tag) {
-            if (!this.form.tags.find(t => t.name === tag.name))
-                this.form.tags.push(tag)
+            if (!this.tags.find(t => t.name === tag.name))
+                this.tags.push(tag)
             this.clearTagInput();
         },
         clearTagInput() {
@@ -130,7 +132,7 @@ export default {
             this.$refs['tagInput'].options = [];
         },
         removeTag(name) {
-            this.form.tags = this.form.tags.filter(t => t.name !== name);
+            this.tags = this.tags.filter(t => t.name !== name);
         }
     }
 }

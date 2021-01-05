@@ -25,6 +25,7 @@ class ResourceController extends Controller
 
     public function show(Resource $resource)
     {
+        $resource->load('tags');
         return Inertia::render('Resource/ShowResource', [
             'resource' => $resource
         ]);

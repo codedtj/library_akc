@@ -5,10 +5,9 @@
 
 namespace Modules\TagManager\Services;
 
+use Illuminate\Support\Collection;
 use Modules\TagManager\Dtos\TagDto;
-use Modules\TagManager\Libs\TagMassWriter;
 use Modules\TagManager\Models\Tag;
-use Nwidart\Modules\Collection;
 
 class TagService
 {
@@ -19,12 +18,10 @@ class TagService
         ]);
     }
 
-    public function storeMany(Collection $tags)
+    public function storeMany(Collection $tagNames): Collection
     {
-        $writer = new TagMassWriter($tags->map(function ($name) {
-            return new Tag(['name' => $name]);
-        })->toArray());
-
-        $writer->write();
+        return $tagNames->map(function ($name) {
+            return Tag::firstOrCreate(['name' => $name]);
+        });
     }
 }

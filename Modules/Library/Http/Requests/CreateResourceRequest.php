@@ -20,7 +20,9 @@ class CreateResourceRequest extends FormRequest
             'year' => 'nullable|string',
             'is_public' => 'required|boolean',
             'file' => 'required|file',
-            'cover' => 'required|image'
+            'cover' => 'required|image',
+            'tags' => 'array',
+            'tags.*' => 'string'
         ];
     }
 

@@ -5,6 +5,7 @@ namespace Modules\Library\Dtos;
 
 
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Collection;
 use Spatie\DataTransferObject\FlexibleDataTransferObject;
 
 class ResourceDto extends FlexibleDataTransferObject
@@ -19,6 +20,8 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public bool $is_public;
 
+    public Collection $tags;
+
     public UploadedFile $file;
 
     public UploadedFile $cover;
@@ -26,6 +29,8 @@ class ResourceDto extends FlexibleDataTransferObject
     public function __construct(array $parameters = [])
     {
         $parameters['is_public'] = (bool)$parameters['is_public'];
+
+        $parameters['tags'] = collect($parameters['tags']);
 
         parent::__construct($parameters);
     }
