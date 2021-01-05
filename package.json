@@ -31,6 +31,7 @@
     "dependencies": {
         "bootstrap": "^4.5.3",
         "bootstrap-vue": "^2.21.1",
-        "jquery": "^3.5.1"
+        "jquery": "^3.5.1",
+        "vue-images-loaded": "^1.1.2"
     }
 }

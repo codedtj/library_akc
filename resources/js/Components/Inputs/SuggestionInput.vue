@@ -196,7 +196,7 @@ export default {
 
             if (this.query && this.query.length > 2)
                 axios.get(this.actionUrl + this.query)
-                    .then(response => this.setOptions(response))
+                    .then(response => this.setOptions(response.data))
                     .catch();
             else this.setOptions([])
         }

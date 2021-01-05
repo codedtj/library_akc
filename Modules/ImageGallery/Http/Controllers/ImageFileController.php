@@ -28,6 +28,6 @@ class ImageFileController extends Controller
                     'height' => request()->get('height')
                 ]
             ]);
-        return $this->service->show($image, $options, false);
+        return $this->service->show($image, $options, true);
     }
 }

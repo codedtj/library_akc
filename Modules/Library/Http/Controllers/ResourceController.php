@@ -23,6 +23,13 @@ class ResourceController extends Controller
         $this->service = $service;
     }
 
+    public function index()
+    {
+        return Inertia::render('Resource/Index', [
+            'pagination' => Resource::latest()->simplePaginate(20)
+        ]);
+    }
+
     public function show(Resource $resource)
     {
         $resource->load('tags');

@@ -13,6 +13,6 @@ class FilteredTagController extends Controller
 {
     public function index($name)
     {
-        return Tag::where('name', $name)->get();
+        return Tag::where('name', 'like', '%' . $name . '%')->get();
     }
 }

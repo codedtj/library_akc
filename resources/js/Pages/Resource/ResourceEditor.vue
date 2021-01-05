@@ -45,6 +45,7 @@
                                                   @selected="onTagSelected"
                                                   @notfound="addNewTag"
                                                   action-url="/tags/filtered/"
+                                                  show
                                 >
                                 </suggestion-input>
                                 <ul
