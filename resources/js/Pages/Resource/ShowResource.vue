@@ -8,7 +8,7 @@
                             <div class="mb-4">
                                 <b-img :src="coverUrl"></b-img>
                             </div>
-                            <a class="text-info" href="#">Скачать ресурс</a>
+                            <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать ресурс</a>
                         </b-col>
                         <b-col>
                             <div>

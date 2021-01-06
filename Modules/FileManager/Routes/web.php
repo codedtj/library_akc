@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('filemanager')->group(function() {
-    Route::get('/', 'FileManagerController@index');
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('files')->group(function () {
+    Route::get('/download/{file}', 'FileDownloadController@download')->name('files.download');
 });

@@ -1,11 +1,13 @@
 <template>
     <div v-images-loaded:on.progress="resizeAllGridItems" class="grid">
         <div class="item" v-for="resource in pagination.data" :key="resource.id">
-            <a class="content" :href="route('resources.show', resource.id)">
-                <div class="resource-preview">
-                    <b-img :src="getCoverUrl(resource.cover_id)"></b-img>
-                    <div class="title">
-                        {{resource.title}}
+            <a :href="route('resources.show', resource.id)">
+                <div class="content">
+                    <div class="resource-preview">
+                        <b-img :src="getCoverUrl(resource.cover_id)"></b-img>
+                        <div class="title">
+                            {{resource.title}}
+                        </div>s
                     </div>
                 </div>
             </a>
