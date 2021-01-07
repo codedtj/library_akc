@@ -14319,3 +14319,19 @@ body {
   width: 100%;
 }
 
+.search-box {
+  position: relative;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: gray;
+}
+
+.search-box .search-icon:hover {
+  cursor: pointer;
+  color: #17a2b8;
+}
+

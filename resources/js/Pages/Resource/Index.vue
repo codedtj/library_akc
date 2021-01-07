@@ -1,37 +1,29 @@
 <template>
-    <div v-images-loaded:on.progress="resizeAllGridItems" class="grid">
-        <div class="item" v-for="resource in pagination.data" :key="resource.id">
-            <a :href="route('resources.show', resource.id)">
-                <div class="content">
-                    <div class="resource-preview">
-                        <b-img :src="getCoverUrl(resource.cover_id)"></b-img>
-                        <div class="title">
-                            {{resource.title}}
-                        </div>s
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+    <resource-masonry :resources="resources"></resource-masonry>
 </template>
 
 <script>
-import {getImageUrl} from "@/Api/imageGalleryApi";
 import MasonryGrid from "@/Mixins/MasonryGrid";
+import ResourceMasonry from "@/Components/Resource/ResourceMasonry";
 
 export default {
     name: 'Index',
+    components: {ResourceMasonry},
+    mounted() {
+        this.resources = this.pagination.data.filter(_ => true);
+    },
     props: {
         pagination: Object
+    },
+    data() {
+        return {
+            resources: []
+        }
     },
     mixins: [
         MasonryGrid
     ],
-    methods: {
-        getCoverUrl(coverId) {
-            return getImageUrl(coverId, {width: 200})
-        },
-    }
+    methods: {}
 }
 </script>
 
@@ -49,15 +41,15 @@ export default {
     width: 200px;
 }
 
-.content{
-    box-shadow: 4px 7px 10px 0px rgba(0,0,0,0.44);
+.content {
+    box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
 }
 
-.content :hover{
+.content :hover {
     cursor: pointer;
 }
 
-.resource-preview{
+.resource-preview {
     position: relative;
 }
 

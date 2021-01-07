@@ -7,7 +7,6 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</b-nav-item>
                     <b-nav-item-dropdown text="Resources" right>
                         <b-dropdown-item :href="route('resources.create')"
                                          :active="route().current('resources.create')">Add Resource
@@ -17,7 +16,12 @@
             </b-collapse>
 
             <b-navbar-nav class="ml-auto">
-                <b-nav-item-dropdown right>
+                <div class="search-box">
+                    <b-input placeholder="Найти ресурс" v-model="query" @keyup.enter="search"></b-input>
+                    <b-icon-search class="search-icon" @click="search"></b-icon-search>
+                </div>
+
+                <b-nav-item-dropdown right v-if="$page.user">
                     <!-- Using 'button-content' slot -->
                     <template #button-content>
                         <em>{{ $page.user.name }}</em>
@@ -56,10 +60,14 @@ export default {
     data() {
         return {
             showingNavigationDropdown: false,
+            query: null
         }
     },
 
     methods: {
+        search() {
+            this.$inertia.visit(this.route('search', this.query))
+        },
         logout() {
             axios.post(route('logout').url()).then(response => {
                 window.location = '/';
