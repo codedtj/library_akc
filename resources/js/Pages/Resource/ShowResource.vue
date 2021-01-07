@@ -51,5 +51,7 @@ export default {
 </script>
 
 <style scoped>
-
+img{
+    box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
+}
 </style>
