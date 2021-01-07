@@ -15,6 +15,7 @@
                                 <h1>{{ resource.title }}</h1>
                                 <h3>Автор: {{ resource.author }}</h3>
                                 <p>Год: {{ resource.year }}</p>
+                                <p>Категория: {{ resource.category.name }}</p>
                                 <p>{{ resource.description }}</p>
                                 <b-container fluid>
                                     <b-row>

@@ -18,7 +18,7 @@ class Resource extends BaseModel
 
     protected static function booted()
     {
-        static::addGlobalScope('public', function (Builder $query){
+        static::addGlobalScope('public', function (Builder $query) {
             $query->where('is_public', true);
         });
     }
@@ -34,16 +34,23 @@ class Resource extends BaseModel
     /**
      * Get resource cover
      */
-    public function cover(){
+    public function cover()
+    {
         return $this->belongsTo(Image::class);
     }
 
     /**
      * Get all of the resource tags.
      */
-    public function tags(){
+    public function tags()
+    {
         return $this->morphToMany(Tag::class, 'taggable')
             ->using(BaseMorphPivot::class)
             ->withTimestamps();
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

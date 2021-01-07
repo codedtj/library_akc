@@ -34,7 +34,8 @@ class ResourceService
             'author' => $data->author,
             'year' => $data->year,
             'description' => $data->description,
-            'is_public' => $data->is_public
+            'is_public' => $data->is_public,
+            'category_id' => $data->category_id
         ]);
 
         $dirProvider = new FileTypeDirectoryProvider($data->file);

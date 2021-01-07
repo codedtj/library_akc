@@ -29,6 +29,16 @@
                                           :invalid-feedback="form.error('year')">
                                 <b-form-input v-model="form.year"></b-form-input>
                             </b-form-group>
+                            <b-form-group label="Категория" :state="!form.error('category_id')"
+                                          :invalid-feedback="form.error('category_id')">
+                                <b-form-select v-model="form.category_id" required>
+                                    <b-form-select-option :value="null">-- Выберите категорию --</b-form-select-option>
+                                    <b-form-select-option v-for="category in categories" :value="category.id"
+                                                          :key="category.id">
+                                        {{ category.name }}
+                                    </b-form-select-option>
+                                </b-form-select>
+                            </b-form-group>
                             <b-form-group label="Описание" :state="!form.error('description')"
                                           :invalid-feedback="form.error('description')">
                                 <b-form-textarea v-model="form.description"></b-form-textarea>
@@ -89,6 +99,9 @@ import SuggestionInput from "@/Components/Inputs/SuggestionInput";
 export default {
     name: "ResourceEditor",
     components: {FilePicker, SuggestionInput},
+    props: {
+        categories: Array
+    },
     data() {
         return {
             form: this.$inertia.form({
@@ -96,6 +109,7 @@ export default {
                 author: null,
                 year: null,
                 description: null,
+                category_id: null,
                 file: null,
                 cover: null,
                 is_public: true,

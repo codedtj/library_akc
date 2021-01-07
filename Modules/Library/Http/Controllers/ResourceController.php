@@ -10,6 +10,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Http\Requests\CreateResourceRequest;
+use Modules\Library\Models\Category;
 use Modules\Library\Models\Resource;
 use Modules\Library\Services\ResourceService;
 
@@ -32,7 +33,7 @@ class ResourceController extends Controller
 
     public function show(Resource $resource)
     {
-        $resource->load('tags');
+        $resource->load('tags', 'category');
         return Inertia::render('Resource/ShowResource', [
             'resource' => $resource
         ]);
@@ -40,7 +41,9 @@ class ResourceController extends Controller
 
     public function create(): Response
     {
-        return Inertia::render('Resource/ResourceEditor');
+        return Inertia::render('Resource/ResourceEditor', [
+            'categories' => Category::all()
+        ]);
     }
 
     public function store(CreateResourceRequest $request)

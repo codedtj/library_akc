@@ -20,6 +20,8 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public bool $is_public;
 
+    public string $category_id;
+
     public Collection $tags;
 
     public UploadedFile $file;
