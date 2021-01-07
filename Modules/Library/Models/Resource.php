@@ -6,6 +6,7 @@
 namespace Modules\Library\Models;
 
 
+use Illuminate\Database\Eloquent\Builder;
 use Modules\FileManager\Models\BaseFile;
 use Modules\ImageGallery\Models\Image;
 use Modules\Shared\Models\BaseModel;
@@ -14,6 +15,13 @@ use Modules\TagManager\Models\Tag;
 
 class Resource extends BaseModel
 {
+
+    protected static function booted()
+    {
+        static::addGlobalScope('public', function (Builder $query){
+            $query->where('is_public', true);
+        });
+    }
 
     /**
      * Get resource file.

@@ -7,9 +7,9 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item-dropdown text="Resources" right>
+                    <b-nav-item-dropdown text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
-                                         :active="route().current('resources.create')">Add Resource
+                                         :active="route().current('resources.create')">Добавить
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
                 </b-navbar-nav>
