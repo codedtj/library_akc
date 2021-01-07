@@ -41,6 +41,7 @@
 
                             <b-form-group label="Теги">
                                 <suggestion-input displayPropertyName="name"
+                                                  query-is-first-option
                                                   ref="tagInput"
                                                   @selected="onTagSelected"
                                                   @notfound="addNewTag"

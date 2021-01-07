@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar toggleable="md" type="dark" variant="info">
-            <b-navbar-brand href="#">AKF Library</b-navbar-brand>
+            <b-navbar-brand :href="route('home')">AKF Library</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
