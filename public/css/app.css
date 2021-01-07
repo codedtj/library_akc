@@ -14350,6 +14350,18 @@ body {
 
 .masonry-grid .item .content {
   box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.masonry-grid .item .content:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.masonry-grid .item .content:active {
+  transform: scale(0.95);
+  transition: 0.2s ease;
 }
 
 .masonry-grid .item:hover {
