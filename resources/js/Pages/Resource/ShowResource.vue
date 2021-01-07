@@ -1,6 +1,6 @@
 <template>
     <b-row align-h="center">
-        <b-col md="10">
+        <b-col lg="10">
             <b-card>
                 <b-card-body>
                     <b-row>
