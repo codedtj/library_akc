@@ -66,7 +66,10 @@ export default {
 
     methods: {
         search() {
-            this.$inertia.visit(this.route('search', this.query))
+            if (this.query)
+                this.$inertia.visit(this.route('search', this.query))
+            else
+                this.$inertia.visit(this.route('home'))
         },
         logout() {
             axios.post(route('logout').url()).then(response => {

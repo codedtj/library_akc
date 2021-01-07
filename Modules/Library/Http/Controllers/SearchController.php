@@ -17,6 +17,7 @@ class SearchController extends Controller
     {
         $q = '%' . $query . '%';
         return Inertia::render('Search/Index', [
+            'query' => $query,
             'pagination' => Resource::where('title', 'like', $q)
                 ->orWhere('author', 'like', $q)
                 ->orWhere('year', 'like', $q)

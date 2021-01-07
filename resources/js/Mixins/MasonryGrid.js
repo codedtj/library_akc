@@ -16,7 +16,7 @@ export default {
     },
     methods: {
         resizeGridItem(item) {
-            let grid = document.getElementsByClassName("grid")[0];
+            let grid = document.getElementsByClassName("masonry-grid")[0];
             let rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
             let rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
             let rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));

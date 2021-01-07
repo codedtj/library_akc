@@ -1,5 +1,5 @@
 <template>
-    <div v-images-loaded:on.progress="resizeAllGridItems" class="grid">
+    <div v-images-loaded:on.progress="resizeAllGridItems" class="masonry-grid">
         <div class="item" v-for="resource in resources" :key="resource.id">
             <a :href="route('resources.show', resource.id)">
                 <div class="content">
