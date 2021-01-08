@@ -8,6 +8,7 @@ namespace Modules\Library\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Modules\FileManager\Models\BaseFile;
 use Modules\ImageGallery\Models\Image;
 use Modules\Shared\Models\BaseModel;
@@ -68,5 +69,10 @@ class Resource extends BaseModel
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getIsEditableAttribute()
+    {
+        return $this->creator->is(Auth::user());
     }
 }

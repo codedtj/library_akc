@@ -24,6 +24,7 @@ class ResourceController extends Controller
     {
         $this->service = $service;
         $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Resource::class, 'resource');
     }
 
     public function index()
@@ -36,7 +37,7 @@ class ResourceController extends Controller
     public function show(Resource $resource)
     {
         return Inertia::render('Resource/ShowResource', [
-            'resource' => $resource
+            'resource' => $resource->append('is_editable')
         ]);
     }
 

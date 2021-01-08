@@ -10,7 +10,7 @@
                             </div>
                             <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать
                                 ресурс</a>
-                            <b-container class="mt-4" fluid>
+                            <b-container class="mt-4" fluid v-if="resource.is_editable">
                                 <b-row>
                                     <a class="btn btn-info mr-3" :href="route('resources.edit', resource.id)">
                                         <b-icon-pencil></b-icon-pencil>
