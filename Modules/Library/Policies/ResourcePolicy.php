@@ -28,6 +28,10 @@ class ResourcePolicy
         return true;
     }
 
+    public function create(){
+        return true;
+    }
+
     public function update(User $user, Resource $resource){
         return $user->id === $resource->created_by;
     }
