@@ -32,10 +32,10 @@ class ResourceController extends Controller
         ]);
     }
 
-    public function show($resource)
+    public function show(Resource $resource)
     {
         return Inertia::render('Resource/ShowResource', [
-            'resource' => Resource::withoutGlobalScope('public')->with(['tags', 'category'])->findOrFail($resource)
+            'resource' => $resource
         ]);
     }
 

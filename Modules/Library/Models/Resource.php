@@ -33,7 +33,7 @@ class Resource extends BaseModel
 
     public function resolveRouteBinding($value, $field = null)
     {
-        return Resource::with('tags', 'category')->findOrFail($value);
+        return Resource::withoutGlobalScope('public')->with('tags', 'category')->findOrFail($value);
     }
 
     /**

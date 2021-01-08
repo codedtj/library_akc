@@ -9,6 +9,12 @@
                                 <b-img :src="coverUrl"></b-img>
                             </div>
                             <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать ресурс</a>
+                            <b-container class="mt-4" fluid>
+                                <b-row>
+                                    <a class="btn btn-info mr-3" :href="route('resources.edit', resource.id)"><b-icon-pencil></b-icon-pencil></a>
+                                    <b-button><b-icon-trash></b-icon-trash></b-button>
+                                </b-row>
+                            </b-container>
                         </b-col>
                         <b-col>
                             <div>
