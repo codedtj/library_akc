@@ -17,7 +17,7 @@ class CreateResourceRequest extends FormRequest
             'title' => 'required|string',
             'description' => 'nullable|string',
             'author' => 'required|string',
-            'year' => 'nullable|string',
+            'year' => 'nullable|string|size:4',
             'is_public' => 'required|boolean',
             'category_id' => 'required|exists:categories,id',
             'file' => 'required|file',

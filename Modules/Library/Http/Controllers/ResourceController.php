@@ -23,6 +23,7 @@ class ResourceController extends Controller
     public function __construct(ResourceService $service)
     {
         $this->service = $service;
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     public function index()
