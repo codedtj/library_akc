@@ -115,7 +115,7 @@ export default {
                 category_id: this.resource?.category_id,
                 file: null,
                 cover: null,
-                is_public: this.resource?.is_public,
+                is_public: this.resource?.is_public ?? false,
                 progress: 0,
                 tags: [],
                 _method: this.resource?.id ? 'put' : 'post'

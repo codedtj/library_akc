@@ -81,7 +81,6 @@ class ResourceService
             $resource->cover()->associate($cover);
         }
 
-
         $resource->tags()->sync($this->tagService->storeMany($data->tags)->pluck('id'));
 
         $resource->save();
