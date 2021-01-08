@@ -14,6 +14,7 @@
                             <div>
                                 <h1>{{ resource.title }}</h1>
                                 <h3>Автор: {{ resource.author }}</h3>
+                                <p class="bg-danger pb-1 px-1" v-if="!resource.is_public">Доступ ограничен</p>
                                 <p>Год: {{ resource.year }}</p>
                                 <p>Категория: {{ resource.category.name }}</p>
                                 <p>{{ resource.description }}</p>
