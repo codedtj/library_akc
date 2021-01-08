@@ -5,10 +5,13 @@
 
 namespace Modules\FileManager\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Shared\Models\BaseModel;
 
 abstract class File extends BaseModel
 {
+    use SoftDeletes;
+
     public abstract function setMimeType(string $mime);
 
     public abstract function setOriginalFilename(string $name);

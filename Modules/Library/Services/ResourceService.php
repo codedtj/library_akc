@@ -10,7 +10,6 @@ use Modules\FileManager\Services\UploadedFileService;
 use Modules\ImageGallery\Services\ImageService;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Models\Resource;
-use Modules\TagManager\Models\Tag;
 use Modules\TagManager\Services\TagService;
 
 class ResourceService
@@ -29,22 +28,59 @@ class ResourceService
 
     public function store(ResourceDto $data): Resource
     {
-        $resource = Resource::create([
+        $resource = Resource::create($this->getAttributesArray($data));
+
+        return $this->attachTagsAndFiles($resource, $data);
+
+    }
+
+    public function edit(Resource $resource, ResourceDto $data): Resource
+    {
+        $resource->update($this->getAttributesArray($data));
+
+        if ($data->cover){
+            $cover = $resource->cover->replicate();
+            $resource->cover()->dissociate();
+            $this->imageService->destroy($cover);
+        }
+
+
+        if ($data->file){
+            $file = $resource->file->replicate();
+            $resource->file()->dissociate();
+            $this->fileService->destroy($file);
+        }
+
+
+        return $this->attachTagsAndFiles($resource, $data);
+    }
+
+    private function getAttributesArray(ResourceDto $data)
+    {
+        return [
             'title' => $data->title,
             'author' => $data->author,
             'year' => $data->year,
             'description' => $data->description,
             'is_public' => $data->is_public,
             'category_id' => $data->category_id
-        ]);
+        ];
+    }
 
-        $dirProvider = new FileTypeDirectoryProvider($data->file);
-        $file = $this->fileService->store($data->file, $dirProvider->getDirectory(), new BaseFile());
-        $resource->file()->associate($file);
+    private function attachTagsAndFiles(Resource $resource, ResourceDto $data): Resource
+    {
+        if ($data->file) {
+            $dirProvider = new FileTypeDirectoryProvider($data->file);
+            $file = $this->fileService->store($data->file, $dirProvider->getDirectory(), new BaseFile());
+            $resource->file()->associate($file);
+        }
 
-        $dirProvider->setFile($data->cover);
-        $cover = $this->imageService->store($data->cover, $dirProvider);
-        $resource->cover()->associate($cover);
+        if ($data->cover) {
+            $dirProvider = new FileTypeDirectoryProvider($data->cover);
+            $cover = $this->imageService->store($data->cover, $dirProvider);
+            $resource->cover()->associate($cover);
+        }
+
 
         $resource->tags()->sync($this->tagService->storeMany($data->tags)->pluck('id'));
 

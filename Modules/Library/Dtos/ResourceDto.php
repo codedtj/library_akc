@@ -10,6 +10,8 @@ use Spatie\DataTransferObject\FlexibleDataTransferObject;
 
 class ResourceDto extends FlexibleDataTransferObject
 {
+    public ?string $id;
+
     public string $title;
 
     public ?string $description;
@@ -24,9 +26,9 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public Collection $tags;
 
-    public UploadedFile $file;
+    public ?UploadedFile $file;
 
-    public UploadedFile $cover;
+    public ?UploadedFile $cover;
 
     public function __construct(array $parameters = [])
     {

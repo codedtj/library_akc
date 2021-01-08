@@ -25,6 +25,7 @@ class CreateFilesTable extends Migration
 
             $table->timestamps();
             $table->userstamps();
+            $table->softDeletes();
         });
     }
 

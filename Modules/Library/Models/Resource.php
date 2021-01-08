@@ -13,14 +13,27 @@ use Modules\Shared\Models\BaseModel;
 use Modules\Shared\Models\BaseMorphPivot;
 use Modules\TagManager\Models\Tag;
 
+/**
+ * @property Image cover
+ * @property BaseFile file
+ */
 class Resource extends BaseModel
 {
+
+    protected $casts = [
+      'is_public' => 'boolean'
+    ];
 
     protected static function booted()
     {
         static::addGlobalScope('public', function (Builder $query) {
             $query->where('is_public', true);
         });
+    }
+
+    public function resolveRouteBinding($value, $field = null)
+    {
+        return Resource::with('tags', 'category')->findOrFail($value);
     }
 
     /**

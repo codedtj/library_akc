@@ -43,11 +43,12 @@
                                           :invalid-feedback="form.error('description')">
                                 <b-form-textarea v-model="form.description"></b-form-textarea>
                             </b-form-group>
-                            <b-form-checkbox class="my-3" v-model="form.is_public" name="check-button" switch
-                                             :state="!form.error('is_public')"
-                                             :invalid-feedback="form.error('is_public')">
-                                Доступно всем
-                            </b-form-checkbox>
+                            <b-form-group :state="!form.error('is_public')" :invalid-feedback="form.error('is_public')">
+                                <b-form-checkbox class="my-3" v-model="form.is_public" name="check-button" switch>
+                                    Доступно всем
+                                </b-form-checkbox>
+                            </b-form-group>
+
 
                             <b-form-group label="Теги">
                                 <suggestion-input displayPropertyName="name"
@@ -100,25 +101,28 @@ export default {
     name: "ResourceEditor",
     components: {FilePicker, SuggestionInput},
     props: {
-        categories: Array
+        categories: Array,
+        resource: Object
     },
     data() {
         return {
             form: this.$inertia.form({
-                title: null,
-                author: null,
-                year: null,
-                description: null,
-                category_id: null,
+                id: this.resource?.id,
+                title: this.resource?.title,
+                author: this.resource?.author,
+                year: this.resource?.year,
+                description: this.resource?.description,
+                category_id: this.resource?.category_id,
                 file: null,
                 cover: null,
-                is_public: true,
+                is_public: this.resource?.is_public,
                 progress: 0,
-                tags: []
+                tags: [],
+                _method: this.resource?.id ? 'put' : 'post'
             }, {
                 resetOnSuccess: true
             }),
-            tags: []
+            tags: this.resource?.tags ?? []
         }
     },
     methods: {
@@ -129,8 +133,18 @@ export default {
 
             this.form.tags = this.tags.map(t => t.name);
 
+            if (this.form.id)
+                this.update();
+            else this.store();
+        },
+        store() {
             this.form
                 .post(route('resources.store').url())
+                .finally(this.form.progress = 0)
+        },
+        update() {
+            this.form
+                .post(route('resources.update', this.form.id).url())
                 .finally(this.form.progress = 0)
         },
         addNewTag(name) {
@@ -153,7 +167,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

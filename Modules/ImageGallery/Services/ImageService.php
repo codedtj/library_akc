@@ -71,4 +71,10 @@ class ImageService
         $response = new FileResponse($path, $mime);
         return $response->generateResponse();
     }
+
+    public function destroy(Image $image)
+    {
+        $this->fileService->destroy($image);
+        return $image->delete();
+    }
 }

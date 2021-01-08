@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
 
             $table->timestamps();
             $table->userstamps();
+            $table->softDeletes();
         });
     }
 

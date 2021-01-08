@@ -10,6 +10,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Http\Requests\CreateResourceRequest;
+use Modules\Library\Http\Requests\EditResourceRequest;
 use Modules\Library\Models\Category;
 use Modules\Library\Models\Resource;
 use Modules\Library\Services\ResourceService;
@@ -33,7 +34,6 @@ class ResourceController extends Controller
 
     public function show(Resource $resource)
     {
-        $resource->load('tags', 'category');
         return Inertia::render('Resource/ShowResource', [
             'resource' => $resource
         ]);
@@ -49,6 +49,20 @@ class ResourceController extends Controller
     public function store(CreateResourceRequest $request)
     {
         $resource = $this->service->store(new ResourceDto($request->validated()));
+        return Redirect::route('resources.show', $resource);
+    }
+
+    public function edit(Resource $resource)
+    {
+        return Inertia::render('Resource/ResourceEditor', [
+            'categories' => Category::all(),
+            'resource' => $resource
+        ]);
+    }
+
+    public function update(Resource $resource, EditResourceRequest $request)
+    {
+        $resource = $this->service->edit($resource, new ResourceDto($request->validated()));
         return Redirect::route('resources.show', $resource);
     }
 }

@@ -27,6 +27,7 @@ class CreateResourcesTable extends Migration
 
             $table->timestamps();
             $table->userstamps();
+            $table->softDeletes();
         });
     }
 

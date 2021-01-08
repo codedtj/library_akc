@@ -18,4 +18,10 @@ abstract class FileService
             return $this->createFileName($path, $extension);
         } else return $fileName;
     }
+
+    public function destroy(File $file)
+    {
+        Storage::disk($file->disk)->delete($file->getPath());
+        return $file->delete();
+    }
 }
