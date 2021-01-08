@@ -65,4 +65,10 @@ class ResourceController extends Controller
         $resource = $this->service->edit($resource, new ResourceDto($request->validated()));
         return Redirect::route('resources.show', $resource);
     }
+
+    public function destroy(Resource $resource)
+    {
+        $this->service->destroy($resource);
+        return Redirect::route('resources.index');
+    }
 }

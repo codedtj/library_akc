@@ -38,21 +38,31 @@ class ResourceService
     {
         $resource->update($this->getAttributesArray($data));
 
-        if ($data->cover){
-            $cover = $resource->cover->replicate();
-            $resource->cover()->dissociate();
-            $this->imageService->destroy($cover);
+        if ($data->cover) {
+            $this->destroyResourceCover($resource);
         }
 
 
-        if ($data->file){
-            $file = $resource->file->replicate();
-            $resource->file()->dissociate();
-            $this->fileService->destroy($file);
+        if ($data->file) {
+            $this->destroyResourceFile($resource);
         }
 
 
         return $this->attachTagsAndFiles($resource, $data);
+    }
+
+    private function destroyResourceFile(Resource $resource)
+    {
+        $file = $resource->file->replicate();
+        $resource->file()->dissociate();
+        $this->fileService->destroy($file);
+    }
+
+    private function destroyResourceCover(Resource $resource)
+    {
+        $cover = $resource->cover->replicate();
+        $resource->cover()->dissociate();
+        $this->imageService->destroy($cover);
     }
 
     private function getAttributesArray(ResourceDto $data)
@@ -86,5 +96,12 @@ class ResourceService
         $resource->save();
 
         return $resource;
+    }
+
+    public function destroy(Resource $resource): bool
+    {
+        $this->destroyResourceFile($resource);
+        $this->destroyResourceCover($resource);
+        return $resource->delete();
     }
 }

@@ -7,6 +7,7 @@ namespace Modules\Library\Models;
 
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\FileManager\Models\BaseFile;
 use Modules\ImageGallery\Models\Image;
 use Modules\Shared\Models\BaseModel;
@@ -20,8 +21,10 @@ use Modules\TagManager\Models\Tag;
 class Resource extends BaseModel
 {
 
+    use SoftDeletes;
+
     protected $casts = [
-      'is_public' => 'boolean'
+        'is_public' => 'boolean'
     ];
 
     protected static function booted()
