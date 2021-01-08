@@ -11,7 +11,7 @@
                         <b-form id="form" href="form" @submit.prevent="submit">
                             <b-form-group label="*Название" :state="!form.error('title')"
                                           :invalid-feedback="form.error('title')">
-                                <b-form-input v-model="form.title"></b-form-input>
+                                <b-form-input v-model="form.title" autofocus></b-form-input>
                             </b-form-group>
                             <b-form-group label="*Прикрепить ресурс" :state="!form.error('file')"
                                           :invalid-feedback="form.error('file')">

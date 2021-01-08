@@ -3,7 +3,6 @@
         <input @click.stop.prevent.capture
                @keydown="onKeyDown"
                autocomplete="off"
-               autofocus
                class="form-control col-md-12"
                data-toggle="dropdown"
                :id="queryInputId"
