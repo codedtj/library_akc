@@ -16,7 +16,7 @@ class CreateResourcesTable extends Migration
         Schema::create('resources', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title', 256);
-            $table->string('author', 128);
+            $table->string('author', 128)->nullable();
             $table->string('year', 4)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_public')->default(false);
