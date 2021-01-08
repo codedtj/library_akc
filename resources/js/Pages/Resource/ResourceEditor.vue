@@ -109,9 +109,9 @@ export default {
             form: this.$inertia.form({
                 id: this.resource?.id,
                 title: this.resource?.title,
-                author: this.resource?.author,
-                year: this.resource?.year,
-                description: this.resource?.description,
+                author: this.resource?.author ?? null,
+                year: this.resource?.year ?? null,
+                description: this.resource?.description ?? null,
                 category_id: this.resource?.category_id,
                 file: null,
                 cover: null,

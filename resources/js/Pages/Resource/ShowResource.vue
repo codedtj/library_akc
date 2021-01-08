@@ -8,11 +8,16 @@
                             <div class="mb-4">
                                 <b-img :src="coverUrl"></b-img>
                             </div>
-                            <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать ресурс</a>
+                            <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать
+                                ресурс</a>
                             <b-container class="mt-4" fluid>
                                 <b-row>
-                                    <a class="btn btn-info mr-3" :href="route('resources.edit', resource.id)"><b-icon-pencil></b-icon-pencil></a>
-                                    <b-button><b-icon-trash></b-icon-trash></b-button>
+                                    <a class="btn btn-info mr-3" :href="route('resources.edit', resource.id)">
+                                        <b-icon-pencil></b-icon-pencil>
+                                    </a>
+                                    <b-button @click="destroy">
+                                        <b-icon-trash></b-icon-trash>
+                                    </b-button>
                                 </b-row>
                             </b-container>
                         </b-col>
@@ -21,9 +26,9 @@
                                 <h1>{{ resource.title }}</h1>
                                 <h3>Автор: {{ resource.author }}</h3>
                                 <p class="bg-danger pb-1 px-1" v-if="!resource.is_public">Доступ ограничен</p>
-                                <p>Год: {{ resource.year }}</p>
+                                <p v-if="resource.year">Год: {{ resource.year }}</p>
                                 <p>Категория: {{ resource.category.name }}</p>
-                                <p>{{ resource.description }}</p>
+                                <p v-if="resource.description">{{ resource.description }}</p>
                                 <b-container fluid>
                                     <b-row>
                                         <b-tag v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove pill
@@ -54,12 +59,28 @@ export default {
         coverUrl() {
             return getImageUrl(this.resource.cover_id, {width: 300})
         }
+    },
+    methods: {
+        destroy() {
+            this.$bvModal.msgBoxConfirm('Вы действительно хотите удалить ресурс "' + this.resource.title + '"?', {
+                centered: true,
+                buttonSize: 'sm',
+                okTitle: 'Удалить',
+                okVariant: 'info',
+                cancelTitle: 'Отмена',
+                cancelVariant: 'secondary',
+                title: 'Подтверждение удаления'
+            }).then(confirmed => {
+                if (confirmed)
+                    this.$inertia.delete(route('resources.destroy', this.resource.id))
+            })
+        }
     }
 }
 </script>
 
 <style scoped>
-img{
+img {
     box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
 }
 </style>
