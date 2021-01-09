@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-navbar toggleable="md" type="dark" variant="info">
+        <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
             <b-navbar-brand :href="route('home')">AKF Library</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
