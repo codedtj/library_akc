@@ -6,11 +6,12 @@
 namespace Modules\Library\Http\Controllers;
 
 
+use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
 use Inertia\Inertia;
 use Modules\Library\Models\Resource;
 
-class ClassResourceController
+class ClassResourceController extends Controller
 {
     public function index()
     {

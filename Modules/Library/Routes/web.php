@@ -18,6 +18,10 @@ Route::prefix('library')->group(function () {
 
     Route::get('/search/{query}', 'SearchController@index')->name('search');
 
-    Route::get('/classes', 'ClassResourceController@index')->name('class-resources.index');
-    Route::get('/classes/{class}', 'ClassResourceController@show')->name('class-resources.show');
+    Route::get('/class/resources', 'ClassResourceController@index')->name('class-resources.index');
+    Route::get('/class/{class}/resources', 'ClassResourceController@show')->name('class-resources.show');
+
+    Route::get('/category/resources', 'CategoryResourceController@index')->name('category-resources.index');
+    Route::get('/category/{category}/resources', 'CategoryResourceController@show')->name('category-resources.show');
+
 });
