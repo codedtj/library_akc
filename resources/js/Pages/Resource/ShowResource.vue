@@ -8,7 +8,8 @@
                             <div class="mb-4">
                                 <b-img :src="coverUrl"></b-img>
                             </div>
-                            <a class="text-info" download :href="route('files.download', resource.file_id)">Скачать
+                            <a class="btn btn-info" download :href="route('files.download', resource.file_id)">
+                                <b-icon-arrow-down></b-icon-arrow-down> Скачать
                                 ресурс</a>
                             <b-container class="mt-4" fluid v-if="resource.is_editable">
                                 <b-row>
