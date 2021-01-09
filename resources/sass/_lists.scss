@@ -1,0 +1,38 @@
+.simple-list {
+    padding-left: 0;
+
+    li {
+        list-style-type: none;
+        text-align: center;
+        margin: 1rem 0;
+        box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, .132);
+        border-radius: 5px;
+        border-left: 2px solid #17a2b8;
+        border-right: 2px solid #17a2b8;
+        transition: 0.2s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+            background: #f8f8f8;
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        a {
+            color: $info;
+            display: block;
+
+            &:hover {
+                text-decoration: none;
+                color: $info;
+            }
+        }
+
+        .list-item {
+            padding: 1rem;
+        }
+    }
+}

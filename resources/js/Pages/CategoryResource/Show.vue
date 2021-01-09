@@ -1,8 +1,9 @@
 <template>
     <b-col cols="12">
-        <h1 class="mb-4">Класс {{ classId }}</h1>
+        <h1 class="mb-4">{{ category.name }}</h1>
         <resource-masonry-with-data-fetching :resources="pagination.data"
-                                             :url="route('class-resources.show', classId)"></resource-masonry-with-data-fetching>
+                                             :url="route('category-resources.show', category.id)">
+        </resource-masonry-with-data-fetching>
     </b-col>
 </template>
 
@@ -14,11 +15,12 @@ export default {
     components: {ResourceMasonryWithDataFetching},
     props: {
         pagination: Object,
-        classId: String
+        category: Object
     }
 }
 </script>
-<style>
+
+<style scoped>
 h1 {
     margin-left: 20px;
 }
