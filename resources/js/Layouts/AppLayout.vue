@@ -12,6 +12,7 @@
                                          :active="route().current('resources.create')">Добавить
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
+                    <b-nav-item :href="route('class-resources.index')" :active="route().current('class-resources.index')">По классам</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
 

@@ -13,8 +13,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('library')->group(function() {
+Route::prefix('library')->group(function () {
     Route::resource('resources', 'ResourceController');
 
     Route::get('/search/{query}', 'SearchController@index')->name('search');
+
+    Route::get('/classes', 'ClassResourceController@index')->name('class-resources.index');
+    Route::get('/classes/{class}', 'ClassResourceController@show')->name('class-resources.show');
 });
