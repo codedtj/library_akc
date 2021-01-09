@@ -1,6 +1,5 @@
 <template>
-    <b-row align-h="center">
-        <b-col lg="10">
+        <b-col class="mx-auto" lg="10">
             <b-card>
                 <b-card-body>
                     <b-row>
@@ -44,7 +43,6 @@
                 </b-card-body>
             </b-card>
         </b-col>
-    </b-row>
 </template>
 
 <script>

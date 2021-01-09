@@ -34,7 +34,9 @@
         </b-navbar>
         <main>
             <b-container fluid="md" class="py-5">
-                <slot></slot>
+                <b-row>
+                    <slot></slot>
+                </b-row>
             </b-container>
         </main>
     </div>
