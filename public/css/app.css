@@ -14317,6 +14317,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background: #f8f8f8;
 }
 
 .search-box {
@@ -14398,6 +14399,7 @@ body {
   border-left: 2px solid #17a2b8;
   border-right: 2px solid #17a2b8;
   transition: 0.2s ease;
+  background: #ffffff;
 }
 
 .simple-list li:hover {
@@ -14422,5 +14424,9 @@ body {
 
 .simple-list li .list-item {
   padding: 1rem;
+}
+
+.shadow-light {
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132);
 }
 

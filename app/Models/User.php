@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Library\Models\Resource;
 use Modules\Shared\Traits\UsesUUID;
 
 class User extends Authenticatable
@@ -19,6 +20,7 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use UsesUUID;
+
     public $incrementing = false;
     protected $primaryKey = 'id';
     protected $keyType = 'uuid';
@@ -63,4 +65,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function resources()
+    {
+        return $this->hasMany(Resource::class, 'created_by');
+    }
 }

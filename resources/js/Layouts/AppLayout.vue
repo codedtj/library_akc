@@ -14,10 +14,10 @@
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown text="Фильтры">
                         <b-dropdown-item :href="route('class-resources.index')"
-                                    :active="route().current('class-resources.index')">По классам
+                                         :active="route().current('class-resources.index')">По классам
                         </b-dropdown-item>
                         <b-dropdown-item :href="route('category-resources.index')"
-                                    :active="route().current('category-resources.index')">По категориям
+                                         :active="route().current('category-resources.index')">По категориям
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
 
@@ -35,9 +35,11 @@
                     <template #button-content>
                         <em>{{ $page.user.name }}</em>
                     </template>
-                    <b-dropdown-item :href="route('profile.show')" :active="route().current('profile.show')">Profile
-                    </b-dropdown-item>
-                    <b-dropdown-item @click.prevent="logout" href="#">Sign Out</b-dropdown-item>
+                    <!--                    <b-dropdown-item :href="route('profile.show')" :active="route().current('profile.show')">Profile-->
+                    <!--                    </b-dropdown-item>-->
+                    <b-dropdown-item :href="route('dashboard')"
+                                     :active="route().current('dashboard')">Обзор</b-dropdown-item>
+                    <b-dropdown-item @click.prevent="logout" href="#">Выйти</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
         </b-navbar>

@@ -24,4 +24,5 @@ Route::prefix('library')->group(function () {
     Route::get('/category/resources', 'CategoryResourceController@index')->name('category-resources.index');
     Route::get('/category/{category}/resources', 'CategoryResourceController@show')->name('category-resources.show');
 
+    Route::get('/my/resources', 'MyResourceController@index')->name('my-resources');
 });
