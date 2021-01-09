@@ -1,6 +1,5 @@
 <template>
-    <b-row align-h="center">
-        <b-col md="8">
+        <b-col md="8" class="mx-auto">
             <b-card header="Добавить ресурс">
                 <b-overlay :show="form.processing" rounded="lg">
                     <template #overlay class="w-100">
@@ -90,7 +89,6 @@
                 </b-overlay>
             </b-card>
         </b-col>
-    </b-row>
 </template>
 
 <script>
