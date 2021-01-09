@@ -16,14 +16,19 @@ class SearchController extends Controller
     public function index($query)
     {
         $q = '%' . $query . '%';
-        return Inertia::render('Search/Index', [
-            'query' => $query,
-            'pagination' => Resource::where('title', 'like', $q)
-                ->orWhere('author', 'like', $q)
-                ->orWhere('year', 'like', $q)
-                ->orWhereHas('tags', function (Builder $query) use ($q) {
-                    $query->where('name', 'like', $q);
-                })->simplePaginate(30)
-        ]);
+        $resources = Resource::where('title', 'like', $q)
+            ->orWhere('author', 'like', $q)
+            ->orWhere('year', 'like', $q)
+            ->orWhereHas('tags', function (Builder $query) use ($q) {
+                $query->where('name', 'like', $q);
+            })->simplePaginate(30);
+
+        if (request()->expectsJson())
+            return $resources;
+        else
+            return Inertia::render('Search/Index', [
+                'query' => $query,
+                'pagination' => $resources
+            ]);
     }
 }
