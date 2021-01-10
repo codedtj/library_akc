@@ -11,7 +11,8 @@
                     <b-nav-item v-else :href="route('login')" class="d-md-none">Вход</b-nav-item>
 
                     <b-nav-item :href="route('home')" :active="route().current('home')">
-                        <b-icon-house-door-fill title="На главную"></b-icon-house-door-fill>
+                        <b-icon-house-door-fill title="На главную" class="d-none d-md-block"></b-icon-house-door-fill>
+                        <span class="d-md-none">Главная</span>
                     </b-nav-item>
                     <b-nav-item-dropdown v-if="$page.user" text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
