@@ -3,7 +3,7 @@
         <b-jumbotron>
             <b-container fluid>
                 <b-row>
-                    <a class="col-sm-4 col-md-3 p-0 mr-4" :href="route('profile.show')">
+                    <a class="col-sm-4 col-md-3 p-0 mr-sm-4 mb-4" :href="route('profile.show')">
                         <b-aspect aspect="square" class="tile  shadow-light" style="background: #3399CC">
                             <b-icon-person font-scale="2" class="tile-icon text-white">
                             </b-icon-person>
@@ -11,7 +11,7 @@
                         </b-aspect>
                     </a>
 
-                    <a class="col-sm-4 col-md-3 p-0 mr-4" :href="route('my-resources')">
+                    <a class="col-sm-4 col-md-3 p-0 mr-sm-4 mb-4" :href="route('my-resources')">
                         <b-aspect aspect="square" class="tile  shadow-light" style="background: #339999">
                             <b-icon-collection font-scale="2" class="tile-icon text-white">
                             </b-icon-collection>
@@ -19,7 +19,7 @@
                         </b-aspect>
                     </a>
 
-                    <a class="col-sm-4 col-md-3 p-0 mr-4" :href="route('favourite.index')">
+                    <a class="col-sm-4 col-md-3 p-0 mr-sm-4 mb-4" :href="route('favourite.index')">
                         <b-aspect aspect="square" class="tile  shadow-light" style="background: #ff0099">
                             <b-icon-bookmark-heart font-scale="2" class="tile-icon text-white">
                             </b-icon-bookmark-heart>
