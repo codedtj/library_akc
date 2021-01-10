@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         getCoverUrl(coverId) {
-            return getImageUrl(coverId, {width: 200})
+            return getImageUrl(coverId, {width: 300})
         }
     }
 }

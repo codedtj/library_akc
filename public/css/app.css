@@ -14374,6 +14374,10 @@ body {
   position: relative;
 }
 
+.masonry-grid .item .resource-preview img {
+  width: 100%;
+}
+
 .masonry-grid .item .resource-preview .title {
   background-color: #17a2b8;
   color: #ffffff;
@@ -14384,6 +14388,16 @@ body {
   right: 0;
   font-size: 0.8rem;
   border-top: 2px solid white;
+}
+
+@media only screen and (max-width: 420px) {
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr)) !important;
+  }
+
+  .item {
+    width: 320px !important;
+  }
 }
 
 .simple-list {

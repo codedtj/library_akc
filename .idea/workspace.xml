@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="Task #5 - Can edit resource">
-      <change beforePath="$PROJECT_DIR$/Modules/Library/Policies/ResourcePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Library/Policies/ResourcePolicy.php" afterDir="false" />
+    <list default="true" id="50671fa5-3930-4a3d-8755-f613e687e1ca" name="Default Changelist" comment="responsive grid">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Resource/ResourceMasonry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Resource/ResourceMasonry.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Vue Single File Component" />
         <option value="SCSS File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -172,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Library/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../logistics" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -195,6 +199,8 @@
       <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\FileManager\Services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\Shared\Pivots" />
+      <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\app\Http\Controllers" />
       <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\resources\js\Components\Inputs" />
       <recent name="C:\Users\sultonazar.mamadaziz\PhpstormProjects\library\Modules\FileManager\Models" />
     </key>
@@ -262,203 +268,8 @@
       <workItem from="1609925716631" duration="3673000" />
       <workItem from="1609996557820" duration="25539000" />
       <workItem from="1610103885396" duration="58000" />
-      <workItem from="1610104022682" duration="8470000" />
-    </task>
-    <task id="LOCAL-00001" summary="init commit">
-      <created>1607153135622</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1607153135622</updated>
-    </task>
-    <task id="LOCAL-00002" summary="modules created">
-      <created>1608206103516</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1608206103516</updated>
-    </task>
-    <task id="LOCAL-00003" summary="move to UUID">
-      <created>1608207595143</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1608207595143</updated>
-    </task>
-    <task id="LOCAL-00004" summary="move to bootstrap">
-      <created>1608223772347</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1608223772347</updated>
-    </task>
-    <task id="LOCAL-00005" summary="intermediate commit">
-      <created>1608224934474</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1608224934474</updated>
-    </task>
-    <task id="LOCAL-00006" summary="File Upload Progress">
-      <created>1608278119961</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1608278119961</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Uploader reset">
-      <created>1608278389189</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1608278389189</updated>
-    </task>
-    <task id="LOCAL-00008" summary="attach cover">
-      <created>1608285260718</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1608285260718</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Error validation messages in viwe">
-      <created>1609077992929</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1609077992929</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Store resource">
-      <created>1609226432625</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1609226432625</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Store resource">
-      <created>1609231970077</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1609231970077</updated>
-    </task>
-    <task id="LOCAL-00012" summary="tag manager intermediate commit">
-      <created>1609270250249</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1609270250249</updated>
-    </task>
-    <task id="LOCAL-00013" summary="attach tags to resource">
-      <created>1609840946287</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1609840946287</updated>
-    </task>
-    <task id="LOCAL-00014" summary="SuggestionInput.vue show options fix">
-      <created>1609841574413</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1609841574413</updated>
-    </task>
-    <task id="LOCAL-00015" summary="List of resources">
-      <created>1609924968453</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1609924968453</updated>
-    </task>
-    <task id="LOCAL-00016" summary="List of resources">
-      <created>1609925004456</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1609925004456</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Download resource">
-      <created>1609927888988</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1609927888988</updated>
-    </task>
-    <task id="LOCAL-00018" summary="minor update">
-      <created>1609997171222</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1609997171222</updated>
-    </task>
-    <task id="LOCAL-00019" summary="search">
-      <created>1610002062846</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1610002062846</updated>
-    </task>
-    <task id="LOCAL-00020" summary="search page update">
-      <created>1610007919497</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1610007919497</updated>
-    </task>
-    <task id="LOCAL-00021" summary="responsive ui update">
-      <created>1610009891660</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1610009891660</updated>
-    </task>
-    <task id="LOCAL-00022" summary="show only public resources by default">
-      <created>1610010454634</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1610010454634</updated>
-    </task>
-    <task id="LOCAL-00023" summary="image shadow">
-      <created>1610013504345</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1610013504345</updated>
-    </task>
-    <task id="LOCAL-00024" summary="login fix">
-      <created>1610016262667</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1610016262667</updated>
-    </task>
-    <task id="LOCAL-00025" summary="animation">
-      <created>1610017359645</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1610017359645</updated>
-    </task>
-    <task id="LOCAL-00026" summary="animation">
-      <created>1610017622708</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1610017622708</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Task #2 - Add Categories">
-      <created>1610020847589</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1610020847589</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Task #2 - Add Categories">
-      <created>1610020869405</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1610020869405</updated>
+      <workItem from="1610104022682" duration="30679000" />
+      <workItem from="1610263446456" duration="23759000" />
     </task>
     <task id="LOCAL-00029" summary="Task #4 - Edit resource">
       <created>1610104979391</created>
@@ -523,7 +334,287 @@
       <option name="project" value="LOCAL" />
       <updated>1610117159352</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Task #5 - Can edit resource">
+      <created>1610117212999</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1610117212999</updated>
+    </task>
+    <task id="LOCAL-00039" summary="autofocus fix">
+      <created>1610117303771</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1610117303771</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Task #9 - Change download resource button">
+      <created>1610196729526</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1610196729527</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Task #10 - Fetch resources on scroll down">
+      <created>1610200857205</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610200857205</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Task #10 - Fetch resources on scroll down&#10;&#10;index refactoring">
+      <created>1610201702159</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1610201702159</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Task #10 - Fetch resources on scroll down&#10;&#10;search page refactoring">
+      <created>1610202213452</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1610202213452</updated>
+    </task>
+    <task id="LOCAL-00044" summary="responsive fix">
+      <created>1610202510759</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1610202510759</updated>
+    </task>
+    <task id="LOCAL-00045" summary="tag seeder">
+      <created>1610203700280</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1610203700280</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Task #6 - Categories and classes pages">
+      <created>1610209649988</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1610209649988</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Task #6 - Categories and classes pages">
+      <created>1610211542602</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1610211542602</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Task #6 - Categories and classes pages">
+      <created>1610211707695</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1610211707695</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Epic #8 - Dashboard. My resources">
+      <created>1610220324060</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1610220324060</updated>
+    </task>
+    <task id="LOCAL-00050" summary="sticky navbar">
+      <created>1610220485126</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1610220485127</updated>
+    </task>
+    <task id="LOCAL-00051" summary="show private resources on my resources page">
+      <created>1610220592919</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610220592919</updated>
+    </task>
+    <task id="LOCAL-00052" summary="policy fix for guests">
+      <created>1610264292384</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1610264292384</updated>
+    </task>
+    <task id="LOCAL-00053" summary="layout update">
+      <created>1610265623505</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1610265623505</updated>
+    </task>
+    <task id="LOCAL-00054" summary="layout update">
+      <created>1610265775166</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1610265775166</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Epic #12 - Favorite Resources&#10;&#10;Add to favourite, remove from favourite">
+      <created>1610272105367</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1610272105367</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Epic #12 - Favorite Resources&#10;&#10;preventing multiple requests">
+      <created>1610272412227</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1610272412227</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Epic #12 - Favorite Resources&#10;&#10;show ui update">
+      <created>1610275416960</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1610275416961</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Epic #12 - Favorite Resources&#10;&#10;favourite index page">
+      <created>1610276644630</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1610276644630</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Epic #12 - Favorite Resources&#10;&#10;latest()">
+      <created>1610276798925</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1610276798925</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Epic #13 - User Profile&#10;&#10;Profile button on Dashboard">
+      <created>1610277509800</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1610277509800</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Epic #13 - User Profile&#10;&#10;Update profile info">
+      <created>1610280538410</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1610280538410</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Epic #13 - User Profile&#10;&#10;Change password">
+      <created>1610280939764</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1610280939765</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Epic #13 - User Profile&#10;&#10;Change password">
+      <created>1610281243256</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1610281243256</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Epic #13 - User Profile&#10;&#10;Change password finalized">
+      <created>1610282828801</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1610282828801</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Epic #13 - User Profile&#10;&#10;delete user">
+      <created>1610283211850</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1610283211850</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Epic #13 - User Profile&#10;&#10;delete user -&gt; modal fix">
+      <created>1610283565881</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1610283565881</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Epic #13 - User Profile&#10;&#10;delete user -&gt; soft delete">
+      <created>1610283715946</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1610283715946</updated>
+    </task>
+    <task id="LOCAL-00068" summary="tag seeder fix">
+      <created>1610284015230</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1610284015230</updated>
+    </task>
+    <task id="LOCAL-00069" summary="show resource for guest fix">
+      <created>1610284930885</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1610284930885</updated>
+    </task>
+    <task id="LOCAL-00070" summary="hide bookmark button for guest">
+      <created>1610285093024</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1610285093024</updated>
+    </task>
+    <task id="LOCAL-00071" summary="user registration">
+      <created>1610293400069</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1610293400069</updated>
+    </task>
+    <task id="LOCAL-00072" summary="user registration">
+      <created>1610293456699</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1610293456699</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Epic #13 - User Profile">
+      <created>1610293918029</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1610293918029</updated>
+    </task>
+    <task id="LOCAL-00074" summary="nav update">
+      <created>1610294776049</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1610294776049</updated>
+    </task>
+    <task id="LOCAL-00075" summary="mobile ui">
+      <created>1610294919360</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1610294919360</updated>
+    </task>
+    <task id="LOCAL-00076" summary="mobile ui">
+      <created>1610295028477</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1610295028477</updated>
+    </task>
+    <task id="LOCAL-00077" summary="responsive grid">
+      <created>1610296053851</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1610296053852</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,32 +633,32 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Error validation messages in viwe" />
-    <MESSAGE value="Store resource" />
-    <MESSAGE value="tag manager intermediate commit" />
-    <MESSAGE value="attach tags to resource" />
-    <MESSAGE value="SuggestionInput.vue show options fix" />
-    <MESSAGE value="List of resources" />
-    <MESSAGE value="Download resource" />
-    <MESSAGE value="minor update" />
-    <MESSAGE value="search" />
-    <MESSAGE value="search page update" />
-    <MESSAGE value="responsive ui update" />
-    <MESSAGE value="show only public resources by default" />
-    <MESSAGE value="image shadow" />
-    <MESSAGE value="login fix" />
-    <MESSAGE value="animation" />
-    <MESSAGE value="Task #2 - Add Categories" />
-    <MESSAGE value="edit resource" />
-    <MESSAGE value="Task #4 - Edit resource" />
-    <MESSAGE value="show private resource" />
-    <MESSAGE value="edit and delete btns on show page" />
-    <MESSAGE value="delete resource" />
-    <MESSAGE value="destroy button" />
-    <MESSAGE value="Task #7 - Auth middleware protection" />
-    <MESSAGE value="author nullable" />
-    <MESSAGE value="Task #5 - Can edit resource" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #5 - Can edit resource" />
+    <MESSAGE value="sticky navbar" />
+    <MESSAGE value="show private resources on my resources page" />
+    <MESSAGE value="policy fix for guests" />
+    <MESSAGE value="layout update" />
+    <MESSAGE value="Epic #12 - Favorite Resources&#10;&#10;Add to favourite, remove from favourite" />
+    <MESSAGE value="Epic #12 - Favorite Resources&#10;&#10;preventing multiple requests" />
+    <MESSAGE value="Epic #12 - Favorite Resources&#10;&#10;show ui update" />
+    <MESSAGE value="Epic #12 - Favorite Resources&#10;&#10;favourite index page" />
+    <MESSAGE value="Epic #12 - Favorite Resources&#10;&#10;latest()" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;Profile button on Dashboard" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;Update profile info" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;Change password" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;Change password finalized" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;delete user" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;delete user -&gt; modal fix" />
+    <MESSAGE value="Epic #13 - User Profile&#10;&#10;delete user -&gt; soft delete" />
+    <MESSAGE value="tag seeder fix" />
+    <MESSAGE value="show resource for guest fix" />
+    <MESSAGE value="hide bookmark button for guest" />
+    <MESSAGE value="user registration" />
+    <MESSAGE value="register and login buttons" />
+    <MESSAGE value="Epic #13 - User Profile" />
+    <MESSAGE value="nav update" />
+    <MESSAGE value="mobile ui" />
+    <MESSAGE value="responsive grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="responsive grid" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
