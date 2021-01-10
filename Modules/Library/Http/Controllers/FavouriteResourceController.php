@@ -18,12 +18,12 @@ class FavouriteResourceController extends Controller
 
     public function index()
     {
-        $pagination = auth()->user()->favouriteResources()->simplePaginate(30);
+        $pagination = auth()->user()->favouriteResources()->latest()->simplePaginate(30);
 
         if (request()->expectsJson())
             return $pagination;
         else
-            return Inertia::render('Favourite/Index', [
+            return Inertia::render('FavouriteResource/Index', [
                 'pagination' => $pagination
             ]);
     }

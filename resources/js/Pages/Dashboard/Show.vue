@@ -3,11 +3,19 @@
         <b-jumbotron>
             <b-container fluid>
                 <b-row>
-                    <a class="col-sm-4 col-md-3 p-0" :href="route('my-resources')">
-                        <b-aspect aspect="square" class="tile  shadow-light">
+                    <a class="col-sm-4 col-md-3 p-0 mr-4" :href="route('my-resources')">
+                        <b-aspect aspect="square" class="tile  shadow-light" style="background: #ffa500">
                             <b-icon-collection font-scale="2" class="tile-icon text-white">
                             </b-icon-collection>
                             <span class="tile-content">Мои ресурсы</span>
+                        </b-aspect>
+                    </a>
+
+                    <a class="col-sm-4 col-md-3 p-0" :href="route('favourite.index')">
+                        <b-aspect aspect="square" class="tile  shadow-light" style="background: #ff0099">
+                            <b-icon-bookmark-heart font-scale="2" class="tile-icon text-white">
+                            </b-icon-bookmark-heart>
+                            <span class="tile-content">Избранное</span>
                         </b-aspect>
                     </a>
                 </b-row>
@@ -27,7 +35,6 @@ export default {
 .tile {
     position: relative;
     border-radius: 5px;
-    background: #17a2b8;
     transition: 0.2s ease;
 }
 
