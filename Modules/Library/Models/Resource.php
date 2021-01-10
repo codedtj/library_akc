@@ -86,6 +86,6 @@ class Resource extends BaseModel
 
     public function getIsFavouriteAttribute()
     {
-        return (bool)\auth()->user()->favouriteResources()->find($this->id);
+        return \auth()->user() ? (bool)\auth()->user()->favouriteResources()->find($this->id) : false;
     }
 }
