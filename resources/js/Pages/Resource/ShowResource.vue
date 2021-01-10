@@ -4,13 +4,15 @@
             <b-card-body>
                 <b-row>
                     <b-col>
-                        <div class="mb-4 position-relative">
-                            <b-img :src="coverUrl"></b-img>
-                            <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5"
-                                                  class="bookmark"
-                                                  @click="removeFromFavourite"></b-icon-bookmark-fill>
-                            <b-icon-bookmark v-else scale="1.5" class="bookmark"
-                                             @click="addToFavourite"></b-icon-bookmark>
+                        <div class="mb-4">
+                            <div class="position-relative" style="width: 300px">
+                                <b-img :src="coverUrl"></b-img>
+                                <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5"
+                                                      class="bookmark"
+                                                      @click="removeFromFavourite"></b-icon-bookmark-fill>
+                                <b-icon-bookmark v-else scale="1.5" class="bookmark"
+                                                 @click="addToFavourite"></b-icon-bookmark>
+                            </div>
                         </div>
                         <a class="btn btn-info" download :href="route('files.download', resource.file_id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
