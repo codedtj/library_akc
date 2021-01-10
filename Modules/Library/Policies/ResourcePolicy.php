@@ -20,11 +20,11 @@ class ResourcePolicy
         //
     }
 
-    public function viewAny(){
+    public function viewAny(?User $user){
         return true;
     }
 
-    public function view(){
+    public function view(?User $user){
         return true;
     }
 
