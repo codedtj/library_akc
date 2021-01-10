@@ -18,10 +18,9 @@
                 <logout-other-browser-sessions-form :sessions="sessions"/>
             </b-col>
 
-
-            <jet-section-border/>
-
-            <delete-user-form class="mt-10 sm:mt-0"/>
+            <b-col cols="12" class="mb-5">
+                <delete-user-form/>
+            </b-col>
         </b-row>
     </div>
 </template>

@@ -1,22 +1,14 @@
 <template>
-    <jet-action-section>
-        <template #title>
-            Delete Account
-        </template>
-
-        <template #description>
-            Permanently delete your account.
-        </template>
-
-        <template #content>
+    <b-card title="Удаление аккаунта" sub-title="Удалить аккаунт навсегда">
+        <b-card-body>
             <div class="max-w-xl text-sm text-gray-600">
-                Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                Удаленние аккаунта необратимая функция
             </div>
 
             <div class="mt-5">
-                <jet-danger-button @click.native="confirmUserDeletion">
-                    Delete Account
-                </jet-danger-button>
+                <b-button variant="danger" @click="confirmUserDeletion">
+                    Удалить аккаунт
+                </b-button>
             </div>
 
             <!-- Delete Account Confirmation Modal -->
@@ -48,8 +40,8 @@
                     </jet-danger-button>
                 </template>
             </jet-dialog-modal>
-        </template>
-    </jet-action-section>
+        </b-card-body>
+    </b-card>
 </template>
 
 <script>

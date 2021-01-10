@@ -21,7 +21,7 @@
                             <div>
                                 {{ session.ip_address }},
 
-                                <span class="" v-if="session.is_current_device">This device</span>
+                                <span class="" v-if="session.is_current_device">Текущее устройство</span>
                                 <span v-else>Last active {{ session.last_active }}</span>
                             </div>
                         </div>
