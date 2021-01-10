@@ -40,7 +40,7 @@
             </div>
 
             <!-- Logout Other Devices Confirmation Modal -->
-            <b-modal title="Выйти на других устройствах" id="logoutConfirmationModal" cancel-title="Отмены"
+            <b-modal title="Выйти на других устройствах" id="logoutConfirmationModal" cancel-title="Отмена"
                      ok-variant="info" ok-title="Выйти" @ok.prevent="logoutOtherBrowserSessions">
 
                 <div>

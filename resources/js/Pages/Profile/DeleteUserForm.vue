@@ -12,89 +12,76 @@
             </div>
 
             <!-- Delete Account Confirmation Modal -->
-            <jet-dialog-modal :show="confirmingUserDeletion" @close="confirmingUserDeletion = false">
-                <template #title>
-                    Delete Account
-                </template>
+            <b-modal id="deleteAccountModal" title="Удаление аккаунта" cancel-title="Отмена"
+                     ok-variant="danger" ok-title="Удалить" @ok.prevent="deleteUser">
 
-                <template #content>
-                    Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.
+                <div>
+                    Введите пароль для подтверждения удаления аккаунта.
 
                     <div class="mt-4">
-                        <jet-input type="password" class="mt-1 block w-3/4" placeholder="Password"
-                                    ref="password"
-                                    v-model="form.password"
-                                    @keyup.enter.native="deleteUser" />
-
-                        <jet-input-error :message="form.error('password')" class="mt-2" />
+                        <b-form-group class="mt-4" :state="!form.error('password')"
+                                      :invalid-feedback="form.error('password')">
+                            <b-input type="password" placeholder="Пароль"
+                                     ref="password"
+                                     v-model="form.password"
+                                     @keyup.enter.native="deleteUser"/>
+                        </b-form-group>
                     </div>
-                </template>
-
-                <template #footer>
-                    <jet-secondary-button @click.native="confirmingUserDeletion = false">
-                        Nevermind
-                    </jet-secondary-button>
-
-                    <jet-danger-button class="ml-2" @click.native="deleteUser" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        Delete Account
-                    </jet-danger-button>
-                </template>
-            </jet-dialog-modal>
+                </div>
+            </b-modal>
         </b-card-body>
     </b-card>
 </template>
 
 <script>
-    import JetActionSection from '@/Jetstream/ActionSection'
-    import JetDialogModal from '@/Jetstream/DialogModal'
-    import JetDangerButton from '@/Jetstream/DangerButton'
-    import JetInput from '@/Jetstream/Input'
-    import JetInputError from '@/Jetstream/InputError'
-    import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+import JetActionSection from '@/Jetstream/ActionSection'
+import JetDialogModal from '@/Jetstream/DialogModal'
+import JetDangerButton from '@/Jetstream/DangerButton'
+import JetInput from '@/Jetstream/Input'
+import JetInputError from '@/Jetstream/InputError'
+import JetSecondaryButton from '@/Jetstream/SecondaryButton'
 
-    export default {
-        components: {
-            JetActionSection,
-            JetDangerButton,
-            JetDialogModal,
-            JetInput,
-            JetInputError,
-            JetSecondaryButton,
+export default {
+    components: {
+        JetActionSection,
+        JetDangerButton,
+        JetDialogModal,
+        JetInput,
+        JetInputError,
+        JetSecondaryButton,
+    },
+
+    data() {
+        return {
+            confirmingUserDeletion: false,
+
+            form: this.$inertia.form({
+                '_method': 'DELETE',
+                password: '',
+            }, {
+                bag: 'deleteUser'
+            })
+        }
+    },
+
+    methods: {
+        confirmUserDeletion() {
+            this.form.password = '';
+
+            this.confirmingUserDeletion = true;
+
+            this.$bvModal.show('deleteAccountModal');
         },
 
-        data() {
-            return {
-                confirmingUserDeletion: false,
-
-                form: this.$inertia.form({
-                    '_method': 'DELETE',
-                    password: '',
-                }, {
-                    bag: 'deleteUser'
-                })
-            }
+        deleteUser() {
+            this.form.post(route('current-user.destroy'), {
+                preserveScroll: true
+            }).then(response => {
+                if (!this.form.hasErrors()) {
+                    this.$bvModal.hide('deleteAccountModal');
+                }
+            })
         },
-
-        methods: {
-            confirmUserDeletion() {
-                this.form.password = '';
-
-                this.confirmingUserDeletion = true;
-
-                setTimeout(() => {
-                    this.$refs.password.focus()
-                }, 250)
-            },
-
-            deleteUser() {
-                this.form.post(route('current-user.destroy'), {
-                    preserveScroll: true
-                }).then(response => {
-                    if (! this.form.hasErrors()) {
-                        this.confirmingUserDeletion = false;
-                    }
-                })
-            },
-        },
-    }
+    },
+}
 </script>
