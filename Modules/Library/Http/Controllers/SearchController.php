@@ -21,7 +21,8 @@ class SearchController extends Controller
             ->orWhere('year', 'like', $q)
             ->orWhereHas('tags', function (Builder $query) use ($q) {
                 $query->where('name', 'like', $q);
-            })->simplePaginate(30);
+            })->latest()
+            ->simplePaginate(30);
 
         if (request()->expectsJson())
             return $resources;

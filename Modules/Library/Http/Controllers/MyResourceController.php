@@ -18,7 +18,7 @@ class MyResourceController extends Controller
 
     public function index()
     {
-        $pagination = auth()->user()->resources()->withoutGlobalScope('public')->simplePaginate(30);
+        $pagination = auth()->user()->resources()->withoutGlobalScope('public')->latest()->simplePaginate(30);
 
         if (request()->expectsJson())
             return $pagination;

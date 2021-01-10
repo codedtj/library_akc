@@ -29,11 +29,12 @@ class ResourceController extends Controller
 
     public function index()
     {
+        $pagination = Resource::latest()->simplePaginate(30);
         if (request()->expectsJson())
-            return Resource::latest()->simplePaginate(20);
+            return $pagination;
         else
             return Inertia::render('Resource/Index', [
-                'pagination' => Resource::latest()->simplePaginate(20)
+                'pagination' => $pagination
             ]);
     }
 
