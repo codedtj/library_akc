@@ -40,7 +40,7 @@ class ResourceController extends Controller
     public function show(Resource $resource)
     {
         return Inertia::render('Resource/ShowResource', [
-            'resource' => $resource->append('is_editable')
+            'resource' => $resource->append(['is_editable', 'is_favourite'])
         ]);
     }
 

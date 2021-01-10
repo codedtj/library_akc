@@ -3,7 +3,7 @@
  * @author Sultonazar Mamadazizov <sultonazar.mamadazizov@mail.ru>
  */
 
-namespace Modules\Shared\Models;
+namespace Modules\Shared\Pivots;
 
 
 use Illuminate\Database\Eloquent\Relations\MorphPivot;

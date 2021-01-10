@@ -25,4 +25,8 @@ Route::prefix('library')->group(function () {
     Route::get('/category/{category}/resources', 'CategoryResourceController@show')->name('category-resources.show');
 
     Route::get('/my/resources', 'MyResourceController@index')->name('my-resources');
+
+    Route::resource('favourite', 'FavouriteResourceController')->only([
+        'index', 'store', 'destroy'
+    ]);
 });

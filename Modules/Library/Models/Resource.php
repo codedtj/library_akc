@@ -6,18 +6,21 @@
 namespace Modules\Library\Models;
 
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Modules\FileManager\Models\BaseFile;
 use Modules\ImageGallery\Models\Image;
 use Modules\Shared\Models\BaseModel;
-use Modules\Shared\Models\BaseMorphPivot;
+use Modules\Shared\Pivots\BaseMorphPivot;
+use Modules\Shared\Pivots\BasePivot;
 use Modules\TagManager\Models\Tag;
 
 /**
  * @property Image cover
  * @property BaseFile file
+ * @property mixed id
  */
 class Resource extends BaseModel
 {
@@ -71,8 +74,18 @@ class Resource extends BaseModel
         return $this->belongsTo(Category::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'favourite_resources')->using(BasePivot::class)->withTimestamps();
+    }
+
     public function getIsEditableAttribute()
     {
         return $this->creator->is(Auth::user());
+    }
+
+    public function getIsFavouriteAttribute()
+    {
+        return (bool)\auth()->user()->favouriteResources()->find($this->id);
     }
 }
