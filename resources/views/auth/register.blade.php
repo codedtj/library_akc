@@ -3,6 +3,11 @@
 @section('content')
     <div class="container mt-5">
         <div class="row">
+            <div class="container-fluid">
+                <div class="row">
+                    <a class="mx-auto mb-5 text-info" href="{{route('home')}}"><h4>Вернуться на главную</h4></a>
+                </div>
+            </div>
             <form method="POST" class="col-md-8 mx-auto" action="{{ route('register') }}">
                 @csrf
                 <div class="card">
