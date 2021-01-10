@@ -1,21 +1,19 @@
 <template>
     <div class="w-100">
         <b-row>
-            <b-col cols="12" v-if="$page.jetstream.canUpdateProfileInformation">
+            <b-col cols="12" class="mb-5" v-if="$page.jetstream.canUpdateProfileInformation">
                 <update-profile-information-form :user="$page.user"/>
             </b-col>
 
-            <div v-if="$page.jetstream.canUpdatePassword">
-                <update-password-form class="mt-10 sm:mt-0"/>
+            <b-col cols="12" class="mb-5" v-if="$page.jetstream.canUpdatePassword">
+                <update-password-form/>
+            </b-col>
 
-                <jet-section-border/>
-            </div>
+<!--            <div v-if="$page.jetstream.canManageTwoFactorAuthentication">-->
+<!--                <two-factor-authentication-form class="mt-10 sm:mt-0"/>-->
 
-            <div v-if="$page.jetstream.canManageTwoFactorAuthentication">
-                <two-factor-authentication-form class="mt-10 sm:mt-0"/>
-
-                <jet-section-border/>
-            </div>
+<!--                <jet-section-border/>-->
+<!--            </div>-->
 
             <logout-other-browser-sessions-form :sessions="sessions" class="mt-10 sm:mt-0"/>
 
