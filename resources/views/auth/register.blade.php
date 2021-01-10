@@ -1,43 +1,60 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.guest')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('content')
+    <div class="container mt-5">
+        <div class="row">
+            <form method="POST" class="col-md-8 mx-auto" action="{{ route('register') }}">
+                @csrf
+                <div class="card">
+                    <div class="card-header">
+                        Регистрация
+                    </div>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" required autofocus
+                                   autocomplete="name">
+                            @error('name')
+                            <div class="invalid-feedback">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{old('email')}}" required
+                                   autocomplete="email">
+                            @error('email')
+                            <div class="invalid-feedback">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input class="form-control @error('password') is-invalid @enderror" id="password" name="password" type="password"
+                                   required
+                                   autocomplete="new-password">
+                            @error('password')
+                            <div class="invalid-feedback">{{$message}}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirmation">Подтвердите пароль</label>
+                            <input class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation"
+                                   type="password"
+                                   required autocomplete="new-password">
+                            @error('password_confirmation')
+                            <div class="invalid-feedback">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div>
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <button class="btn btn-info mx-auto" type="submit">Сохранить</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+@endsection
