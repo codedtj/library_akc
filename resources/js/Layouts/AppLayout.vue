@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
-            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Библиотека ФАХ</b-navbar-brand>
+            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Библиотека</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -10,7 +10,9 @@
                     <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
                     <b-nav-item v-else :href="route('login')" class="d-md-none">Вход</b-nav-item>
 
-                    <b-nav-item :href="route('home')" :active="route().current('home')">Главная</b-nav-item>
+                    <b-nav-item :href="route('home')" :active="route().current('home')">
+                        <b-icon-house-door-fill title="На главную"></b-icon-house-door-fill>
+                    </b-nav-item>
                     <b-nav-item-dropdown v-if="$page.user" text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
                                          :active="route().current('resources.create')">Добавить

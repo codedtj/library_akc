@@ -1,7 +1,7 @@
 <template>
     <b-nav-item-dropdown>
         <template #button-content>
-            <em>{{ $page.user.name }}</em>
+            <span class="user-name">{{ $page.user.name }}</span>
         </template>
         <b-dropdown-item :href="route('dashboard')"
                          :active="route().current('dashboard')">Обзор
@@ -22,3 +22,11 @@ export default {
     }
 }
 </script>
+<style>
+.user-name {
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 130px;
+    overflow: hidden;
+}
+</style>
