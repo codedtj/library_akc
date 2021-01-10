@@ -6,9 +6,11 @@
                     <b-col>
                         <div class="mb-4 position-relative">
                             <b-img :src="coverUrl"></b-img>
-                            <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5" class="bookmark"
+                            <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5"
+                                                  class="bookmark"
                                                   @click="removeFromFavourite"></b-icon-bookmark-fill>
-                            <b-icon-bookmark v-else  scale="1.5" class="bookmark" @click="addToFavourite"></b-icon-bookmark>
+                            <b-icon-bookmark v-else scale="1.5" class="bookmark"
+                                             @click="addToFavourite"></b-icon-bookmark>
                         </div>
                         <a class="btn btn-info" download :href="route('files.download', resource.file_id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
@@ -58,6 +60,11 @@ export default {
     props: {
         resource: Object
     },
+    data() {
+        return {
+            submitting: false
+        }
+    },
     computed: {
         coverUrl() {
             return getImageUrl(this.resource.cover_id, {width: 300})
@@ -79,10 +86,22 @@ export default {
             })
         },
         addToFavourite() {
-            axios.post(route('favourite.store'), {resource:this.resource.id}).then(_ => this.resource.is_favourite = true)
+            if (this.submitting)
+                return;
+
+            this.submitting = true;
+            axios.post(route('favourite.store'), {resource: this.resource.id})
+                .then(_ => this.resource.is_favourite = true)
+                .finally(() => this.submitting = false)
         },
         removeFromFavourite() {
-            axios.delete(route('favourite.destroy', this.resource.id)).then(_ => this.resource.is_favourite = false)
+            if (this.submitting)
+                return
+
+            this.submitting = true;
+            axios.delete(route('favourite.destroy', this.resource.id))
+                .then(_ => this.resource.is_favourite = false)
+                .finally(() => this.submitting = false)
         }
     }
 }
