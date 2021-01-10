@@ -9,13 +9,15 @@
                 <update-password-form/>
             </b-col>
 
-<!--            <div v-if="$page.jetstream.canManageTwoFactorAuthentication">-->
-<!--                <two-factor-authentication-form class="mt-10 sm:mt-0"/>-->
+            <!--            <div v-if="$page.jetstream.canManageTwoFactorAuthentication">-->
+            <!--                <two-factor-authentication-form class="mt-10 sm:mt-0"/>-->
 
-<!--                <jet-section-border/>-->
-<!--            </div>-->
+            <!--                <jet-section-border/>-->
+            <!--            </div>-->
+            <b-col cols="12" class="mb-5">
+                <logout-other-browser-sessions-form :sessions="sessions"/>
+            </b-col>
 
-            <logout-other-browser-sessions-form :sessions="sessions" class="mt-10 sm:mt-0"/>
 
             <jet-section-border/>
 
