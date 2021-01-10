@@ -41,7 +41,7 @@
                             <p v-if="resource.description">{{ resource.description }}</p>
                             <b-container fluid>
                                 <b-row>
-                                    <b-tag v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove pill
+                                    <b-tag class="mb-2" v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove pill
                                            variant="info">
                                         {{ tag.name }}
                                     </b-tag>
