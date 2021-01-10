@@ -8,7 +8,7 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
-
+                    <b-nav-item :href="route('home')" :active="route().current('home')">Главная</b-nav-item>
                     <b-nav-item-dropdown v-if="$page.user" text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
                                          :active="route().current('resources.create')">Добавить
