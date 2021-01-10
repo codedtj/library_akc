@@ -3,7 +3,7 @@
         <b-jumbotron>
             <b-container fluid>
                 <b-row>
-                    <a class="col-md-3 p-0" :href="route('my-resources')">
+                    <a class="col-sm-4 col-md-3 p-0" :href="route('my-resources')">
                         <b-aspect aspect="square" class="tile  shadow-light">
                             <b-icon-collection font-scale="2" class="tile-icon text-white">
                             </b-icon-collection>
@@ -48,8 +48,8 @@ export default {
 }
 
 .tile-icon {
-    top: 35%;
-    right: 41%;
+    top: calc(50% - 14px);
+    right: calc(50% - 14px);
     position: absolute;
 }
 </style>

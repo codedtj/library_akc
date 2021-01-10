@@ -1,13 +1,15 @@
 <template>
     <div>
         <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
-            <b-navbar-brand :href="route('home')">AKF Library</b-navbar-brand>
+            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Библиотека ФАХ</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item-dropdown text="Ресурсы" right>
+                    <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
+
+                    <b-nav-item-dropdown v-if="$page.user" text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
                                          :active="route().current('resources.create')">Добавить
                         </b-dropdown-item>
@@ -30,17 +32,7 @@
                     <b-icon-search class="search-icon" @click="search"></b-icon-search>
                 </div>
 
-                <b-nav-item-dropdown right v-if="$page.user">
-                    <!-- Using 'button-content' slot -->
-                    <template #button-content>
-                        <em>{{ $page.user.name }}</em>
-                    </template>
-                    <!--                    <b-dropdown-item :href="route('profile.show')" :active="route().current('profile.show')">Profile-->
-                    <!--                    </b-dropdown-item>-->
-                    <b-dropdown-item :href="route('dashboard')"
-                                     :active="route().current('dashboard')">Обзор</b-dropdown-item>
-                    <b-dropdown-item @click.prevent="logout" href="#">Выйти</b-dropdown-item>
-                </b-nav-item-dropdown>
+                <user-nav-item v-if="$page.user" class="d-none d-md-block"></user-nav-item>
             </b-navbar-nav>
         </b-navbar>
         <main>
@@ -60,9 +52,11 @@ import JetDropdown from '@/Jetstream/Dropdown'
 import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+import UserNavItem from "@/Layouts/UserNavItem";
 
 export default {
     components: {
+        UserNavItem,
         JetApplicationMark,
         JetDropdown,
         JetDropdownLink,
@@ -83,12 +77,7 @@ export default {
                 this.$inertia.visit(this.route('search', this.query))
             else
                 this.$inertia.visit(this.route('home'))
-        },
-        logout() {
-            axios.post(route('logout').url()).then(response => {
-                window.location = '/';
-            })
-        },
+        }
     }
 }
 </script>
