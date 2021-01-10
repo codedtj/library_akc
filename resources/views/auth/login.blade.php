@@ -35,6 +35,10 @@
                                 <span class="ml-2">Запомнить меня</span>
                             </div>
 
+                            <div>
+                                <a href="{{route('register')}}">Нет акаунта? Зарегистрируйтесь</a>
+                            </div>
+
                             <div class="flex items-center justify-end mt-4">
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
