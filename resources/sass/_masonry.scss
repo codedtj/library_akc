@@ -1,3 +1,4 @@
+
 .masonry-grid {
     display: grid;
     grid-gap: 10px;
@@ -11,16 +12,17 @@
 
         .content {
             box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
-            transition:0.3s ease;
+            transition: 0.3s ease;
             position: relative;
+
             &:hover {
                 transform: scale(1.1);
                 z-index: 10;
             }
 
-            &:active{
+            &:active {
                 transform: scale(0.95);
-                transition:0.2s ease;
+                transition: 0.2s ease;
                 box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.44);
             }
         }
@@ -31,6 +33,10 @@
 
         .resource-preview {
             position: relative;
+
+            img {
+                width: 100%;
+            }
 
             .title {
                 background-color: #17a2b8;
@@ -50,3 +56,12 @@
 }
 
 
+@media only screen and (max-width: 420px) {
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(390px, 1fr))!important;
+    }
+
+    .item {
+        width: 320px!important;
+    }
+}
