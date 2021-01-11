@@ -14327,13 +14327,19 @@ body {
 .search-box .search-icon {
   position: absolute;
   right: 5%;
-  bottom: calc(50% - 8px);
+  bottom: calc(50% - 6px);
   color: gray;
 }
 
 .search-box .search-icon:hover {
   cursor: pointer;
   color: #17a2b8;
+}
+
+@media screen and (max-width: 768px) {
+  .search-icon {
+    bottom: calc(50% - 9px) !important;
+  }
 }
 
 .masonry-grid {
