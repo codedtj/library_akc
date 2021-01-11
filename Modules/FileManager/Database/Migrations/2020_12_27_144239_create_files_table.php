@@ -19,9 +19,10 @@ class CreateFilesTable extends Migration
             $table->string('filename');
             $table->string('mime_type', 128);
             $table->string('hash');
-            $table->string('extension', 5);
-            $table->string('path');
+            $table->string('extension', 10);
+            $table->text('path');
             $table->unsignedBigInteger('size');
+            $table->string('disk');
 
             $table->timestamps();
             $table->userstamps();

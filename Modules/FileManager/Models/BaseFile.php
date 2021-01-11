@@ -12,6 +12,7 @@ namespace Modules\FileManager\Models;
  * @property string extension
  * @property string path
  * @property int size
+ * @property string disk
  */
 class BaseFile extends File
 {
@@ -53,6 +54,11 @@ class BaseFile extends File
         $this->size = $size;
     }
 
+    public function setDisk(string $disk)
+    {
+        $this->disk = $disk;
+    }
+
     public function getMimeType(): string
     {
         return $this->mime_type;
@@ -86,5 +92,10 @@ class BaseFile extends File
     public function getSize(): int
     {
         return $this->size;
+    }
+
+    public function getDisk(): string
+    {
+        return $this->disk;
     }
 }

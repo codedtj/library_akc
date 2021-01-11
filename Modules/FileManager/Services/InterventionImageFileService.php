@@ -25,6 +25,7 @@ class InterventionImageFileService extends FileService
         $entity->setOriginalFilename($filename);
         $entity->setExtension($extension);
         $entity->setSize(strlen($encoded->getEncoded()));
+        $entity->setDisk($disk);
 
         $path = $rootPath . '/' . Random::generateString(3);
 

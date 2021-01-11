@@ -25,6 +25,7 @@ class UploadedFileService extends FileService
         $path = $rootPath . '/' . Random::generateString(3);
         $entity->setFilename($this->createFileName($path, $file->getClientOriginalExtension(), $disk));
         $entity->setPath(Storage::disk($disk)->putFileAs($path, $file, $entity->getFilename()));
+        $entity->setDisk($disk);
 
         $entity->save();
 

@@ -17,7 +17,7 @@ class CreateResourcesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('title', 256);
             $table->string('author', 128)->nullable();
-            $table->string('year', 4)->nullable();
+            $table->string('year', 20)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_public')->default(false);
 

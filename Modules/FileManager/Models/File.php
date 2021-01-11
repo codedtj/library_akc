@@ -26,6 +26,8 @@ abstract class File extends BaseModel
 
     public abstract function setSize(int $size);
 
+    public abstract function setDisk(string $disk);
+
     public abstract function getMimeType(): string;
 
     public abstract function getOriginalFilename(): string;
@@ -39,4 +41,6 @@ abstract class File extends BaseModel
     public abstract function getPath(): string;
 
     public abstract function getSize(): int;
+
+    public abstract function getDisk(): String;
 }
