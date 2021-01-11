@@ -3,9 +3,9 @@
         <b-card>
             <b-container fluid>
                 <b-row>
-                    <b-col>
+                    <b-col sm="6">
                         <div class="mb-4">
-                            <div class="position-relative" style="width: 300px">
+                            <div class="cover-wrapper">
                                 <b-img class="resource-cover" :src="coverUrl"></b-img>
                                 <template v-if="$page.user">
                                     <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5"
@@ -114,14 +114,14 @@ export default {
 </script>
 
 <style scoped>
-.resource-cover {
-    box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
+
+.cover-wrapper {
+    position: relative;
 }
 
-@media only screen and (max-width: 420px) {
-    .resource-cover {
-        width: calc(100% - 80px);
-    }
+.resource-cover {
+    box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
+    width: 100%;
 }
 
 .bookmark {
