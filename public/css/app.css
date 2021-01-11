@@ -14327,7 +14327,7 @@ body {
 .search-box .search-icon {
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 18px;
   color: gray;
 }
 
@@ -14356,12 +14356,12 @@ body {
 }
 
 .masonry-grid .item .content:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
   z-index: 10;
 }
 
 .masonry-grid .item .content:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
   transition: 0.2s ease;
   box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.44);
 }
