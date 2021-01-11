@@ -21,7 +21,11 @@ class SearchController extends Controller
             ->orWhere('year', 'like', $q)
             ->orWhereHas('tags', function (Builder $query) use ($q) {
                 $query->where('name', 'like', $q);
-            })->latest()
+            })
+            ->orWhereHas('category', function (Builder $query) use ($q){
+                $query->where('name', 'like', $q);
+            })
+            ->latest()
             ->simplePaginate(30);
 
         if (request()->expectsJson())
