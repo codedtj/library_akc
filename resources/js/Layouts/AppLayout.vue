@@ -33,7 +33,7 @@
 
             <b-navbar-nav class="ml-auto">
                 <div class="search-box">
-                    <b-input placeholder="Найти ресурс" v-model="query" @keyup.enter="search"></b-input>
+                    <b-input placeholder="Найти ресурс" v-model="query" @keyup.enter="search" autocomplete="search"></b-input>
                     <b-icon-search class="search-icon" @click="search"></b-icon-search>
                 </div>
 

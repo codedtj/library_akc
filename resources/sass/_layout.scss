@@ -9,8 +9,8 @@ html, body {
 
     .search-icon {
         position: absolute;
-        right: 10px;
-        bottom: 18px;
+        right: 5%;
+        bottom: calc(50% - 8px);
         color: gray;
 
         &:hover {
