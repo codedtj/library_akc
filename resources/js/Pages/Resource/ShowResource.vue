@@ -3,7 +3,7 @@
         <b-card>
             <b-container fluid>
                 <b-row>
-                    <b-col sm="6">
+                    <b-col sm="6" md="5" lg="4">
                         <div class="mb-4">
                             <div class="cover-wrapper">
                                 <b-img class="resource-cover" :src="coverUrl"></b-img>
@@ -73,7 +73,7 @@ export default {
     },
     computed: {
         coverUrl() {
-            return getImageUrl(this.resource.cover_id, {width: 300})
+            return getImageUrl(this.resource.cover_id, {width: 350})
         }
     },
     methods: {
