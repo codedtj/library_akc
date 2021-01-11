@@ -14392,11 +14392,11 @@ body {
 
 @media only screen and (max-width: 420px) {
   .masonry-grid {
-    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% - 30px), 1fr)) !important;
   }
 
   .item {
-    width: 320px !important;
+    width: calc(100% - 25px) !important;
   }
 }
 

@@ -1,12 +1,12 @@
 <template>
     <b-col class="mx-auto" lg="10">
         <b-card>
-            <b-card-body>
+            <b-container fluid>
                 <b-row>
                     <b-col>
                         <div class="mb-4">
                             <div class="position-relative" style="width: 300px">
-                                <b-img :src="coverUrl"></b-img>
+                                <b-img class="resource-cover" :src="coverUrl"></b-img>
                                 <template v-if="$page.user">
                                     <b-icon-bookmark-fill v-if="resource.is_favourite" variant="danger" scale="1.5"
                                                           class="bookmark"
@@ -41,7 +41,8 @@
                             <p v-if="resource.description">{{ resource.description }}</p>
                             <b-container fluid>
                                 <b-row>
-                                    <b-tag class="mb-2" v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove pill
+                                    <b-tag class="mb-2" v-for="tag in resource.tags" :key="tag.name" size="lg" no-remove
+                                           pill
                                            variant="info">
                                         {{ tag.name }}
                                     </b-tag>
@@ -50,7 +51,8 @@
                         </div>
                     </b-col>
                 </b-row>
-            </b-card-body>
+            </b-container>
+
         </b-card>
     </b-col>
 </template>
@@ -112,8 +114,14 @@ export default {
 </script>
 
 <style scoped>
-img {
+.resource-cover {
     box-shadow: 4px 7px 10px 0px rgba(0, 0, 0, 0.44);
+}
+
+@media only screen and (max-width: 420px) {
+    .resource-cover {
+        width: calc(100% - 80px);
+    }
 }
 
 .bookmark {
