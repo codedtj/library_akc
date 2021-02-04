@@ -30,7 +30,7 @@ class ResourceService
     {
         $resource = Resource::create($this->getAttributesArray($data));
 
-        return $this->attachTagsAndFiles($resource, $data);
+        return $this->updateRelations($resource, $data);
 
     }
 
@@ -48,7 +48,7 @@ class ResourceService
         }
 
 
-        return $this->attachTagsAndFiles($resource, $data);
+        return $this->updateRelations($resource, $data);
     }
 
     private function destroyResourceFile(Resource $resource)
@@ -65,7 +65,7 @@ class ResourceService
         $this->imageService->destroy($cover);
     }
 
-    private function getAttributesArray(ResourceDto $data)
+    private function getAttributesArray(ResourceDto $data): array
     {
         return [
             'title' => $data->title,
@@ -73,11 +73,15 @@ class ResourceService
             'year' => $data->year,
             'description' => $data->description,
             'is_public' => $data->is_public,
-            'category_id' => $data->category_id
+            'category_id' => $data->category_id,
+            'theme_id' => $data->theme_id,
+            'type' => $data->type,
+            'level' => $data->level,
+            'language' => $data->language,
         ];
     }
 
-    private function attachTagsAndFiles(Resource $resource, ResourceDto $data): Resource
+    private function updateRelations(Resource $resource, ResourceDto $data): Resource
     {
         if ($data->file) {
             $dirProvider = new FileTypeDirectoryProvider($data->file);
@@ -92,6 +96,8 @@ class ResourceService
         }
 
         $resource->tags()->sync($this->tagService->storeMany($data->tags)->pluck('id'));
+
+        $resource->roles()->sync($data->roles);
 
         $resource->save();
 

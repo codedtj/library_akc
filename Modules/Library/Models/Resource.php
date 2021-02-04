@@ -82,6 +82,11 @@ class Resource extends BaseModel
         return $this->belongsTo(Category::class);
     }
 
+    public function theme(): BelongsTo
+    {
+        return $this->belongsTo(Theme::class);
+    }
+
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'favourite_resources')->using(BasePivot::class)->withTimestamps();

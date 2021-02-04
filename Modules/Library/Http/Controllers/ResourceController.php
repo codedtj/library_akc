@@ -10,7 +10,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Http\Requests\CreateResourceRequest;
-use Modules\Library\Http\Requests\EditResourceRequest;
+use Modules\Library\Http\Requests\UpdateResourceRequest;
 use Modules\Library\Models\Category;
 use Modules\Library\Models\Resource;
 use Modules\Library\Models\Role;
@@ -70,7 +70,7 @@ class ResourceController extends Controller
         ]);
     }
 
-    public function update(Resource $resource, EditResourceRequest $request)
+    public function update(Resource $resource, UpdateResourceRequest $request)
     {
         $resource = $this->service->edit($resource, new ResourceDto($request->validated()));
         return Redirect::route('resources.show', $resource);

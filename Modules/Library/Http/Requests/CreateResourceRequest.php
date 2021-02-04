@@ -17,13 +17,19 @@ class CreateResourceRequest extends FormRequest
             'title' => 'required|string',
             'description' => 'nullable|string',
             'author' => 'required|string',
-            'year' => 'nullable|string|size:4',
+            'year' => 'nullable|string|max:10',
             'is_public' => 'required|boolean',
             'category_id' => 'required|exists:categories,id',
+            'theme_id' => 'required|exists:themes,id',
+            'type' => 'required|string|max:128',
+            'language' => 'required|string|in:ru,tj,en',
+            'level' => 'nullable|string|max:50',
+            'tags' => 'nullable|array',
+            'tags.*' => 'string',
+            'roles' => 'nullable|array',
+            'roles.*' => 'string|exists:roles,id',
             'file' => 'required|file',
             'cover' => 'required|image',
-            'tags' => 'nullable|array',
-            'tags.*' => 'string'
         ];
     }
 

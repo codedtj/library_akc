@@ -20,11 +20,21 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public ?string $year;
 
+    public string $type;
+
+    public ?string $level;
+
+    public string $language;
+
     public bool $is_public;
 
     public string $category_id;
 
+    public string $theme_id;
+
     public Collection $tags;
+
+    public Collection $roles;
 
     public ?UploadedFile $file;
 
@@ -35,6 +45,8 @@ class ResourceDto extends FlexibleDataTransferObject
         $parameters['is_public'] = (bool)$parameters['is_public'];
 
         $parameters['tags'] = collect($parameters['tags']);
+
+        $parameters['roles'] = collect($parameters['roles']);
 
         parent::__construct($parameters);
     }

@@ -4,7 +4,7 @@ namespace Modules\Library\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditResourceRequest extends FormRequest
+class UpdateResourceRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -15,16 +15,22 @@ class EditResourceRequest extends FormRequest
     {
         return [
             'id' => 'required|exists:resources,id',
-            'title' => 'required|string',
-            'description' => 'nullable|string',
-            'author' => 'required|string',
-            'year' => 'nullable|string',
-            'is_public' => 'required|boolean',
-            'category_id' => 'required|exists:categories,id',
             'file' => 'nullable|file',
             'cover' => 'nullable|image',
             'tags' => 'nullable|array',
-            'tags.*' => 'string'
+            'tags.*' => 'string',
+            'title' => 'required|string',
+            'description' => 'nullable|string',
+            'author' => 'required|string',
+            'year' => 'nullable|string|max:10',
+            'is_public' => 'required|boolean',
+            'category_id' => 'required|exists:categories,id',
+            'theme_id' => 'required|exists:themes,id',
+            'type' => 'required|string|max:128',
+            'language' => 'required|string|in:ru,tj,en',
+            'level' => 'nullable|string|max:50',
+            'roles' => 'nullable|array',
+            'roles.*' => 'string|exists:roles,id',
         ];
     }
 
