@@ -8,6 +8,10 @@ namespace Modules\Library\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Modules\FileManager\Models\BaseFile;
@@ -38,7 +42,7 @@ class Resource extends BaseModel
         });
     }
 
-    public function resolveRouteBinding($value, $field = null)
+    public function resolveRouteBinding($value, $field = null): ?Model
     {
         return Resource::withoutGlobalScope('public')->with('tags', 'category')->findOrFail($value);
     }
@@ -46,7 +50,7 @@ class Resource extends BaseModel
     /**
      * Get resource file.
      */
-    public function file()
+    public function file(): BelongsTo
     {
         return $this->belongsTo(BaseFile::class, 'file_id');
     }
@@ -54,37 +58,41 @@ class Resource extends BaseModel
     /**
      * Get resource cover
      */
-    public function cover()
+    public function cover(): BelongsTo
     {
         return $this->belongsTo(Image::class);
     }
 
-    /**
-     * Get all of the resource tags.
-     */
-    public function tags()
+    public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable')
             ->using(BaseMorphPivot::class)
             ->withTimestamps();
     }
 
-    public function category()
+    public function roles(): MorphToMany
+    {
+        return $this->morphToMany(Role::class, 'roleable')
+            ->using(BaseMorphPivot::class)
+            ->withTimestamps();
+    }
+
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function users()
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'favourite_resources')->using(BasePivot::class)->withTimestamps();
     }
 
-    public function getIsEditableAttribute()
+    public function getIsEditableAttribute(): bool
     {
         return $this->creator->is(Auth::user());
     }
 
-    public function getIsFavouriteAttribute()
+    public function getIsFavouriteAttribute(): bool
     {
         return \auth()->user() ? (bool)\auth()->user()->favouriteResources()->find($this->id) : false;
     }

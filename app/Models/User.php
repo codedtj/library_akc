@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +13,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Library\Models\Resource;
+use Modules\Library\Models\Role;
+use Modules\Shared\Pivots\BaseMorphPivot;
 use Modules\Shared\Pivots\BasePivot;
 use Modules\Shared\Traits\UsesUUID;
 
@@ -74,8 +78,15 @@ class User extends Authenticatable
         return $this->hasMany(Resource::class, 'created_by');
     }
 
-    public function favouriteResources()
+    public function favouriteResources(): BelongsToMany
     {
         return $this->belongsToMany(Resource::class, 'favourite_resources')->using(BasePivot::class)->withTimestamps();
+    }
+
+    public function roles(): MorphToMany
+    {
+        return $this->morphToMany(Role::class, 'roleable')
+            ->using(BaseMorphPivot::class)
+            ->withTimestamps();
     }
 }
