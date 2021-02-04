@@ -5,6 +5,7 @@ namespace Modules\Library\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -29,7 +30,7 @@ class ResourceController extends Controller
         $this->authorizeResource(Resource::class, 'resource');
     }
 
-    public function index()
+    public function index(): Response
     {
         $pagination = Resource::latest()->simplePaginate(30);
         if (request()->expectsJson())
@@ -40,7 +41,7 @@ class ResourceController extends Controller
             ]);
     }
 
-    public function show(Resource $resource)
+    public function show(Resource $resource): Response
     {
         return Inertia::render('Resource/ShowResource', [
             'resource' => $resource->append(['is_editable', 'is_favourite'])
@@ -56,27 +57,30 @@ class ResourceController extends Controller
         ]);
     }
 
-    public function store(CreateResourceRequest $request)
+    public function store(CreateResourceRequest $request): RedirectResponse
     {
         $resource = $this->service->store(new ResourceDto($request->validated()));
         return Redirect::route('resources.show', $resource);
     }
 
-    public function edit(Resource $resource)
+    public function edit(Resource $resource): Response
     {
+        $resource->load('roles');
         return Inertia::render('Resource/ResourceEditor', [
             'categories' => Category::all(),
+            'themes' => Theme::all(),
+            'roles' => Role::public()->get(),
             'resource' => $resource
         ]);
     }
 
-    public function update(Resource $resource, UpdateResourceRequest $request)
+    public function update(Resource $resource, UpdateResourceRequest $request): RedirectResponse
     {
         $resource = $this->service->edit($resource, new ResourceDto($request->validated()));
         return Redirect::route('resources.show', $resource);
     }
 
-    public function destroy(Resource $resource)
+    public function destroy(Resource $resource): RedirectResponse
     {
         $this->service->destroy($resource);
         return Redirect::route('resources.index');

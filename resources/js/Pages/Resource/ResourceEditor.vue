@@ -87,7 +87,7 @@
 
                         <b-form-group label="Роли" :state="!form.error('roles')"
                                       :invalid-feedback="form.error('roles')">
-                            <b-form-select multiple v-model="form.roles" select-size="6" required>
+                            <b-form-select multiple v-model="form.roles" :select-size="6" required>
                                 <b-form-select-option v-for="role in roles" :value="role.id"
                                                       :key="role.id">
                                     {{ rolesTranslation[role.name] }}
