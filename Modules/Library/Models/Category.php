@@ -6,6 +6,7 @@
 namespace Modules\Library\Models;
 
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Shared\Models\BaseModel;
 
 /**
@@ -13,6 +14,8 @@ use Modules\Shared\Models\BaseModel;
  */
 class Category extends BaseModel
 {
+    use SoftDeletes;
+
     public function resources()
     {
         return $this->hasMany(Resource::class);

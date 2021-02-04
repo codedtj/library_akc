@@ -17,5 +17,7 @@ class LibraryDatabaseSeeder extends Seeder
         Model::unguard();
 
          $this->call(CategorySeeder::class);
+         $this->call(ThemeSeeder::class);
+         $this->call(RoleSeeder::class);
     }
 }
