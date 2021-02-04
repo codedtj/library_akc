@@ -6,6 +6,7 @@
 namespace Modules\Library\Models;
 
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Modules\Shared\Models\BaseModel;
 use Modules\Shared\Pivots\BaseMorphPivot;
@@ -19,6 +20,13 @@ class Role extends BaseModel
         Relation::morphMap([
             'resource' => 'Modules\Library\Models\Resource',
             'user' => 'App\Models\User'
+        ]);
+    }
+
+    public function  scopePublic(Builder $query): Builder
+    {
+        return $query->whereNotIn('name', [
+            'admin', 'editor', 'moderator'
         ]);
     }
 

@@ -1,94 +1,140 @@
 <template>
-        <b-col md="8" class="mx-auto">
-            <b-card header="Добавить ресурс">
-                <b-overlay :show="form.processing" rounded="lg">
-                    <template #overlay class="w-100">
-                        <b-progress variant="info" style="width: 250px" :value="form.progress"
-                                    max="100" animated></b-progress>
-                    </template>
-                    <b-card-body>
-                        <b-form id="form" href="form" @submit.prevent="submit">
-                            <b-form-group label="*Название" :state="!form.error('title')"
-                                          :invalid-feedback="form.error('title')">
-                                <b-form-input v-model="form.title" autofocus></b-form-input>
-                            </b-form-group>
-                            <b-form-group label="*Прикрепить ресурс" :state="!form.error('file')"
-                                          :invalid-feedback="form.error('file')">
-                                <file-picker v-model="form.file"></file-picker>
-                            </b-form-group>
-                            <b-form-group label="*Прикрепить обложку" :state="!form.error('cover')"
-                                          :invalid-feedback="form.error('cover')">
-                                <file-picker v-model="form.cover"></file-picker>
-                            </b-form-group>
-                            <b-form-group label="Автор" required :state="!form.error('author')"
-                                          :invalid-feedback="form.error('author')">
-                                <b-form-input v-model="form.author"></b-form-input>
-                            </b-form-group>
-                            <b-form-group label="Год" required :state="!form.error('year')"
-                                          :invalid-feedback="form.error('year')">
-                                <b-form-input v-model="form.year"></b-form-input>
-                            </b-form-group>
-                            <b-form-group label="Категория" :state="!form.error('category_id')"
-                                          :invalid-feedback="form.error('category_id')">
-                                <b-form-select v-model="form.category_id" required>
-                                    <b-form-select-option :value="null">-- Выберите категорию --</b-form-select-option>
-                                    <b-form-select-option v-for="category in categories" :value="category.id"
-                                                          :key="category.id">
-                                        {{ category.name }}
-                                    </b-form-select-option>
-                                </b-form-select>
-                            </b-form-group>
-                            <b-form-group label="Описание" :state="!form.error('description')"
-                                          :invalid-feedback="form.error('description')">
-                                <b-form-textarea v-model="form.description"></b-form-textarea>
-                            </b-form-group>
-                            <b-form-group :state="!form.error('is_public')" :invalid-feedback="form.error('is_public')">
-                                <b-form-checkbox class="my-3" v-model="form.is_public" name="check-button" switch>
-                                    Доступно всем
-                                </b-form-checkbox>
-                            </b-form-group>
+    <b-col md="8" class="mx-auto">
+        <b-card header="Добавить ресурс">
+            <b-overlay :show="form.processing" rounded="lg">
+                <template #overlay class="w-100">
+                    <b-progress variant="info" style="width: 250px" :value="form.progress"
+                                max="100" animated></b-progress>
+                </template>
+                <b-card-body>
+                    <b-form id="form" href="form" @submit.prevent="submit">
+                        <b-form-group label="*Название" :state="!form.error('title')"
+                                      :invalid-feedback="form.error('title')">
+                            <b-form-input v-model="form.title" autofocus></b-form-input>
+                        </b-form-group>
+                        <b-form-group label="*Прикрепить ресурс" :state="!form.error('file')"
+                                      :invalid-feedback="form.error('file')">
+                            <file-picker v-model="form.file"></file-picker>
+                        </b-form-group>
+                        <b-form-group label="*Прикрепить обложку" :state="!form.error('cover')"
+                                      :invalid-feedback="form.error('cover')">
+                            <file-picker v-model="form.cover"></file-picker>
+                        </b-form-group>
+                        <b-form-group label="Автор" required :state="!form.error('author')"
+                                      :invalid-feedback="form.error('author')">
+                            <b-form-input v-model="form.author"></b-form-input>
+                        </b-form-group>
+                        <b-form-group label="Год" required :state="!form.error('year')"
+                                      :invalid-feedback="form.error('year')">
+                            <b-form-input v-model="form.year"></b-form-input>
+                        </b-form-group>
+                        <b-form-group label="Категория" :state="!form.error('category_id')"
+                                      :invalid-feedback="form.error('category_id')">
+                            <b-form-select v-model="form.category_id" required>
+                                <b-form-select-option :value="null">-- Выберите категорию --</b-form-select-option>
+                                <b-form-select-option v-for="category in categories" :value="category.id"
+                                                      :key="category.id">
+                                    {{ category.name }}
+                                </b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+                        <b-form-group label="Тема" :state="!form.error('theme_id')"
+                                      :invalid-feedback="form.error('theme_id')">
+                            <b-form-select v-model="form.theme_id" required>
+                                <b-form-select-option :value="null" disabled>-- Выберите тему --</b-form-select-option>
+                                <b-form-select-option v-for="theme in themes" :value="theme.id"
+                                                      :key="theme.id">
+                                    {{ theme.name }}
+                                </b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+                        <b-form-group label="Тип" :state="!form.error('type')"
+                                      :invalid-feedback="form.error('type')">
+                            <b-form-select v-model="form.type" required>
+                                <b-form-select-option :value="null" disabled>-- Выберите тип --</b-form-select-option>
+                                <b-form-select-option value="video">Видео</b-form-select-option>
+                                <b-form-select-option value="audio">Аудио</b-form-select-option>
+                                <b-form-select-option value="ebook">Электронная книга</b-form-select-option>
+                                <b-form-select-option value="pdf">PDF</b-form-select-option>
+                                <b-form-select-option value="other">Другое</b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+                        <b-form-group label="Забон" :state="!form.error('language')"
+                                      :invalid-feedback="form.error('language')">
+                            <b-form-select v-model="form.language" required>
+                                <b-form-select-option value="ru">Русӣ</b-form-select-option>
+                                <b-form-select-option value="tj">Тоҷикӣ</b-form-select-option>
+                                <b-form-select-option value="en">Англисӣ</b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+                        <b-form-group label="Уровень" :state="!form.error('level')"
+                                      :invalid-feedback="form.error('level')">
+                            <b-form-select v-model="form.level" required>
+                                <b-form-select-option :value="null">-- Выберите уровень --</b-form-select-option>
+                                <b-form-select-option value="easy">Легко</b-form-select-option>
+                                <b-form-select-option value="hard">Сложно</b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+                        <b-form-group label="Описание" :state="!form.error('description')"
+                                      :invalid-feedback="form.error('description')">
+                            <b-form-textarea v-model="form.description"></b-form-textarea>
+                        </b-form-group>
+                        <b-form-group :state="!form.error('is_public')" :invalid-feedback="form.error('is_public')">
+                            <b-form-checkbox class="my-3" v-model="form.is_public" name="check-button" switch>
+                                Доступно всем
+                            </b-form-checkbox>
+                        </b-form-group>
 
+                        <b-form-group label="Роли" :state="!form.error('roles')"
+                                      :invalid-feedback="form.error('roles')">
+                            <b-form-select multiple v-model="form.roles" select-size="6" required>
+                                <b-form-select-option v-for="role in roles" :value="role.id"
+                                                      :key="role.id">
+                                    {{ rolesTranslation[role.name] }}
+                                </b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
 
-                            <b-form-group label="Теги">
-                                <suggestion-input displayPropertyName="name"
-                                                  query-is-first-option
-                                                  ref="tagInput"
-                                                  @selected="onTagSelected"
-                                                  @notfound="addNewTag"
-                                                  action-url="/tags/filtered/"
-                                                  show
+                        <b-form-group label="Теги">
+                            <suggestion-input displayPropertyName="name"
+                                              query-is-first-option
+                                              ref="tagInput"
+                                              @selected="onTagSelected"
+                                              @notfound="addNewTag"
+                                              action-url="/tags/filtered/"
+                                              show
+                            >
+                            </suggestion-input>
+                            <ul
+                                class="list-unstyled d-inline-flex flex-wrap mb-0">
+                                <b-card
+                                    v-for="tag in tags"
+                                    :key="tag.name"
+                                    :id="`tags_${tag.name.replace(/\s/g, '_')}_`"
+                                    tag="li"
+                                    class="mt-1 mr-1 bg-light"
+                                    body-class="py-1 pr-2 text-nowrap"
                                 >
-                                </suggestion-input>
-                                <ul
-                                    class="list-unstyled d-inline-flex flex-wrap mb-0">
-                                    <b-card
-                                        v-for="tag in tags"
-                                        :key="tag.name"
-                                        :id="`tags_${tag.name.replace(/\s/g, '_')}_`"
-                                        tag="li"
-                                        class="mt-1 mr-1 bg-light"
-                                        body-class="py-1 pr-2 text-nowrap"
-                                    >
-                                        <strong>{{ tag.name }}</strong>
-                                        <b-button
-                                            @click="removeTag(tag.name)"
-                                            variant="link"
-                                            class="text-decoration-none"
-                                            size="sm"
-                                            :aria-controls="`albumsTagList__${tag.name.replace(/\s/g, '_')}_`"
-                                        >&times;
-                                        </b-button>
-                                    </b-card>
-                                </ul>
+                                    <strong>{{ tag.name }}</strong>
+                                    <b-button
+                                        @click="removeTag(tag.name)"
+                                        variant="link"
+                                        class="text-decoration-none"
+                                        size="sm"
+                                        :aria-controls="`albumsTagList__${tag.name.replace(/\s/g, '_')}_`"
+                                    >&times;
+                                    </b-button>
+                                </b-card>
+                            </ul>
 
-                            </b-form-group>
+                        </b-form-group>
 
-                            <b-button type="submit" :disabled="form.processing" variant="info">Сохранить</b-button>
-                        </b-form>
-                    </b-card-body>
-                </b-overlay>
-            </b-card>
-        </b-col>
+                        <b-button type="submit" :disabled="form.processing" variant="info">Сохранить</b-button>
+                    </b-form>
+                </b-card-body>
+            </b-overlay>
+        </b-card>
+    </b-col>
 </template>
 
 <script>
@@ -100,7 +146,9 @@ export default {
     components: {FilePicker, SuggestionInput},
     props: {
         categories: Array,
-        resource: Object
+        themes:Array,
+        resource: Object,
+        roles: Array
     },
     data() {
         return {
@@ -110,17 +158,30 @@ export default {
                 author: this.resource?.author ?? null,
                 year: this.resource?.year ?? null,
                 description: this.resource?.description ?? null,
-                category_id: this.resource?.category_id,
+                category_id: this.resource?.category_id ?? null,
+                theme_id: this.resource?.theme_id ?? null,
+                type: this.resource?.type ?? null,
+                language: this.resource?.language ?? 'ru',
+                level: this.resource?.level ?? null,
                 file: null,
                 cover: null,
                 is_public: this.resource?.is_public ?? false,
                 progress: 0,
                 tags: [],
+                roles:this.resource?.roles.map(r => r.id) ?? [],
                 _method: this.resource?.id ? 'put' : 'post'
             }, {
                 resetOnSuccess: true
             }),
-            tags: this.resource?.tags ?? []
+            tags: this.resource?.tags ?? [],
+            rolesTranslation :{
+                teacher : 'Учитель',
+                manager: 'Менеджер',
+                methodologist: 'Методист',
+                librarian: 'Библиотекарь',
+                student: 'Студент',
+                parent: 'Родитель'
+            }
         }
     },
     methods: {

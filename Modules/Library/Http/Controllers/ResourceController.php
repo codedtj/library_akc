@@ -13,6 +13,8 @@ use Modules\Library\Http\Requests\CreateResourceRequest;
 use Modules\Library\Http\Requests\EditResourceRequest;
 use Modules\Library\Models\Category;
 use Modules\Library\Models\Resource;
+use Modules\Library\Models\Role;
+use Modules\Library\Models\Theme;
 use Modules\Library\Services\ResourceService;
 
 class ResourceController extends Controller
@@ -48,7 +50,9 @@ class ResourceController extends Controller
     public function create(): Response
     {
         return Inertia::render('Resource/ResourceEditor', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'themes' => Theme::all(),
+            'roles' => Role::public()->get()
         ]);
     }
 
