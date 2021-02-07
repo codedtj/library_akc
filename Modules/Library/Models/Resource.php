@@ -96,7 +96,7 @@ class Resource extends BaseModel
 
     public function getIsEditableAttribute(): bool
     {
-        return $this->creator->is(Auth::user());
+        return $this->creator->isAdmin() || $this->creator->is(Auth::user()) && $this->creator->hasRole('editor');
     }
 
     public function getIsFavouriteAttribute(): bool
