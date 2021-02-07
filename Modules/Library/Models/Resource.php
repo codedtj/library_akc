@@ -26,6 +26,7 @@ use Modules\TagManager\Models\Tag;
  * @property BaseFile file
  * @property String id
  * @property String file_id
+ * @property String created_by
  */
 class Resource extends BaseModel
 {

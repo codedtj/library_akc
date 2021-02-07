@@ -26,7 +26,9 @@ class ResourceController extends Controller
     public function __construct(ResourceService $service)
     {
         $this->service = $service;
-        $this->middleware('auth')->except(['index', 'show', 'download']);
+        $public = ['index', 'show', 'download'];
+        $this->middleware('auth')->except($public);
+        $this->middleware('role:editor')->except($public);
         $this->authorizeResource(Resource::class, 'resource');
     }
 

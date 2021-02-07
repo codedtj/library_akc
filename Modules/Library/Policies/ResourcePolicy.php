@@ -20,23 +20,28 @@ class ResourcePolicy
         //
     }
 
-    public function viewAny(?User $user){
+    public function viewAny(?User $user): bool
+    {
         return true;
     }
 
-    public function view(?User $user){
+    public function view(?User $user): bool
+    {
         return true;
     }
 
-    public function create(){
+    public function create(): bool
+    {
         return true;
     }
 
-    public function update(User $user, Resource $resource){
+    public function update(User $user, Resource $resource): bool
+    {
         return $user->id === $resource->created_by;
     }
 
-    public function delete(User $user, Resource $resource){
+    public function delete(User $user, Resource $resource): bool
+    {
         return $user->id === $resource->created_by;
     }
 }
