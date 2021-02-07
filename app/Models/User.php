@@ -89,4 +89,19 @@ class User extends Authenticatable
             ->using(BaseMorphPivot::class)
             ->withTimestamps();
     }
+
+    public function isAdmin(): bool
+    {
+        return null !== $this->roles()->where('name', 'admin')->first();
+    }
+
+    public function hasAnyRole($roles): bool
+    {
+        return null !== $this->roles()->whereIn('name', $roles)->first();
+    }
+
+    public function hasRole($role): bool
+    {
+        return null !== $this->roles()->where('name', $role)->first();
+    }
 }
