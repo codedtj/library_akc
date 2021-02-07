@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('library')->group(function () {
     Route::resource('resources', 'ResourceController');
+    Route::get('/resources/{resource}/download', 'ResourceController@download')->name('resources.download');
 
     Route::get('/search/{query}', 'SearchController@index')->name('search');
 

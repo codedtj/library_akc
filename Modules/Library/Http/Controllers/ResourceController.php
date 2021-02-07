@@ -26,7 +26,7 @@ class ResourceController extends Controller
     public function __construct(ResourceService $service)
     {
         $this->service = $service;
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'download']);
         $this->authorizeResource(Resource::class, 'resource');
     }
 
@@ -43,6 +43,8 @@ class ResourceController extends Controller
 
     public function show(Resource $resource): Response
     {
+        $resource->increment('views');
+
         return Inertia::render('Resource/ShowResource', [
             'resource' => $resource->append(['is_editable', 'is_favourite'])
         ]);
@@ -84,5 +86,11 @@ class ResourceController extends Controller
     {
         $this->service->destroy($resource);
         return Redirect::route('resources.index');
+    }
+
+    public function download(Resource $resource): RedirectResponse
+    {
+        $resource->increment('downloads');
+        return Redirect::route('files.download', $resource->file_id);
     }
 }

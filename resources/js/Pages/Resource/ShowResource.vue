@@ -25,7 +25,7 @@
                                 <span>{{resource.downloads}}</span>
                             </b-row>
                         </b-container>
-                        <a class="btn btn-info" download :href="route('files.download', resource.file_id)">
+                        <a class="btn btn-info" download :href="route('resources.download', resource.id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
                             Скачать ресурс
                         </a>

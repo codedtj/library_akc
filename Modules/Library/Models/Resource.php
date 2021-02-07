@@ -24,7 +24,8 @@ use Modules\TagManager\Models\Tag;
 /**
  * @property Image cover
  * @property BaseFile file
- * @property mixed id
+ * @property String id
+ * @property String file_id
  */
 class Resource extends BaseModel
 {
