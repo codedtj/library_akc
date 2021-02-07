@@ -16,10 +16,19 @@
                                 </template>
                             </div>
                         </div>
+                        <b-container fluid class="text-secondary mb-2">
+                            <b-row align-v="baseline">
+                                <b-icon-eye class="mr-1" shift-v="-2"></b-icon-eye>
+                                <span class="mr-3">{{resource.views}}</span>
+
+                                <b-icon-download class="mr-1" shift-v="-2"></b-icon-download>
+                                <span>{{resource.downloads}}</span>
+                            </b-row>
+                        </b-container>
                         <a class="btn btn-info" download :href="route('files.download', resource.file_id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
-                            Скачать
-                            ресурс</a>
+                            Скачать ресурс
+                        </a>
                         <b-container class="mt-4" fluid v-if="resource.is_editable">
                             <b-row>
                                 <a class="btn btn-info mr-3" :href="route('resources.edit', resource.id)">
