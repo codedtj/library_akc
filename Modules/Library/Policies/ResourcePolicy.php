@@ -30,18 +30,23 @@ class ResourcePolicy
         return true;
     }
 
-    public function create(): bool
+    public function create(User $user): bool
     {
-        return true;
+        return $user->hasAnyRole(['editor', 'admin']);
     }
 
     public function update(User $user, Resource $resource): bool
     {
-        return $user->id === $resource->created_by;
+        return $this->grantPermission($user, $resource);
     }
 
     public function delete(User $user, Resource $resource): bool
     {
-        return $user->id === $resource->created_by;
+        return $this->grantPermission($user, $resource);
+    }
+
+    private function grantPermission(User $user, Resource $resource): bool
+    {
+        return $user->isAdmin() || $user->id === $resource->created_by && $user->hasRole('editor');
     }
 }

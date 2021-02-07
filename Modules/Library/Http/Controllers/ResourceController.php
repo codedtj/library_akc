@@ -28,7 +28,6 @@ class ResourceController extends Controller
         $this->service = $service;
         $public = ['index', 'show', 'download'];
         $this->middleware('auth')->except($public);
-        $this->middleware('role:editor')->except($public);
         $this->authorizeResource(Resource::class, 'resource');
     }
 
