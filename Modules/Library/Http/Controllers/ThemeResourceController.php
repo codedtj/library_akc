@@ -9,7 +9,6 @@ namespace Modules\Library\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
-use Modules\Library\Models\Grade;
 use Modules\Library\Models\Theme;
 
 class ThemeResourceController extends Controller
