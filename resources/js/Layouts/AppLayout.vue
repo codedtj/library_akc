@@ -26,6 +26,10 @@
                         <b-dropdown-item :href="route('category-resources.index')"
                                          :active="route().current('category-resources.index')">По категориям
                         </b-dropdown-item>
+
+                        <b-dropdown-item :href="route('theme-resources.index')"
+                                         :active="route().current('theme-resources.index')">По темам
+                        </b-dropdown-item>
                     </b-nav-item-dropdown>
 
                 </b-navbar-nav>

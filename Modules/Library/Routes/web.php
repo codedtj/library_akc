@@ -25,6 +25,9 @@ Route::prefix('library')->group(function () {
     Route::get('/category/resources', 'CategoryResourceController@index')->name('category-resources.index');
     Route::get('/category/{category}/resources', 'CategoryResourceController@show')->name('category-resources.show');
 
+    Route::get('/theme/resources', 'ThemeResourceController@index')->name('theme-resources.index');
+    Route::get('/theme/{theme}/resources', 'ThemeResourceController@show')->name('theme-resources.show');
+
     Route::get('/my/resources', 'MyResourceController@index')->name('my-resources');
 
     Route::resource('favourite', 'FavouriteResourceController')->only([
