@@ -14,12 +14,18 @@ class UsersController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth');
         $this->middleware('role');
     }
 
     public function index()
     {
-        $pagination = User::latest()->with('roles')->simplePaginate(50);
+        $query = User::latest()->with('roles');
+        if (request('name'))
+            $query->Where('name', 'like', '%' . request('name') . '%');
+        if (request('email'))
+            $query->Where('email', 'like', '%' . request('email') . '%');
+        $pagination = $query->simplePaginate(25);
         if (request()->expectsJson())
             return $pagination;
         else
