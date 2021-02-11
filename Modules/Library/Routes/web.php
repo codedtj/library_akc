@@ -19,8 +19,8 @@ Route::prefix('library')->group(function () {
 
     Route::get('/search/{query}', 'SearchController@index')->name('search');
 
-    Route::get('/class/resources', 'ClassResourceController@index')->name('class-resources.index');
-    Route::get('/class/{class}/resources', 'ClassResourceController@show')->name('class-resources.show');
+    Route::get('/grade/resources', 'GradeResourceController@index')->name('grade-resources.index');
+    Route::get('/grade/{grade}/resources', 'GradeResourceController@show')->name('grade-resources.show');
 
     Route::get('/category/resources', 'CategoryResourceController@index')->name('category-resources.index');
     Route::get('/category/{category}/resources', 'CategoryResourceController@show')->name('category-resources.show');

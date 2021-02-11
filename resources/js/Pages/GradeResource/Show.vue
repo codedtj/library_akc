@@ -1,8 +1,8 @@
 <template>
     <b-col cols="12">
-        <h1 class="mb-4">Класс {{ classId }}</h1>
+        <h1 class="mb-4">Синфи {{ grade.name }}</h1>
         <resource-masonry-with-data-fetching :resources="pagination.data"
-                                             :url="route('class-resources.show', classId)"></resource-masonry-with-data-fetching>
+                                             :url="route('grade-resources.show', grade.id)"></resource-masonry-with-data-fetching>
     </b-col>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     components: {ResourceMasonryWithDataFetching},
     props: {
         pagination: Object,
-        classId: String
+        grade: Object
     }
 }
 </script>

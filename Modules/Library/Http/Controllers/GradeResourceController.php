@@ -9,28 +9,29 @@ namespace Modules\Library\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Builder;
 use Inertia\Inertia;
+use Modules\Library\Models\Grade;
 use Modules\Library\Models\Resource;
 
-class ClassResourceController extends Controller
+class GradeResourceController extends Controller
 {
     public function index()
     {
-        return Inertia::render('ClassResource/Index');
+        return Inertia::render('GradeResource/Index', [
+            'grades' => Grade::all()
+        ]);
     }
 
-    public function show($class)
+    public function show(Grade $grade)
     {
-        $tagName = 'Класс ' . $class;
-        $pagination = Resource::whereHas('tags', function (Builder $query) use ($tagName) {
-            $query->where('name', $tagName);
-        })->simplePaginate(30);
+
+        $pagination = $grade->resources()->simplePaginate(30);
 
         if (request()->expectsJson())
             return $pagination;
         else
-            return Inertia::render('ClassResource/Show', [
+            return Inertia::render('GradeResource/Show', [
                 'pagination' => $pagination,
-                'classId' => $class
+                'grade' => $grade
             ]);
     }
 }

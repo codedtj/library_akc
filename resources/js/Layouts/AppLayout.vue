@@ -20,8 +20,8 @@
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
                     <b-nav-item-dropdown text="Фильтры">
-                        <b-dropdown-item :href="route('class-resources.index')"
-                                         :active="route().current('class-resources.index')">По классам
+                        <b-dropdown-item :href="route('grade-resources.index')"
+                                         :active="route().current('grade-resources.index')">По классам
                         </b-dropdown-item>
                         <b-dropdown-item :href="route('category-resources.index')"
                                          :active="route().current('category-resources.index')">По категориям
