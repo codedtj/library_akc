@@ -13,9 +13,15 @@ class ShareInertiaCustomData
 {
     public function handle($request, $next)
     {
-        Inertia::share([
-            'menu' => ['resources' => Auth::user()->hasAnyRole(['admin', 'editor'])]
-        ]);
+        $user = Auth::user();
+
+        if ($user)
+            Inertia::share([
+                'menu' => [
+                    'resources' => $user->hasAnyRole(['admin', 'editor'])
+                ],
+                'is_admin' => $user->isAdmin()
+            ]);
 
         return $next($request);
     }

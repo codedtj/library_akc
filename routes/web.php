@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserRolesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +20,9 @@ Route::get('/', function () {
     return redirect()->route('resources.index');
 })->name('home');
 
+Route::resource('users', UsersController::class);
+
+Route::post('/roles/{user}', [UserRolesController::class, 'update'])->name('user-roles.update');
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return Inertia\Inertia::render('Dashboard');
