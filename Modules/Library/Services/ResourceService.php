@@ -99,6 +99,8 @@ class ResourceService
 
         $resource->roles()->sync($data->roles);
 
+        $resource->grades()->sync($data->grades);
+
         $resource->save();
 
         return $resource;

@@ -95,6 +95,16 @@
                             </b-form-select>
                         </b-form-group>
 
+                        <b-form-group label="Классы" :state="!form.error('grades')"
+                                      :invalid-feedback="form.error('grades')">
+                            <b-form-select multiple v-model="form.grades" :select-size="12" required>
+                                <b-form-select-option v-for="grade in grades" :value="grade.id"
+                                                      :key="grade.id">
+                                    Синфи {{ grade.name }}
+                                </b-form-select-option>
+                            </b-form-select>
+                        </b-form-group>
+
                         <b-form-group label="Теги">
                             <suggestion-input displayPropertyName="name"
                                               query-is-first-option
@@ -146,9 +156,10 @@ export default {
     components: {FilePicker, SuggestionInput},
     props: {
         categories: Array,
-        themes:Array,
+        themes: Array,
         resource: Object,
-        roles: Array
+        roles: Array,
+        grades: Array
     },
     data() {
         return {
@@ -168,14 +179,15 @@ export default {
                 is_public: this.resource?.is_public ?? false,
                 progress: 0,
                 tags: [],
-                roles:this.resource?.roles.map(r => r.id) ?? [],
+                roles: this.resource?.roles.map(r => r.id) ?? [],
+                grades: this.resource?.grades.map(g => g.id) ?? [],
                 _method: this.resource?.id ? 'put' : 'post'
             }, {
                 resetOnSuccess: true
             }),
             tags: this.resource?.tags ?? [],
-            rolesTranslation :{
-                teacher : 'Учитель',
+            rolesTranslation: {
+                teacher: 'Учитель',
                 manager: 'Менеджер',
                 methodologist: 'Методист',
                 librarian: 'Библиотекарь',

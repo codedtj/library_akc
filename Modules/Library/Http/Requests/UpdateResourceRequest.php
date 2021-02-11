@@ -31,6 +31,8 @@ class UpdateResourceRequest extends FormRequest
             'level' => 'nullable|string|max:50',
             'roles' => 'nullable|array',
             'roles.*' => 'string|exists:roles,id',
+            'grades' => 'nullable|array',
+            'grades.*' => 'string|exists:grades,id',
         ];
     }
 

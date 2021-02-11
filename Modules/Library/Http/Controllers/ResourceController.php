@@ -13,6 +13,7 @@ use Modules\Library\Dtos\ResourceDto;
 use Modules\Library\Http\Requests\CreateResourceRequest;
 use Modules\Library\Http\Requests\UpdateResourceRequest;
 use Modules\Library\Models\Category;
+use Modules\Library\Models\Grade;
 use Modules\Library\Models\Resource;
 use Modules\Library\Models\Role;
 use Modules\Library\Models\Theme;
@@ -56,7 +57,8 @@ class ResourceController extends Controller
         return Inertia::render('Resource/ResourceEditor', [
             'categories' => Category::all(),
             'themes' => Theme::all(),
-            'roles' => Role::public()->get()
+            'roles' => Role::public()->get(),
+            'grades' => Grade::all()
         ]);
     }
 
@@ -68,12 +70,13 @@ class ResourceController extends Controller
 
     public function edit(Resource $resource): Response
     {
-        $resource->load('roles');
+        $resource->load(['roles', 'grades']);
         return Inertia::render('Resource/ResourceEditor', [
             'categories' => Category::all(),
             'themes' => Theme::all(),
             'roles' => Role::public()->get(),
-            'resource' => $resource
+            'resource' => $resource,
+            'grades' => Grade::all()
         ]);
     }
 

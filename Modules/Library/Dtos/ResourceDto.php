@@ -36,6 +36,8 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public Collection $roles;
 
+    public Collection $grades;
+
     public ?UploadedFile $file;
 
     public ?UploadedFile $cover;
@@ -47,6 +49,8 @@ class ResourceDto extends FlexibleDataTransferObject
         $parameters['tags'] = collect($parameters['tags']);
 
         $parameters['roles'] = collect($parameters['roles']);
+
+        $parameters['grades'] = collect($parameters['grades']);
 
         parent::__construct($parameters);
     }

@@ -79,6 +79,13 @@ class Resource extends BaseModel
             ->withTimestamps();
     }
 
+    public function grades(): MorphToMany
+    {
+        return $this->morphToMany(Grade::class, 'gradeable')
+            ->using(BaseMorphPivot::class)
+            ->withTimestamps();
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

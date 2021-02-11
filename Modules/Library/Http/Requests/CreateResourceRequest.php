@@ -28,6 +28,8 @@ class CreateResourceRequest extends FormRequest
             'tags.*' => 'string',
             'roles' => 'nullable|array',
             'roles.*' => 'string|exists:roles,id',
+            'grades' => 'nullable|array',
+            'grades.*' => 'string|exists:grades,id',
             'file' => 'required|file',
             'cover' => 'required|image',
         ];

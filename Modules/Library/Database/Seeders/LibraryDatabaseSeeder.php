@@ -19,5 +19,6 @@ class LibraryDatabaseSeeder extends Seeder
          $this->call(CategorySeeder::class);
          $this->call(ThemeSeeder::class);
          $this->call(RoleSeeder::class);
+         $this->call(GradeSeeder::class);
     }
 }
