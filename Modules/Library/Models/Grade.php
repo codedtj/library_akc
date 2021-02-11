@@ -7,11 +7,14 @@ namespace Modules\Library\Models;
 
 
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Shared\Models\BaseModel;
 use Modules\Shared\Pivots\BaseMorphPivot;
 
 class Grade extends BaseModel
 {
+    use SoftDeletes;
+
     protected static function boot()
     {
         parent::boot();

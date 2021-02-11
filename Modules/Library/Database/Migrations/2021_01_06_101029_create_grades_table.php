@@ -18,6 +18,7 @@ class CreateGradesTable extends Migration
             $table->string('name', 128)->unique()->index();
             $table->timestamps();
             $table->userstamps();
+            $table->softDeletes();
         });
     }
 
