@@ -19,10 +19,14 @@ class SearchController extends Controller
         $resources = Resource::where('title', 'like', $q)
             ->orWhere('author', 'like', $q)
             ->orWhere('year', 'like', $q)
+            ->orWhere('type', 'like', $q)
             ->orWhereHas('tags', function (Builder $query) use ($q) {
                 $query->where('name', 'like', $q);
             })
             ->orWhereHas('category', function (Builder $query) use ($q){
+                $query->where('name', 'like', $q);
+            })
+            ->orWhereHas('theme', function (Builder $query) use ($q){
                 $query->where('name', 'like', $q);
             })
             ->latest()

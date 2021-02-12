@@ -32,14 +32,18 @@ class ResourceController extends Controller
         $this->authorizeResource(Resource::class, 'resource');
     }
 
-    public function index(): Response
+    public function index()
     {
-        $pagination = Resource::latest()->simplePaginate(30);
+        $pagination = Resource::latest()->simplePaginate(50);
         if (request()->expectsJson())
             return $pagination;
         else
             return Inertia::render('Resource/Index', [
-                'pagination' => $pagination
+                'pagination' => $pagination,
+                'themes' => Theme::all(),
+                'categories' => Category::all(),
+                'roles' => Role::all(),
+                'grades' => Grade::all()
             ]);
     }
 

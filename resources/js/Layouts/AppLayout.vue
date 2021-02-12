@@ -10,10 +10,6 @@
                     <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
                     <b-nav-item v-else :href="route('login')" class="d-md-none">Вход</b-nav-item>
 
-                    <b-nav-item :href="route('home')" :active="route().current('home')">
-                        <b-icon-house-door-fill title="На главную" class="d-none d-md-block"></b-icon-house-door-fill>
-                        <span class="d-md-none">Главная</span>
-                    </b-nav-item>
                     <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Ресурсы" right>
                         <b-dropdown-item :href="route('resources.create')"
                                          :active="route().current('resources.create')">Добавить

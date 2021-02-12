@@ -10,7 +10,7 @@
                type="text"
                v-bind:placeholder="placeholder"
                v-model="query"
-               :class="{'is-invalid': isInvalid}"
+               :class="{'is-invalid': isInvalid, 'form-control-sm': size === 'sm'}"
                v-on:blur="hideDropdown" v-on:focus="showDropdown"
                v-on:input="onInputChanged">
         <div :class="{show: showOptions && options.length > 0}"
@@ -52,6 +52,7 @@ export default {
             type: Array,
             required: false
         },
+        size:String,
         actionUrl: String,
         placeholder: String,
         displayPropertyName: String,

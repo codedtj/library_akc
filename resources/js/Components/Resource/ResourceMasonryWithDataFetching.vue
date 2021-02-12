@@ -40,7 +40,7 @@ export default {
 
             this.page++;
             this.fetching = true;
-            axios.get(this.url + '?page=' + this.page)
+            axios.get(this.url + '&page=' + this.page)
                 .then(response => {
                     if (response.data.data.length > 0)
                         this.data.push(...response.data.data);

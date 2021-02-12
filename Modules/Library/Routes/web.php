@@ -30,6 +30,8 @@ Route::prefix('library')->group(function () {
 
     Route::get('/my/resources', 'MyResourceController@index')->name('my-resources');
 
+    Route::get('/filtered/resources', 'FilteredResourceController@index')->name('filtered-resources.index');
+
     Route::resource('favourite', 'FavouriteResourceController')->only([
         'index', 'store', 'destroy'
     ]);
