@@ -73,7 +73,7 @@
                                 <b-form-select size="sm" v-model="filters.role">
                                     <b-form-select-option :value="null">-- Истифодабаранда --</b-form-select-option>
                                     <b-form-select-option v-for="role in roles" :value="role.id"
-                                                          :key="role.id">{{ role.name }}
+                                                          :key="role.id">{{ role.local_name }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>

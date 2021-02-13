@@ -91,10 +91,10 @@
 
                         <b-form-group label="Роли" :state="!form.error('roles')"
                                       :invalid-feedback="form.error('roles')">
-                            <b-form-select multiple v-model="form.roles" :select-size="6" required>
+                            <b-form-select multiple v-model="form.roles" :select-size="4" required>
                                 <b-form-select-option v-for="role in roles" :value="role.id"
                                                       :key="role.id">
-                                    {{ rolesTranslation[role.name] }}
+                                    {{ role.local_name }}
                                 </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
@@ -189,15 +189,7 @@ export default {
             }, {
                 resetOnSuccess: true
             }),
-            tags: this.resource?.tags ?? [],
-            rolesTranslation: {
-                teacher: 'Учитель',
-                manager: 'Менеджер',
-                methodologist: 'Методист',
-                librarian: 'Библиотекарь',
-                student: 'Студент',
-                parent: 'Родитель'
-            }
+            tags: this.resource?.tags ?? []
         }
     },
     methods: {

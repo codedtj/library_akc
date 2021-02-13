@@ -42,7 +42,7 @@ class ResourceController extends Controller
                 'pagination' => $pagination,
                 'themes' => Theme::all(),
                 'categories' => Category::all(),
-                'roles' => Role::all(),
+                'roles' => Role::public()->get(),
                 'grades' => Grade::all()
             ]);
     }

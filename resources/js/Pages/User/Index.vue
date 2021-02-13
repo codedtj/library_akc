@@ -24,10 +24,10 @@
             <template #row-details="row">
                 <b-overlay :ref="'ov' +row.item.id" spinner-variant="info">
                     <div>
-                        <select :ref="row.item.id" class="form-control" size="9" multiple>
+                        <select :ref="row.item.id" class="form-control" size="7" multiple>
                             <option :selected="userHasRole(role, row.item.roles)"
                                     v-for="role in roles" :key="role.id" :value="role.id">
-                                {{ rolesTranslation[role.name] }}
+                                {{ role.local_name }}
                             </option>
                         </select>
                         <div class="d-flex">
@@ -74,17 +74,6 @@ export default {
                     label: ''
                 }
             ],
-            rolesTranslation: {
-                admin: 'Администратор',
-                editor: 'Редактор',
-                moderator: 'Модератор',
-                teacher: 'Учитель',
-                manager: 'Менеджер',
-                methodologist: 'Методист',
-                librarian: 'Библиотекарь',
-                student: 'Студент',
-                parent: 'Родитель'
-            },
             fetchUrl: this.route('users.index') + '?page='
         }
     },
