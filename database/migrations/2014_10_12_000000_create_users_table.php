@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
 //            $table->text('profile_photo_path')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreignUuid('avatar_id')->nullable()->references('id')->on('files');
         });
     }
 
