@@ -22,7 +22,7 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.type">
-                                    <b-form-select-option :value="null" disabled>-- Намудҳо --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- Намудҳо --</b-form-select-option>
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                     <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
