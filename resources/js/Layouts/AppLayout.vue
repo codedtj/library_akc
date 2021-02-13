@@ -44,7 +44,10 @@
         <main>
             <b-container fluid="md">
                 <b-row class="my-3">
-                    <div class="search-box ml-auto mr-3">
+                    <div class="mb-3 mb-md-0 col-md-8 external-links">
+                        <a target="_blank" href="https://www.khanacademy.org/"><b-img src="/images/khan-academy-logo.png"></b-img></a>
+                    </div>
+                    <div class="search-box col-md-4 ml-auto">
                         <b-input size="sm" placeholder="Ҷустуҷӯи маводҳо" v-model="query" @keyup.enter="search"
                                  autocomplete="search"></b-input>
                         <b-icon-search class="search-icon" @click="search"></b-icon-search>
