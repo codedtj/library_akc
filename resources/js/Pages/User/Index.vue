@@ -6,9 +6,9 @@
                     <b-input size="sm" placeholder="Ном" v-model="name"></b-input>
                 </b-col>
                 <b-col class="mb-2 mb-md-0" cols="md-3">
-                    <b-input size="sm" placeholder="E-mail" v-model="email"></b-input>
+                    <b-input size="sm" placeholder="Суроғаи электронӣ" v-model="email"></b-input>
                 </b-col>
-                <b-button size="sm" class="ml-auto ml-md-0 mr-3 mr-md-0" variant="info" @click="filter">Поиск</b-button>
+                <b-button size="sm" class="ml-auto ml-md-0 mr-3 mr-md-0" variant="info" @click="filter">Ҷустуҷӯ</b-button>
             </b-row>
         </b-container>
         <b-table primary-key="id" stacked="sm" head-variant="info" responsive
@@ -32,7 +32,7 @@
                         </select>
                         <div class="d-flex">
                             <b-button size="sm" class="ml-auto mt-3" variant="info" @click="submit(row.item.id)">
-                                Обновить
+                                Маҳфуз
                             </b-button>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ export default {
                 },
                 {
                     key: 'email',
-                    label: 'E-mail'
+                    label: 'Суроғаи электронӣ'
                 },
                 {
                     key: 'actions',
