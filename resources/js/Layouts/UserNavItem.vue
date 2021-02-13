@@ -3,10 +3,10 @@
         <template #button-content>
             <span class="user-name">{{ $page.user.name }}</span>
         </template>
-        <b-dropdown-item :href="route('dashboard')"
+        <b-dropdown-item variant="info" :href="route('dashboard')"
                          :active="route().current('dashboard')">Шарҳ
         </b-dropdown-item>
-        <b-dropdown-item @click.prevent="logout" href="#">Баромад</b-dropdown-item>
+        <b-dropdown-item variant="info" @click.prevent="logout" href="#">Баромад</b-dropdown-item>
     </b-nav-item-dropdown>
 </template>
 

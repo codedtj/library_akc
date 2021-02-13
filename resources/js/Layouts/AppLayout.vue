@@ -1,6 +1,6 @@
 <template>
     <div class="position-relative">
-        <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
+        <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="dark" variant="info">
             <b-navbar-brand :href="route('home')" class="d-none d-md-block">Китобхона</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -10,8 +10,12 @@
                     <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
                     <b-nav-item v-else :href="route('login')" class="d-md-none">Воридшавӣ</b-nav-item>
 
+                    <b-nav-item :href="route('home')" :active="route().current('resources.index')" class="d-md-none">
+                        Китобхона
+                    </b-nav-item>
+
                     <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Маводҳо" right>
-                        <b-dropdown-item :href="route('resources.create')"
+                        <b-dropdown-item variant="info" :href="route('resources.create')"
                                          :active="route().current('resources.create')">Илова
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
@@ -52,8 +56,20 @@
             </b-container>
         </main>
         <div class="supporters shadow-light">
-           <a href="https://parlament.tj/ru"><b-img style="padding: 6px" src="/images/emblem-tjk.png"></b-img></a>
-           <a href="https://www.akdn.org/our-agencies/aga-khan-foundation"><b-img src="/images/akf-logo-tjk.png"></b-img></a>
+            <a href="https://parlament.tj/ru">
+                <b-img style="padding: 6px" src="/images/emblem-tjk.png"></b-img>
+            </a>
+            <a href="https://www.akdn.org/our-agencies/aga-khan-foundation">
+                <b-img src="/images/akf-logo-tjk.png"></b-img>
+            </a>
+            <ul>
+                <li>
+                    <a class="text-secondary text-decoration-none" :href="route('about')">О проекте</a>
+                </li>
+                <li>
+                    <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Условия использования</a>
+                </li>
+            </ul>
         </div>
     </div>
 

@@ -24,13 +24,7 @@ html, body {
     }
 }
 
-@media screen and(max-width: 768px) {
-    .search-icon {
-        bottom: calc(50% - 9px) !important;
-    }
-}
-
-main{
+main {
     padding-bottom: 100px;
 }
 
@@ -47,11 +41,44 @@ main{
     z-index: 100;
     box-shadow: 1px -2px 8px 0 rgb(0 0 0 / 13%);
 
-    a{
+    a {
         display: contents;
 
-        img{
+        img {
             height: 100%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin-top:auto;
+        margin-bottom: auto;
+        border-left: solid 2px;
+    }
+}
+
+.main-nav {
+
+    ul {
+        li {
+            .nav-link {
+                //color: white!important;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width: 768px) {
+    .search-icon {
+        bottom: calc(50% - 9px) !important;
+    }
+
+    .supporters {
+        ul{
+            padding-left: 5px;
+            font-size: 0.8rem;
         }
     }
 }
