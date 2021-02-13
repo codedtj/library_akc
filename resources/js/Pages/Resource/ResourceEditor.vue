@@ -52,11 +52,15 @@
                                       :invalid-feedback="form.error('type')">
                             <b-form-select v-model="form.type" required>
                                 <b-form-select-option :value="null" disabled>-- Выберите тип --</b-form-select-option>
-                                <b-form-select-option value="video">Видео</b-form-select-option>
-                                <b-form-select-option value="audio">Аудио</b-form-select-option>
-                                <b-form-select-option value="ebook">Электронная книга</b-form-select-option>
-                                <b-form-select-option value="pdf">PDF</b-form-select-option>
-                                <b-form-select-option value="other">Другое</b-form-select-option>
+                                <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
+                                <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
+                                <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
+                                <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ</b-form-select-option>
+                                <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
+                                <b-form-select-option value="Маводҳои аудиоӣ">Маводҳои аудиоӣ</b-form-select-option>
+                                <b-form-select-option value="Маводҳои соҳавӣ">Маводҳои соҳавӣ</b-form-select-option>
+                                <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ</b-form-select-option>
+                                <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили ихтисоси омӯзгорон</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
                         <b-form-group label="Забон" :state="!form.error('language')"

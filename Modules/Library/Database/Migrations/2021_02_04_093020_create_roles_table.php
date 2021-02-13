@@ -17,6 +17,7 @@ class CreateRolesTable extends Migration
             $table->uuid('id')->primary();
 
             $table->string('name', 30)->unique();
+            $table->string('local_name', 128)->unique();
 
             $table->timestamps();
             $table->userstamps();

@@ -14,17 +14,17 @@ class RoleSeeder extends Seeder
     public function run()
     {
         collect([
-            'teacher',
-            'manager',
-            'methodologist',
-            'librarian',
-            'student',
-            'parent',
-            'editor',
-            'moderator',
-            'admin'
-        ])->each(function ($name) {
-            Role::create(['name' => $name]);
+            'teacher' => 'Омӯзгор',
+            'educator' => 'Корманди соҳаи маориф',
+//            'methodologist',
+//            'librarian',
+            'student' => 'Хонанда',
+            'parent' => 'Волидайн',
+            'editor' => 'Муҳаррир',
+            'moderator' => 'Модератор',
+            'admin' => 'Администратор'
+        ])->each(function ($local_name, $name) {
+            Role::create(['name' => $name, 'local_name' => $local_name]);
         });
     }
 }

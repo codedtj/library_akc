@@ -12,6 +12,8 @@ use Modules\Library\Models\Grade;
 class GradeSeeder extends Seeder
 {
     public function run(){
+        Grade::create(['name' => 'Томактабӣ']);
+
         for($i = 0; $i < 12; $i++){
             Grade::create(['name' => $i]);
         }
