@@ -1,18 +1,18 @@
 <template>
     <form @submit.prevent="updatePassword">
-        <b-card title="Изменение пароля"
-                sub-title="Придумайте надежный длинный пароль с использованием специальных символов">
+        <b-card title="Тағйири  рамз"
+                sub-title="Рамзи дарозтарро бо истифода аз аломатҳои махсус фикр намоед.">
             <b-card-body>
                 <b-col md="6">
-                    <b-form-group label="Текущий пароль" :state="!form.error('current_password')" ref="current_password"
+                    <b-form-group label="Рамзи ҷорӣ" :state="!form.error('current_password')" ref="current_password"
                                   :invalid-feedback="form.error('current_password')" autocomplete="current-password">
                         <b-input type="password" v-model="form.current_password"></b-input>
                     </b-form-group>
-                    <b-form-group label="Новый пароль" :state="!form.error('password')" ref="password"
+                    <b-form-group label="Рамзи нав" :state="!form.error('password')" ref="password"
                                   :invalid-feedback="form.error('password')" autocomplete="new-password">
                         <b-input type="password" v-model="form.password"></b-input>
                     </b-form-group>
-                    <b-form-group label="Подтверждение пароля" :state="!form.error('password_confirmation')"
+                    <b-form-group label="Тасдиқи рамз" :state="!form.error('password_confirmation')"
                                   ref="password_confirmation"
                                   :invalid-feedback="form.error('password_confirmation')" autocomplete="new-password">
                         <b-input type="password" v-model="form.password_confirmation"></b-input>
@@ -22,9 +22,9 @@
 
             <template #footer>
                 <b-row align-v="baseline">
-                    <b-card-text class="ml-4" v-if="form.recentlySuccessful">Пароль изменён</b-card-text>
+                    <b-card-text class="ml-4" v-if="form.recentlySuccessful">Тағйиротҳо маҳфуз шуданд</b-card-text>
                     <b-button type="submit" class="ml-auto mr-4" variant="info" :disabled="form.processing">
-                        Сохранить
+                        Маҳфуз
                     </b-button>
                 </b-row>
             </template>

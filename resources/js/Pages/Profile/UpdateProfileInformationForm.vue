@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="updateProfileInformation">
-        <b-card title="Персональная информация" sub-title="Обновите имя и адрес электронной почты">
+        <b-card title="Маълумоти шахсӣ" sub-title="Ном ва суроғаи электрониатонро аз нав намоед.">
             <b-card-body>
                 <!-- Profile Photo -->
 <!--                <div v-if="$page.jetstream.managesProfilePhotos">-->
@@ -38,12 +38,12 @@
 
                 <b-col md="6">
                     <!-- Name -->
-                    <b-form-group label="Имя" :state="!form.error('name')" :invalid-feedback="form.error('name')">
+                    <b-form-group label="Ном" :state="!form.error('name')" :invalid-feedback="form.error('name')">
                         <b-form-input v-model="form.name"></b-form-input>
                     </b-form-group>
 
                     <!-- Email -->
-                    <b-form-group label="E-mail" :state="!form.error('email')" :invalid-feedback="form.error('email')">
+                    <b-form-group label="Суроғаи электронӣ" :state="!form.error('email')" :invalid-feedback="form.error('email')">
                         <b-form-input v-model="form.email"></b-form-input>
                     </b-form-group>
                 </b-col>
@@ -51,9 +51,9 @@
 
             <template #footer>
                 <b-row align-v="baseline">
-                    <b-card-text class="ml-4" v-if="form.recentlySuccessful">Изменения сохранены</b-card-text>
+                    <b-card-text class="ml-4" v-if="form.recentlySuccessful">Тағйиротҳо маҳфуз шуданд.</b-card-text>
                     <b-button type="submit" class="ml-auto mr-4" variant="info" :disabled="form.processing">
-                        Сохранить
+                        Маҳфуз
                     </b-button>
                 </b-row>
             </template>

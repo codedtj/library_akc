@@ -1,27 +1,27 @@
 <template>
-    <b-card title="Удаление аккаунта" sub-title="Удалить аккаунт навсегда">
+    <b-card title="Несткунии суроға" sub-title="Тамоман нест кардани суроға">
         <b-card-body>
             <div class="max-w-xl text-sm text-gray-600">
-                Удаление аккаунта необратимая функция
+                Несткунии суроға амали бебозгашт аст
             </div>
 
             <div class="mt-5">
                 <b-button variant="danger" @click="confirmUserDeletion">
-                    Удалить аккаунт
+                    Несткунии суроға
                 </b-button>
             </div>
 
             <!-- Delete Account Confirmation Modal -->
-            <b-modal id="deleteAccountModal" title="Удаление аккаунта" cancel-title="Отмена"
-                     ok-variant="danger" ok-title="Удалить" @ok.prevent="deleteUser">
+            <b-modal id="deleteAccountModal" title="Несткунии суроға" cancel-title="Бекор кардан"
+                     ok-variant="danger" ok-title="Нест кардан" @ok.prevent="deleteUser">
 
                 <div>
-                    Введите пароль для подтверждения удаления аккаунта.
+                    Рамзро барои несткунии суроға ворид созед.
 
                     <div class="mt-4">
                         <b-form-group class="mt-4" :state="!form.error('password')"
                                       :invalid-feedback="form.error('password')">
-                            <b-input type="password" placeholder="Пароль"
+                            <b-input type="password" placeholder="Рамз"
                                      ref="password"
                                      v-model="form.password"
                                      @keyup.enter.native="deleteUser"/>

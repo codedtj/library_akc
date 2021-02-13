@@ -1,10 +1,9 @@
 <template>
-    <b-card title="Активные сессии" sub-title="Выйти из системы на других устройствах">
+    <b-card title="Машғулиятҳои фаъол" sub-title="Дар дастгоҳҳои дигар аз система бароед">
 
         <b-card-body>
             <b-card-text>
-                Вы можете выйти из системы на всех других устройствах. Если вы считаете, что ваш аккаунт был взломан,
-                измените пароль.
+                Шумо метавонед дар ҳамаи дастгоҳҳои дигар аз система бароед, агар  фикр намоед , ки саҳифаи Шумо  аз тарафи ягон кас ҳак шудааст ва метавонед рамзи худро иваз намоед
             </b-card-text>
 
             <!-- Other Browser Sessions -->
@@ -21,8 +20,8 @@
                             <div>
                                 {{ session.ip_address }},
 
-                                <span class="" v-if="session.is_current_device">Текущее устройство</span>
-                                <span v-else>Last active {{ session.last_active }}</span>
+                                <span class="" v-if="session.is_current_device">Дастгоҳи ҷорӣ</span>
+                                <span v-else>Амали охирон {{ session.last_active }}</span>
                             </div>
                         </div>
                     </div>
@@ -31,24 +30,24 @@
 
             <div>
                 <b-button @click="confirmLogout">
-                    Выйти из системы в других браузерах
+                    Дар дигар  браузерҳо аз система бароед
                 </b-button>
 
                 <b-alert :on="form.recentlySuccessful" class="ml-3">
-                    Готово.
+                    Тайер
                 </b-alert>
             </div>
 
             <!-- Logout Other Devices Confirmation Modal -->
-            <b-modal title="Выйти на других устройствах" id="logoutConfirmationModal" cancel-title="Отмена"
-                     ok-variant="info" ok-title="Выйти" @ok.prevent="logoutOtherBrowserSessions">
+            <b-modal title="Дар дастгоҳҳои дигар аз система бароед" id="logoutConfirmationModal" cancel-title="Бекор кардан"
+                     ok-variant="info" ok-title="Баромадан" @ok.prevent="logoutOtherBrowserSessions">
 
                 <div>
-                    Введите пароль для подтверждения выхода из системы на всех остальных устройствах
+                    Рамзро барои тасдиқи баромадан аз система дар ҳамаи дастгоҳҳо ворид намоед.
 
                     <b-form-group class="mt-4" :state="!form.error('password')"
                                   :invalid-feedback="form.error('password')">
-                        <b-input type="password" placeholder="Пароль"
+                        <b-input type="password" placeholder="Рамз"
                                  ref="password"
                                  v-model="form.password"
                                  @keyup.enter.native="logoutOtherBrowserSessions"/>
