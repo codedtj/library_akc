@@ -22,12 +22,16 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.type">
-                                    <b-form-select-option :value="null">-- Намуд --</b-form-select-option>
-                                    <b-form-select-option value="video">Видео</b-form-select-option>
-                                    <b-form-select-option value="audio">Аудио</b-form-select-option>
-                                    <b-form-select-option value="ebook">Электронная книга</b-form-select-option>
-                                    <b-form-select-option value="pdf">PDF</b-form-select-option>
-                                    <b-form-select-option value="other">Другое</b-form-select-option>
+                                    <b-form-select-option :value="null" disabled>-- Намудҳо --</b-form-select-option>
+                                    <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
+                                    <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
+                                    <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
+                                    <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ</b-form-select-option>
+                                    <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
+                                    <b-form-select-option value="Маводҳои аудиоӣ">Маводҳои аудиоӣ</b-form-select-option>
+                                    <b-form-select-option value="Маводҳои соҳавӣ">Маводҳои соҳавӣ</b-form-select-option>
+                                    <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ</b-form-select-option>
+                                    <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили ихтисоси омӯзгорон</b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
