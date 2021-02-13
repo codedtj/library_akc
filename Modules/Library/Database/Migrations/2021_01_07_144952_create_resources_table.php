@@ -23,6 +23,7 @@ class CreateResourcesTable extends Migration
             $table->string('level', 50)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_public')->default(false);
+            $table->boolean('approved')->default(true);
 
             $table->unsignedBigInteger('views')->default(0);
             $table->unsignedBigInteger('downloads')->default(0);
