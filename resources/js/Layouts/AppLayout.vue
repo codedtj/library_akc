@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="position-relative">
         <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
             <b-navbar-brand :href="route('home')" class="d-none d-md-block">Китобхона</b-navbar-brand>
 
@@ -28,19 +28,6 @@
                                 :active="route().current('theme-resources.index')">
                         Мавзӯҳо
                     </b-nav-item>
-                    <!--                    <b-nav-item-dropdown text="Фильтры">-->
-                    <!--                        <b-dropdown-item :href="route('grade-resources.index')"-->
-                    <!--                                         :active="route().current('grade-resources.index')">По классам-->
-                    <!--                        </b-dropdown-item>-->
-                    <!--                        <b-dropdown-item :href="route('category-resources.index')"-->
-                    <!--                                         :active="route().current('category-resources.index')">По категориям-->
-                    <!--                        </b-dropdown-item>-->
-
-                    <!--                        <b-dropdown-item :href="route('theme-resources.index')"-->
-                    <!--                                         :active="route().current('theme-resources.index')">По темам-->
-                    <!--                        </b-dropdown-item>-->
-                    <!--                    </b-nav-item-dropdown>-->
-
                 </b-navbar-nav>
             </b-collapse>
 
@@ -64,6 +51,10 @@
                 </b-row>
             </b-container>
         </main>
+        <div class="supporters shadow-light">
+           <a href="https://parlament.tj/ru"><b-img style="padding: 6px" src="/images/emblem-tjk.png"></b-img></a>
+           <a href="https://www.akdn.org/our-agencies/aga-khan-foundation"><b-img src="/images/akf-logo-tjk.png"></b-img></a>
+        </div>
     </div>
 
 </template>
