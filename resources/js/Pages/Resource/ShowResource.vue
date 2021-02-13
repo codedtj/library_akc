@@ -27,7 +27,7 @@
                         </b-container>
                         <a class="btn btn-info" download :href="route('resources.download', resource.id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
-                            Скачать ресурс
+                            Зеркашӣ намудани мавод
                         </a>
                         <b-container class="mt-4" fluid v-if="resource.is_editable">
                             <b-row>
@@ -43,10 +43,11 @@
                     <b-col>
                         <div>
                             <h1>{{ resource.title }}</h1>
-                            <h3>Автор: {{ resource.author }}</h3>
-                            <p class="bg-danger pb-1 px-1" v-if="!resource.is_public">Доступ ограничен</p>
-                            <p v-if="resource.year">Год: {{ resource.year }}</p>
-                            <p>Категория: {{ resource.category.name }}</p>
+                            <h3>Муаллиф: {{ resource.author }}</h3>
+                            <p class="bg-danger pb-1 px-1" v-if="!resource.is_public">Дастрасии маҳдуд</p>
+                            <p v-if="resource.year">Сол: {{ resource.year }}</p>
+                            <p v-if="resource.category">Фан: {{ resource.category.name }}</p>
+                            <p v-if="resource.theme">Мавзӯ: {{ resource.theme.name }}</p>
                             <p v-if="resource.description">{{ resource.description }}</p>
                             <b-container fluid>
                                 <b-row>
@@ -87,14 +88,14 @@ export default {
     },
     methods: {
         destroy() {
-            this.$bvModal.msgBoxConfirm('Вы действительно хотите удалить ресурс "' + this.resource.title + '"?', {
+            this.$bvModal.msgBoxConfirm('Оё Шумо хоҳиши несткунии мавод "' + this.resource.title + '"-ро доред?', {
                 centered: true,
                 buttonSize: 'sm',
-                okTitle: 'Удалить',
+                okTitle: 'Нест кардан',
                 okVariant: 'info',
-                cancelTitle: 'Отмена',
+                cancelTitle: 'Бекор кардан',
                 cancelVariant: 'secondary',
-                title: 'Подтверждение удаления'
+                title: 'Тасдиқи несткунӣ'
             }).then(confirmed => {
                 if (confirmed)
                     this.$inertia.delete(route('resources.destroy', this.resource.id))
