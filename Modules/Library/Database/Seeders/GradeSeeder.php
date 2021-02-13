@@ -15,7 +15,7 @@ class GradeSeeder extends Seeder
         Grade::create(['name' => 'Томактабӣ']);
 
         for($i = 0; $i < 12; $i++){
-            Grade::create(['name' => $i]);
+            Grade::create(['name' => 'Синфи ' . $i]);
         }
     }
 }
