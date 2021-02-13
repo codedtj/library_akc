@@ -101,7 +101,7 @@
 
                         <b-form-group label="Классы" :state="!form.error('grades')"
                                       :invalid-feedback="form.error('grades')">
-                            <b-form-select multiple v-model="form.grades" :select-size="12" required>
+                            <b-form-select multiple v-model="form.grades" :select-size="13" required>
                                 <b-form-select-option v-for="grade in grades" :value="grade.id"
                                                       :key="grade.id">
                                     {{ grade.name }}
