@@ -30,7 +30,7 @@ class CreateResourcesTable extends Migration
 
             $table->foreignUuid('file_id')->nullable()->references('id')->on('files');
             $table->foreignUuid('cover_id')->nullable()->references('id')->on('files');
-            $table->foreignUuid('category_id')->references('id')->on('categories');
+            $table->foreignUuid('category_id')->nullable()->references('id')->on('categories');
             $table->foreignUuid('theme_id')->references('id')->on('themes');
 
             $table->timestamps();
