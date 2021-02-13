@@ -40,7 +40,7 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.level">
-                                    <b-form-select-option :value="null">-- Выберите уровень --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- Мураккабӣ --</b-form-select-option>
                                     <b-form-select-option value="easy">Легко</b-form-select-option>
                                     <b-form-select-option value="hard">Сложно</b-form-select-option>
                                 </b-form-select>
@@ -71,7 +71,7 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.role">
-                                    <b-form-select-option :value="null">-- Истифодабар --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- Истифодабаранда --</b-form-select-option>
                                     <b-form-select-option v-for="role in roles" :value="role.id"
                                                           :key="role.id">{{ role.name }}
                                     </b-form-select-option>
@@ -80,7 +80,7 @@
                             <b-form-group class="col-sm-12 col-md-3">
                                 <suggestion-input displayPropertyName="name"
                                                   ref="tagInput"
-                                                  placeholder="Теги"
+                                                  placeholder="Барчаспҳо"
                                                   size="sm"
                                                   @selected="onTagSelected"
                                                   action-url="/tags/filtered/"
@@ -116,7 +116,7 @@
                             </b-form-group>
                         </b-row>
                         <b-row align-h="center">
-                            <b-button size="sm" variant="info" @click="filter">Нигох доштан</b-button>
+                            <b-button size="sm" variant="info" @click="filter">Нигоҳ доштан</b-button>
                         </b-row>
                     </b-container>
 
