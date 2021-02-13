@@ -1,49 +1,64 @@
 <template>
     <div>
         <b-navbar sticky class="shadow-light" toggleable="md" type="dark" variant="info">
-            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Библиотека</b-navbar-brand>
+            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Китобхона</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
                     <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
-                    <b-nav-item v-else :href="route('login')" class="d-md-none">Вход</b-nav-item>
+                    <b-nav-item v-else :href="route('login')" class="d-md-none">Воридшавӣ</b-nav-item>
 
-                    <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Ресурсы" right>
+                    <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Маводҳо" right>
                         <b-dropdown-item :href="route('resources.create')"
-                                         :active="route().current('resources.create')">Добавить
+                                         :active="route().current('resources.create')">Илова
                         </b-dropdown-item>
                     </b-nav-item-dropdown>
-                    <b-nav-item-dropdown text="Фильтры">
-                        <b-dropdown-item :href="route('grade-resources.index')"
-                                         :active="route().current('grade-resources.index')">По классам
-                        </b-dropdown-item>
-                        <b-dropdown-item :href="route('category-resources.index')"
-                                         :active="route().current('category-resources.index')">По категориям
-                        </b-dropdown-item>
+                    <b-nav-item :href="route('grade-resources.index')"
+                                :active="route().current('grade-resources.index')">
+                        Синфҳо
+                    </b-nav-item>
+                    <b-nav-item :href="route('category-resources.index')"
+                                :active="route().current('category-resources.index')">
+                        Фанҳо
+                    </b-nav-item>
 
-                        <b-dropdown-item :href="route('theme-resources.index')"
-                                         :active="route().current('theme-resources.index')">По темам
-                        </b-dropdown-item>
-                    </b-nav-item-dropdown>
+                    <b-nav-item :href="route('theme-resources.index')"
+                                :active="route().current('theme-resources.index')">
+                        Мавзӯҳо
+                    </b-nav-item>
+                    <!--                    <b-nav-item-dropdown text="Фильтры">-->
+                    <!--                        <b-dropdown-item :href="route('grade-resources.index')"-->
+                    <!--                                         :active="route().current('grade-resources.index')">По классам-->
+                    <!--                        </b-dropdown-item>-->
+                    <!--                        <b-dropdown-item :href="route('category-resources.index')"-->
+                    <!--                                         :active="route().current('category-resources.index')">По категориям-->
+                    <!--                        </b-dropdown-item>-->
+
+                    <!--                        <b-dropdown-item :href="route('theme-resources.index')"-->
+                    <!--                                         :active="route().current('theme-resources.index')">По темам-->
+                    <!--                        </b-dropdown-item>-->
+                    <!--                    </b-nav-item-dropdown>-->
 
                 </b-navbar-nav>
             </b-collapse>
 
             <b-navbar-nav class="ml-auto">
-                <div class="search-box">
-                    <b-input placeholder="Найти ресурс" v-model="query" @keyup.enter="search" autocomplete="search"></b-input>
-                    <b-icon-search class="search-icon" @click="search"></b-icon-search>
-                </div>
-
                 <user-nav-item v-if="$page.user" class="d-none d-md-block"></user-nav-item>
-                <b-nav-item v-else :href="route('login')" class="d-none d-md-block">Вход</b-nav-item>
+                <b-nav-item v-else :href="route('login')" class="d-none d-md-block">Воридшавӣ</b-nav-item>
 
             </b-navbar-nav>
         </b-navbar>
         <main>
-            <b-container fluid="md" class="py-5">
+            <b-container fluid="md">
+                <b-row class="my-3">
+                    <div class="search-box ml-auto mr-3">
+                        <b-input size="sm" placeholder="Ҷустуҷӯи маводҳо" v-model="query" @keyup.enter="search"
+                                 autocomplete="search"></b-input>
+                        <b-icon-search class="search-icon" @click="search"></b-icon-search>
+                    </div>
+                </b-row>
                 <b-row>
                     <slot></slot>
                 </b-row>

@@ -7,10 +7,14 @@ html, body {
 .search-box {
     position: relative;
 
+    .form-control{
+        border-radius: 2rem;
+    }
+
     .search-icon {
         position: absolute;
         right: 5%;
-        bottom: calc(50% - 6px);
+        bottom: calc(50% - 7px);
         color: gray;
 
         &:hover {

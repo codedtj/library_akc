@@ -14324,10 +14324,14 @@ body {
   position: relative;
 }
 
+.search-box .form-control {
+  border-radius: 2rem;
+}
+
 .search-box .search-icon {
   position: absolute;
   right: 5%;
-  bottom: calc(50% - 6px);
+  bottom: calc(50% - 7px);
   color: gray;
 }
 
