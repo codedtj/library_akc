@@ -1,6 +1,6 @@
 <template>
     <b-col md="8" class="mx-auto">
-        <b-card header="Добавить ресурс">
+        <b-card header="Иловаи мавод">
             <b-overlay :show="form.processing" rounded="lg">
                 <template #overlay class="w-100">
                     <b-progress variant="info" style="width: 250px" :value="form.progress"
@@ -8,50 +8,50 @@
                 </template>
                 <b-card-body>
                     <b-form id="form" href="form" @submit.prevent="submit">
-                        <b-form-group label="*Название" :state="!form.error('title')"
+                        <b-form-group label="*Ном" :state="!form.error('title')"
                                       :invalid-feedback="form.error('title')">
                             <b-form-input v-model="form.title" autofocus></b-form-input>
                         </b-form-group>
-                        <b-form-group label="*Прикрепить ресурс" :state="!form.error('file')"
+                        <b-form-group label="*Мавод" :state="!form.error('file')"
                                       :invalid-feedback="form.error('file')">
                             <file-picker v-model="form.file"></file-picker>
                         </b-form-group>
-                        <b-form-group label="*Прикрепить обложку" :state="!form.error('cover')"
+                        <b-form-group label="*Расм" :state="!form.error('cover')"
                                       :invalid-feedback="form.error('cover')">
                             <file-picker v-model="form.cover"></file-picker>
                         </b-form-group>
-                        <b-form-group label="Автор" required :state="!form.error('author')"
+                        <b-form-group label="*Муаллиф" required :state="!form.error('author')"
                                       :invalid-feedback="form.error('author')">
                             <b-form-input v-model="form.author"></b-form-input>
                         </b-form-group>
-                        <b-form-group label="Год" required :state="!form.error('year')"
+                        <b-form-group label="Сол" required :state="!form.error('year')"
                                       :invalid-feedback="form.error('year')">
                             <b-form-input v-model="form.year"></b-form-input>
                         </b-form-group>
-                        <b-form-group label="Категория" :state="!form.error('category_id')"
+                        <b-form-group label="*Фан" :state="!form.error('category_id')"
                                       :invalid-feedback="form.error('category_id')">
                             <b-form-select v-model="form.category_id" required>
-                                <b-form-select-option :value="null">-- Выберите категорию --</b-form-select-option>
+                                <b-form-select-option :value="null">-- Фанҳо --</b-form-select-option>
                                 <b-form-select-option v-for="category in categories" :value="category.id"
                                                       :key="category.id">
                                     {{ category.name }}
                                 </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="Тема" :state="!form.error('theme_id')"
+                        <b-form-group label="*Мавзӯ" :state="!form.error('theme_id')"
                                       :invalid-feedback="form.error('theme_id')">
                             <b-form-select v-model="form.theme_id" required>
-                                <b-form-select-option :value="null" disabled>-- Выберите тему --</b-form-select-option>
+                                <b-form-select-option :value="null" disabled>--  Мавзӯҳо --</b-form-select-option>
                                 <b-form-select-option v-for="theme in themes" :value="theme.id"
                                                       :key="theme.id">
                                     {{ theme.name }}
                                 </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="Тип" :state="!form.error('type')"
+                        <b-form-group label="*Намуд" :state="!form.error('type')"
                                       :invalid-feedback="form.error('type')">
                             <b-form-select v-model="form.type" required>
-                                <b-form-select-option :value="null" disabled>-- Выберите тип --</b-form-select-option>
+                                <b-form-select-option :value="null" disabled>-- Намудҳо --</b-form-select-option>
                                 <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                 <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                 <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
@@ -63,7 +63,7 @@
                                 <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили ихтисоси омӯзгорон</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="Забон" :state="!form.error('language')"
+                        <b-form-group label="*Забон" :state="!form.error('language')"
                                       :invalid-feedback="form.error('language')">
                             <b-form-select v-model="form.language" required>
                                 <b-form-select-option value="ru">Русӣ</b-form-select-option>
@@ -71,15 +71,15 @@
                                 <b-form-select-option value="en">Англисӣ</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="Уровень" :state="!form.error('level')"
+                        <b-form-group label="*Мураккабӣ" :state="!form.error('level')"
                                       :invalid-feedback="form.error('level')">
                             <b-form-select v-model="form.level" required>
-                                <b-form-select-option :value="null">-- Выберите уровень --</b-form-select-option>
-                                <b-form-select-option value="easy">Легко</b-form-select-option>
+                                <b-form-select-option :value="null">-- Мураккабӣ --</b-form-select-option>
+                                <b-form-select-option value="easy">Осон</b-form-select-option>
                                 <b-form-select-option value="hard">Сложно</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="Описание" :state="!form.error('description')"
+                        <b-form-group label="Тавсиф" :state="!form.error('description')"
                                       :invalid-feedback="form.error('description')">
                             <b-form-textarea v-model="form.description"></b-form-textarea>
                         </b-form-group>
@@ -104,12 +104,12 @@
                             <b-form-select multiple v-model="form.grades" :select-size="12" required>
                                 <b-form-select-option v-for="grade in grades" :value="grade.id"
                                                       :key="grade.id">
-                                    Синфи {{ grade.name }}
+                                    {{ grade.name }}
                                 </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
 
-                        <b-form-group label="Теги">
+                        <b-form-group label="Барчаспҳо">
                             <suggestion-input displayPropertyName="name"
                                               query-is-first-option
                                               ref="tagInput"
@@ -143,7 +143,7 @@
 
                         </b-form-group>
 
-                        <b-button type="submit" :disabled="form.processing" variant="info">Сохранить</b-button>
+                        <b-button type="submit" :disabled="form.processing" variant="info">Маҳфуз</b-button>
                     </b-form>
                 </b-card-body>
             </b-overlay>
