@@ -28,7 +28,6 @@ class UpdateResourceRequest extends FormRequest
             'theme_id' => 'required|exists:themes,id',
             'type' => 'required|string|max:128',
             'language' => 'required|string|in:ru,tj,en',
-            'level' => 'nullable|string|max:50',
             'roles' => 'nullable|array',
             'roles.*' => 'string|exists:roles,id',
             'grades' => 'nullable|array',

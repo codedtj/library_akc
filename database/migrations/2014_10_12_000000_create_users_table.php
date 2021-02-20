@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreignUuid('avatar_id')->nullable()->references('id')->on('files');
+//            $table->foreignUuid('avatar_id')->nullable()->references('id')->on('files');
         });
     }
 

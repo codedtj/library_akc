@@ -20,7 +20,6 @@ class CreateResourcesTable extends Migration
             $table->string('year', 10)->nullable();
             $table->string('type', 128)->index();
             $table->char('language', 3);
-            $table->string('level', 50)->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_public')->default(false);
             $table->boolean('approved')->default(true);

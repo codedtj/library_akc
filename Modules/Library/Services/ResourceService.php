@@ -76,7 +76,6 @@ class ResourceService
             'category_id' => $data->category_id,
             'theme_id' => $data->theme_id,
             'type' => $data->type,
-            'level' => $data->level,
             'language' => $data->language,
         ];
     }

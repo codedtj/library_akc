@@ -22,8 +22,6 @@ class ResourceDto extends FlexibleDataTransferObject
 
     public string $type;
 
-    public ?string $level;
-
     public string $language;
 
     public bool $is_public;

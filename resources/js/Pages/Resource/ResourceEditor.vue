@@ -71,14 +71,6 @@
                                 <b-form-select-option value="en">Англисӣ</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
-                        <b-form-group label="*Мураккабӣ" :state="!form.error('level')"
-                                      :invalid-feedback="form.error('level')">
-                            <b-form-select v-model="form.level" required>
-                                <b-form-select-option :value="null">-- Мураккабӣ --</b-form-select-option>
-                                <b-form-select-option value="easy">Осон</b-form-select-option>
-                                <b-form-select-option value="hard">Сложно</b-form-select-option>
-                            </b-form-select>
-                        </b-form-group>
                         <b-form-group label="Тавсиф" :state="!form.error('description')"
                                       :invalid-feedback="form.error('description')">
                             <b-form-textarea v-model="form.description"></b-form-textarea>
@@ -177,7 +169,6 @@ export default {
                 theme_id: this.resource?.theme_id ?? null,
                 type: this.resource?.type ?? null,
                 language: this.resource?.language ?? 'ru',
-                level: this.resource?.level ?? null,
                 file: null,
                 cover: null,
                 is_public: this.resource?.is_public ?? false,

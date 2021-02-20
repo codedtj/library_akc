@@ -23,7 +23,6 @@ class CreateResourceRequest extends FormRequest
             'theme_id' => 'required|exists:themes,id',
             'type' => 'required|string|max:128',
             'language' => 'required|string|in:ru,tj,en',
-            'level' => 'nullable|string|max:50',
             'tags' => 'nullable|array',
             'tags.*' => 'string',
             'roles' => 'nullable|array',
