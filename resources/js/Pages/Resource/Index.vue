@@ -43,13 +43,6 @@
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
-                                <b-form-select size="sm" v-model="filters.level">
-                                    <b-form-select-option :value="null">-- Мураккабӣ --</b-form-select-option>
-                                    <b-form-select-option value="easy">Легко</b-form-select-option>
-                                    <b-form-select-option value="hard">Сложно</b-form-select-option>
-                                </b-form-select>
-                            </b-form-group>
-                            <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.category">
                                     <b-form-select-option :value="null">-- Фан --</b-form-select-option>
                                     <b-form-select-option v-for="category in categories" :value="category.id"
@@ -160,7 +153,6 @@ export default {
                 year: null,
                 type: null,
                 language: null,
-                level: null,
                 description: null,
                 category: null,
                 theme: null,
@@ -193,8 +185,6 @@ export default {
                 this.fetchUrl += `&type=${this.filters.type}`;
             if (this.filters.language)
                 this.fetchUrl += `&language=${this.filters.language}`;
-            if (this.filters.level)
-                this.fetchUrl += `&level=${this.filters.level}`;
             if (this.filters.category)
                 this.fetchUrl += `&category=${this.filters.category}`;
             if (this.filters.theme)

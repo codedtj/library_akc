@@ -26,8 +26,6 @@ class FilteredResourceController extends Controller
             $query->where('type', 'like', request('type'));
         if (request('language'))
             $query->where('language', 'like', request('language'));
-        if (request('level'))
-            $query->where('level', 'like', request('level'));
         if (request('description'))
             $query->where('description', 'like', '%' . request('description') . '%');
         if (request('tags')){
