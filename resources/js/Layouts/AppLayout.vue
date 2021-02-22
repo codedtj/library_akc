@@ -32,6 +32,14 @@
                                 :active="route().current('theme-resources.index')">
                         Мавзӯҳо
                     </b-nav-item>
+                    <b-nav-item class="d-md-none" :href="route('about')"
+                                :active="route().current('about')">
+                        Оид ба лоиҳа
+                    </b-nav-item>
+                    <b-nav-item class="d-md-none" :href="route('user-agreement')"
+                                :active="route().current('user-agreement')">
+                        Талаботҳои истифодабарӣ
+                    </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
 
@@ -59,20 +67,37 @@
             </b-container>
         </main>
         <div class="supporters shadow-light">
-            <a href="https://parlament.tj/ru">
-                <b-img style="padding: 6px" src="/images/emblem-tjk.png"></b-img>
-            </a>
-            <a href="https://www.akdn.org/our-agencies/aga-khan-foundation">
-                <b-img src="/images/akf-logo-tjk.png"></b-img>
-            </a>
-            <ul>
-                <li>
-                    <a class="text-secondary text-decoration-none" :href="route('about')">Оид ба лоиҳа</a>
-                </li>
-                <li>
-                    <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Талаботҳои истифодабарӣ</a>
-                </li>
-            </ul>
+            <b-container fluid>
+                <b-form-row>
+                    <div class="col-6 col-md-4">
+                        <a  href="https://parlament.tj/ru" class="text-decoration-none">
+                            <div id="wrapper-for-tjk-logo">
+                                <b-img class="mx-auto mx-md-0" style="padding: 6px" src="/images/emblem-tjk.png"></b-img>
+                                <div class="d-none d-md-flex"><span class="my-auto">Вазорати Маориф ва Илми Ҷумҳурии Тоҷикистон</span></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-md-4 d-flex">
+                        <a  href="https://www.akdn.org/our-agencies/aga-khan-foundation">
+                            <b-img class="mx-auto" src="/images/akf-logo-tjk.png"></b-img>
+                        </a>
+                    </div>
+
+                  <div class="col-md-4 d-none d-md-flex left-section">
+                      <ul>
+                          <li>
+                              <a class="text-secondary text-decoration-none" :href="route('about')">Оид ба лоиҳа</a>
+                          </li>
+                          <li>
+                              <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Талаботҳои истифодабарӣ</a>
+                          </li>
+                      </ul>
+                  </div>
+
+                </b-form-row>
+            </b-container>
+
         </div>
     </div>
 
