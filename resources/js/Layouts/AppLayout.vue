@@ -67,10 +67,10 @@
             </a>
             <ul>
                 <li>
-                    <a class="text-secondary text-decoration-none" :href="route('about')">О проекте</a>
+                    <a class="text-secondary text-decoration-none" :href="route('about')">Оид ба лоиҳа</a>
                 </li>
                 <li>
-                    <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Условия использования</a>
+                    <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Талаботҳои истифодабарӣ</a>
                 </li>
             </ul>
         </div>

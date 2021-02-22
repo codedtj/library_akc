@@ -77,11 +77,11 @@
                         </b-form-group>
                         <b-form-group :state="!form.error('is_public')" :invalid-feedback="form.error('is_public')">
                             <b-form-checkbox class="my-3" v-model="form.is_public" name="check-button" switch>
-                                Доступно всем
+                                Дастрас ба ҳама
                             </b-form-checkbox>
                         </b-form-group>
 
-                        <b-form-group label="Роли" :state="!form.error('roles')"
+                        <b-form-group label="Нақшҳо" :state="!form.error('roles')"
                                       :invalid-feedback="form.error('roles')">
                             <b-form-select multiple v-model="form.roles" :select-size="4" required>
                                 <b-form-select-option v-for="role in roles" :value="role.id"
@@ -91,7 +91,7 @@
                             </b-form-select>
                         </b-form-group>
 
-                        <b-form-group label="Классы" :state="!form.error('grades')"
+                        <b-form-group label="Синфҳо" :state="!form.error('grades')"
                                       :invalid-feedback="form.error('grades')">
                             <b-form-select multiple v-model="form.grades" :select-size="13" required>
                                 <b-form-select-option v-for="grade in grades" :value="grade.id"
