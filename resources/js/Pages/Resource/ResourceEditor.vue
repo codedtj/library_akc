@@ -12,13 +12,20 @@
                                       :invalid-feedback="form.error('title')">
                             <b-form-input v-model="form.title" autofocus></b-form-input>
                         </b-form-group>
-                        <b-form-group label="*Мавод" :state="!form.error('file')"
-                                      :invalid-feedback="form.error('file')">
+                        <b-form-group label="*Мавод" :state="!form.error('file') && validation.file">
                             <file-picker v-model="form.file"></file-picker>
+                            <b-form-invalid-feedback :state="!form.error('file') && validation.file">
+                                <span v-if="!validation.file">Ҷоизи андозаи мавод 300 Мб. </span>
+                                {{ form.error('file') }}
+                            </b-form-invalid-feedback>
                         </b-form-group>
-                        <b-form-group label="*Расм" :state="!form.error('cover')"
-                                      :invalid-feedback="form.error('cover')">
-                            <file-picker v-model="form.cover"></file-picker>
+                        <b-form-group label="*Расм" :state="!form.error('cover') && validation.cover">
+                            <b-form-file accept="image/jpeg, image/png" v-model="form.cover">
+                            </b-form-file>
+                            <b-form-invalid-feedback :state="!form.error('cover') && validation.cover">
+                                <span v-if="!validation.cover">Ҷоизи андозаи расм 1 Мб. </span>
+                                {{ form.error('cover') }}
+                            </b-form-invalid-feedback>
                         </b-form-group>
                         <b-form-group label="*Муаллиф" required :state="!form.error('author')"
                                       :invalid-feedback="form.error('author')">
@@ -41,7 +48,7 @@
                         <b-form-group label="*Мавзӯ" :state="!form.error('theme_id')"
                                       :invalid-feedback="form.error('theme_id')">
                             <b-form-select v-model="form.theme_id" required>
-                                <b-form-select-option :value="null" disabled>--  Мавзӯҳо --</b-form-select-option>
+                                <b-form-select-option :value="null" disabled>-- Мавзӯҳо --</b-form-select-option>
                                 <b-form-select-option v-for="theme in themes" :value="theme.id"
                                                       :key="theme.id">
                                     {{ theme.name }}
@@ -55,12 +62,16 @@
                                 <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                 <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                 <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
-                                <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ</b-form-select-option>
+                                <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ
+                                </b-form-select-option>
                                 <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
                                 <b-form-select-option value="Маводҳои аудиоӣ">Маводҳои аудиоӣ</b-form-select-option>
                                 <b-form-select-option value="Маводҳои соҳавӣ">Маводҳои соҳавӣ</b-form-select-option>
-                                <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ</b-form-select-option>
-                                <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили ихтисоси омӯзгорон</b-form-select-option>
+                                <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ
+                                </b-form-select-option>
+                                <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили
+                                    ихтисоси омӯзгорон
+                                </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
                         <b-form-group label="*Забон" :state="!form.error('language')"
@@ -146,6 +157,7 @@
 <script>
 import FilePicker from "@/Components/Inputs/FilePicker";
 import SuggestionInput from "@/Components/Inputs/SuggestionInput";
+import {getFileExtension} from "@/Util/stringHelper";
 
 export default {
     name: "ResourceEditor",
@@ -180,11 +192,17 @@ export default {
             }, {
                 resetOnSuccess: true
             }),
-            tags: this.resource?.tags ?? []
+            tags: this.resource?.tags ?? [],
+            validation: {
+                cover: true,
+                file: true
+            }
         }
     },
     methods: {
         submit: function () {
+            if (!this.validation.cover || !this.validation.file)
+                return;
             this.$inertia.on('progress', (event) => {
                 this.form.progress = event.detail.progress.percentage
             });
@@ -201,9 +219,9 @@ export default {
                 .finally(this.form.progress = 0)
         },
         update() {
-            this.form
-                .post(route('resources.update', this.form.id).url())
-                .finally(this.form.progress = 0)
+                this.form
+                    .post(route('resources.update', this.form.id).url())
+                    .finally(this.form.progress = 0)
         },
         addNewTag(name) {
             if (!this.tags.find(t => t.name === name))
@@ -221,6 +239,16 @@ export default {
         },
         removeTag(name) {
             this.tags = this.tags.filter(t => t.name !== name);
+        },
+    },
+    watch: {
+        'form.cover'() {
+            this.validation.cover = this.form.cover.size / 1024 / 1024 <= 1;
+        },
+        'form.file'() {
+            let extension = getFileExtension(this.form.file.name);
+            let size = this.form.file.size / 1024 / 1024;
+            this.validation.file = size <= 300 && extension !== "exe";
         }
     }
 }

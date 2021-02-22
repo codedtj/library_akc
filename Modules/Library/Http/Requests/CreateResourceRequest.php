@@ -29,8 +29,8 @@ class CreateResourceRequest extends FormRequest
             'roles.*' => 'string|exists:roles,id',
             'grades' => 'nullable|array',
             'grades.*' => 'string|exists:grades,id',
-            'file' => 'required|file',
-            'cover' => 'required|image',
+            'file' => 'required|file|max:307200',
+            'cover' => 'required|image|max:1024',
         ];
     }
 

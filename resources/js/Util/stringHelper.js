@@ -45,3 +45,7 @@ export function getBaseUri() {
 export function generateId() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
+
+export function getFileExtension(filename){
+    return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+}

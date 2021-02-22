@@ -15,8 +15,8 @@ class UpdateResourceRequest extends FormRequest
     {
         return [
             'id' => 'required|exists:resources,id',
-            'file' => 'nullable|file',
-            'cover' => 'nullable|image',
+            'file' => 'nullable|file|max:307200',
+            'cover' => 'nullable|image|max:1024',
             'tags' => 'nullable|array',
             'tags.*' => 'string',
             'title' => 'required|string',

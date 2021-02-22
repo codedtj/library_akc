@@ -1,7 +1,7 @@
 <template>
     <b-container fluid>
         <b-row>
-            <b-form-file v-bind:value="value"
+            <b-form-file :accept="accept" v-bind:value="value"
                          v-on:change="onChange">
             </b-form-file>
         </b-row>
@@ -14,7 +14,8 @@ export default {
     props:{
         value:{
             default:null
-        }
+        },
+        accept:String
     },
     methods:{
         onChange(e) {
