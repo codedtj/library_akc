@@ -1,10 +1,10 @@
 {
-    "name": "nwidart/shared",
+    "name": "coded/shared",
     "description": "",
     "authors": [
         {
-            "name": "Nicolas Widart",
-            "email": "n.widart@gmail.com"
+            "name": "Sultonazar Mamadazizov",
+            "email": "sultonazar@outlook.com"
         }
     ],
     "extra": {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Shared\\": ""
+            "Modules\\FileManager\\": ""
         }
     }
 }
