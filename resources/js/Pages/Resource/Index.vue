@@ -224,7 +224,7 @@ export default {
 }
 
 .overlay::after {
-    content: "“Хонед, Омӯзед ва Рушд ёбед” – тавассути ин китобхонаи электронӣ.";
+    content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";
     color: white;
     position: absolute;
     text-align: center;
