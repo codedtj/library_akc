@@ -1,7 +1,7 @@
 <template>
     <div class="position-relative">
         <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="dark" variant="info">
-            <b-navbar-brand :href="route('home')" class="d-none d-md-block">Китобхона</b-navbar-brand>
+            <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -11,7 +11,7 @@
                     <b-nav-item v-else :href="route('login')" class="d-md-none">Воридшавӣ</b-nav-item>
 
                     <b-nav-item :href="route('home')" :active="route().current('resources.index')" class="d-md-none">
-                        Китобхона
+                        <span style="font-size: 1rem">КИТОБХОНА</span>
                     </b-nav-item>
 
                     <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Маводҳо" right>
