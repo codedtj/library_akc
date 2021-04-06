@@ -246,9 +246,9 @@ export default {
             this.validation.cover = this.form.cover.size / 1024 / 1024 <= 1;
         },
         'form.file'() {
-            let extension = getFileExtension(this.form.file.name);
-            let size = this.form.file.size / 1024 / 1024;
-            this.validation.file = size <= 300 && extension !== "exe";
+            // let extension = getFileExtension(this.form.file.name);
+            let size = this.form.file.size / 1024 / 1024;console.log(size);
+            this.validation.file = size <= 300;
         }
     }
 }
