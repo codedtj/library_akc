@@ -15,7 +15,7 @@ class UpdateResourceRequest extends FormRequest
     {
         return [
             'id' => 'required|exists:resources,id',
-            'file' => 'required|file|max:307200|mimes:epub,pdf,azw,jpg,djvu,djv,epub,fb2',
+            'file' => 'required|file|max:307200',
             'cover' => 'nullable|image|max:1024',
             'tags' => 'nullable|array',
             'tags.*' => 'string',
