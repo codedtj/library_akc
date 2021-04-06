@@ -113,7 +113,7 @@
                             </b-form-group>
                         </b-row>
                         <b-row align-h="center">
-                            <b-button size="sm" variant="info" @click="filter">Нигоҳ доштан</b-button>
+                            <b-button size="sm" variant="info" @click="filter">Ҷустуҷӯ</b-button>
                         </b-row>
                     </b-container>
 
