@@ -213,38 +213,60 @@ export default {
 </script>
 
 <style>
-.overlay::before {
-    content: "";
-    position: absolute;
-    background-color: #00000066;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
+/*.overlay::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    background-color: #00000066;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
 
 .overlay::after {
     content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";
     color: white;
     position: absolute;
     text-align: center;
-    top: 20%;
+    top: 30%;
     right: 0;
     width: 100%;
     height: 100%;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
+
+/*@media only screen and (min-width: 300px) {*/
+/*    .overlay::after {*/
+/*        top: 20% !important;*/
+/*        font-size: 1rem !important;*/
+/*    }*/
+/*}*/
 
 @media only screen and (min-width: 400px) {
     .overlay::after {
-        top: 30% !important;
+        top: 50% !important;
+        font-size: 1.5rem !important;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .overlay::after {
+        top: 70% !important;
+        font-size: 1.7rem !important;
+    }
+}
+
+@media only screen and (min-width: 670px) {
+    .overlay::after {
+        top: 70% !important;
+        font-size: 2rem !important;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .overlay::after {
         font-size: 1.8rem !important;
-        top: 45% !important;
+        top: 80% !important;
     }
 }
 </style>
