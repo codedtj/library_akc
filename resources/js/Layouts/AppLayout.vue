@@ -1,6 +1,6 @@
 <template>
     <div class="position-relative">
-        <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="dark" variant="info">
+        <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="light" variant="info">
             <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -70,7 +70,7 @@
                         <a  href="https://parlament.tj/ru" class="text-decoration-none">
                             <div id="wrapper-for-tjk-logo">
                                 <b-img class="mx-auto mx-md-0" style="padding: 6px" src="/images/emblem-tjk.png"></b-img>
-                                <div class="d-none d-md-flex"><span class="my-auto">Вазорати Маориф ва Илми Ҷумҳурии Тоҷикистон</span></div>
+                                <div class="d-none d-md-flex"><span class="my-auto">Вазорати маориф ва илми Ҷумҳурии Тоҷикистон</span></div>
                             </div>
                         </a>
                     </div>
