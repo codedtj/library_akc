@@ -63,7 +63,7 @@
                 </b-row>
             </b-container>
         </main>
-        <div class="supporters shadow-light">
+        <div class="supporters">
             <b-container fluid>
                 <b-form-row>
                     <div class="col-6 col-md-4">
