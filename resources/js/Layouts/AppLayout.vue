@@ -1,5 +1,5 @@
 <template>
-    <div class="position-relative">
+    <div class="position-relative h-100">
         <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="light" variant="info">
             <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>
 

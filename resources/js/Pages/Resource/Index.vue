@@ -2,7 +2,7 @@
     <b-container fluid>
         <div class="position-relative">
             <div class="overlay">
-                <b-img class="w-100 " src="/images/main-page-banner.jpg"></b-img>
+                <b-img class="w-100" src="/images/main-page-banner.jpg"></b-img>
             </div>
         </div>
 

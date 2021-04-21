@@ -4,6 +4,10 @@ html, body {
     background: #f8f8f8;
 }
 
+main{
+    min-height: 100%;
+}
+
 .search-box {
     position: relative;
 
@@ -30,8 +34,6 @@ main {
 
 
 .supporters {
-    //position: fixed;
-    //bottom: 0px;
     width: 100%;
     //display: flex;
     //justify-content: space-around;

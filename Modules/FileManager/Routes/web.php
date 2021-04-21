@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('files')->group(function () {
     Route::get('/download/{file}', 'FileDownloadController@download')->name('files.download');
+
+    Route::get('/show/{file}', 'FileViewController@show')->name('files.open');
 });

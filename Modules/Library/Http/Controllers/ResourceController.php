@@ -101,4 +101,11 @@ class ResourceController extends Controller
         $resource->increment('downloads');
         return Redirect::route('files.download', $resource->file_id);
     }
+
+    public function open(Resource $resource): Response
+    {
+        return Inertia::render('FileViewer/BaseView.vue', [
+            'resource' => $resource
+        ]);
+    }
 }

@@ -7,6 +7,7 @@ namespace Modules\FileManager\Http\Controllers;
 
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Modules\FileManager\Models\BaseFile;
 use Modules\FileManager\Services\FileDownloadService;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -22,6 +23,8 @@ class FileDownloadController extends Controller
 
     public function download(BaseFile $file): StreamedResponse
     {
-        return $this->service->download($file);
+        Storage::
+        $path = Storage::disk('local')-($file->path);
+        return $this->service->download($path);
     }
 }
