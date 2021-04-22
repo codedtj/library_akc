@@ -23,8 +23,6 @@ class FileDownloadController extends Controller
 
     public function download(BaseFile $file): StreamedResponse
     {
-        Storage::
-        $path = Storage::disk('local')-($file->path);
-        return $this->service->download($path);
+        return $this->service->download($file);
     }
 }
