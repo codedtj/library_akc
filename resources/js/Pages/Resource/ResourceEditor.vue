@@ -242,6 +242,22 @@ export default {
         },
     },
     watch: {
+        'form.description'(){
+            if(this.form.language === "tj"){
+                this.form.description = this.form.description
+                    .replaceAll('њ', 'ҳ')
+                    .replaceAll('ї', 'ӣ')
+                    .replaceAll('ѓ', 'ғ')
+                    .replaceAll('љ', 'ҷ')
+                    .replaceAll('ќ', 'қ')
+                    .replaceAll('Њ', 'Ҳ')
+                    .replaceAll('Ї', 'Ӣ')
+                    .replaceAll('Ѓ', 'Ғ')
+                    .replaceAll('Љ', 'Ҷ')
+                    .replaceAll('Ќ', 'Қ')
+
+            }
+        },
         'form.cover'() {
             this.validation.cover = this.form.cover.size / 1024 / 1024 <= 1;
         },
