@@ -8,6 +8,10 @@
 <script>
 export default {
     name: "BaseView",
+    mounted() {
+        document.getElementsByClassName('supporters')[0].style.display = 'none';
+        document.getElementsByTagName('main')[0].style.minHeight = 'unset';
+    },
     props: {
         resource: Object
     }
