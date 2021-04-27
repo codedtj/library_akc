@@ -32,6 +32,7 @@ class ThemeSeeder extends Seeder
             'Саргузашт',
             'Афсона',
             'Рассомӣ',
+            'Фарҳанг',
             'Дигар'
         ];
 
