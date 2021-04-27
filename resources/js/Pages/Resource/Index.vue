@@ -213,15 +213,15 @@ export default {
 </script>
 
 <style>
-/*.overlay::before {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    background-color: #00000066;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*}*/
+.overlay::before {
+    content: "";
+    position: absolute;
+    background-color: #00000066;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
 
 .overlay::after {
     content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";
@@ -251,14 +251,14 @@ export default {
 
 @media only screen and (min-width: 500px) {
     .overlay::after {
-        top: 70% !important;
+        top: 40% !important;
         font-size: 1.7rem !important;
     }
 }
 
-@media only screen and (min-width: 670px) {
+@media only screen and (min-width: 680px) {
     .overlay::after {
-        top: 70% !important;
+        top: 50% !important;
         font-size: 2rem !important;
     }
 }
@@ -266,7 +266,7 @@ export default {
 @media only screen and (min-width: 768px) {
     .overlay::after {
         font-size: 1.8rem !important;
-        top: 80% !important;
+        /*top: 80% !important;*/
     }
 }
 </style>
