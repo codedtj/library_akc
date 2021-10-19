@@ -3,7 +3,7 @@
  * @author Sultonazar Mamadazizov <sultonazar.mamadazizov@mail.ru>
  */
 
-namespace Modules\Library\Database\Seeders;
+namespace Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
