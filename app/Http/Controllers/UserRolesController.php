@@ -18,8 +18,7 @@ class UserRolesController extends Controller
     public function update(User $user)
     {
         $data = request()->validate([
-            'roles' => 'required|array',
-            'roles*' => 'string, exists:roles,id'
+            'roles' => 'nullable|array'
         ]);
 
         $user->roles()->sync($data['roles']);

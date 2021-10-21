@@ -95,7 +95,11 @@ export default {
         submit(userId) {
             let overlay = this.$refs['ov' + userId];
             overlay.show = true;
-            let roles = [...this.$refs[userId].options].filter(option => option.selected).map(option => option.value)
+
+            let roles = [...this.$refs[userId].options]
+                .filter(option => option.selected)
+                .map(option => option.value)
+
             axios.post(this.route('user-roles.update', userId), {
                 'roles': roles
             })
