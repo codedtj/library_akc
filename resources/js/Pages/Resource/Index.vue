@@ -1,14 +1,47 @@
 <template>
-    <b-container fluid>
-        <div class="position-relative">
-            <div class="overlay">
-                <b-img class="w-100" src="/images/main-page-banner.jpg"></b-img>
+    <div class="container-fluid">
+        <!--        <div class="position-relative">-->
+        <!--            <div class="overlay">-->
+        <!--                <b-img class="w-100" src="/images/main-page-banner.jpg"></b-img>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="row">
+            <div class="container-fluid pt-5" style="background-color: #01795C; color: white">
+                <div class="row pt-5">
+                    <div class="pl-md-5 col-md-7 pr-md-5">
+                        <h1 class="px-md-4" style="font-size: 2.45rem">“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи
+                            электрони."</h1>
+                    </div>
+                    <div class="col-md-5">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s,
+                        </p>
+                        <div class="d-flex">
+                            <button class="btn btn-outline-primary">Рандом</button>
+                            <button class="btn btn-secondary">Видео</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="container-fluid pt-5 main-page-banner-container position-relative">
+                <img src="/images/main-page-banner.jpg" style="position: relative; z-index: 100" class="w-100">
+            </div>
+        </div>
+        <b-row class="mt-3">
+            <b-container fluid>
+                <button @click="toggleShowFilter" style="color: #01795c; background-color: transparent;border: none; outline: none;">
+                    <span>FILTERS</span>
+                    <img v-if="showFilter" src="/icons/arrow-down.svg">
+                    <img v-else style="transform: rotate(270deg)" src="/icons/arrow-down.svg">
+                </button>
+                <hr class="mt-1">
+            </b-container>
 
-        <b-row>
-            <div class="col-12">
-                <b-jumbotron>
+            <div v-if="showFilter" class="col-12">
+                <b-jumbotron class="bg-info">
                     <b-container fluid>
                         <b-row>
                             <b-form-group class="col-sm-12 col-md-3">
@@ -26,12 +59,16 @@
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                     <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
-                                    <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ</b-form-select-option>
+                                    <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ
+                                    </b-form-select-option>
                                     <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
                                     <b-form-select-option value="Маводҳои аудиоӣ">Маводҳои аудиоӣ</b-form-select-option>
                                     <b-form-select-option value="Маводҳои соҳавӣ">Маводҳои соҳавӣ</b-form-select-option>
-                                    <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ</b-form-select-option>
-                                    <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили ихтисоси омӯзгорон</b-form-select-option>
+                                    <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ
+                                    </b-form-select-option>
+                                    <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили
+                                        ихтисоси омӯзгорон
+                                    </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
@@ -113,7 +150,8 @@
                             </b-form-group>
                         </b-row>
                         <b-row align-h="center">
-                            <b-button size="sm" variant="info" @click="filter">Ҷустуҷӯ</b-button>
+<!--                            <b-button size="sm" variant="info" @click="filter">Ҷустуҷӯ</b-button>-->
+                            <button class="py-1 px-4" style=" border-radius: 7px; color: white; border: 3px solid white;background-color: transparent">Ҷустуҷӯ</button>
                         </b-row>
                     </b-container>
 
@@ -128,7 +166,7 @@
             </resource-masonry-with-data-fetching>
         </b-row>
 
-    </b-container>
+    </div>
 </template>
 
 <script>
@@ -147,6 +185,7 @@ export default {
     },
     data() {
         return {
+            showFilter: true,
             filters: {
                 title: null,
                 author: null,
@@ -164,6 +203,9 @@ export default {
         }
     },
     methods: {
+        toggleShowFilter() {
+          this.showFilter = !this.showFilter
+        },
         onTagSelected(tag) {
             if (!this.filters.tags.find(t => t.name === tag.name))
                 this.filters.tags.push(tag)
@@ -268,5 +310,16 @@ export default {
         font-size: 1.8rem !important;
         /*top: 80% !important;*/
     }
+}
+
+.main-page-banner-container::after{
+    position: absolute;
+    content: '';
+    background-color: #01795c;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
 }
 </style>

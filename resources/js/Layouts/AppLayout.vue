@@ -1,63 +1,77 @@
 <template>
-    <div class="position-relative h-100">
-        <b-navbar sticky class="main-nav shadow-light" toggleable="md" type="light" variant="info">
-            <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>
+    <div class="position-relative h-200">
+<!--        <b-navbar sticky class="main-nav" toggleable="md" type="light" variant="info">-->
+<!--            <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>-->
 
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+<!--            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>-->
 
-            <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav>
-                    <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>
-                    <b-nav-item v-else :href="route('login')" class="d-md-none">Воридшавӣ</b-nav-item>
+<!--            <b-collapse id="nav-collapse" is-nav>-->
+<!--                <b-navbar-nav>-->
+<!--                    <user-nav-item v-if="$page.user" class="d-md-none"></user-nav-item>-->
+<!--                    <b-nav-item v-else :href="route('login')" class="d-md-none">Воридшавӣ</b-nav-item>-->
 
-                    <b-nav-item :href="route('home')" :active="route().current('resources.index')" class="d-md-none">
-                        <span style="font-size: 1rem">КИТОБХОНА</span>
-                    </b-nav-item>
+<!--                    <b-nav-item :href="route('home')" :active="route().current('resources.index')" class="d-md-none">-->
+<!--                        <span style="font-size: 1rem">КИТОБХОНА</span>-->
+<!--                    </b-nav-item>-->
 
-                    <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Маводҳо" right>
-                        <b-dropdown-item variant="info" :href="route('resources.create')"
-                                         :active="route().current('resources.create')">Илова
-                        </b-dropdown-item>
-                    </b-nav-item-dropdown>
-                    <b-nav-item :href="route('grade-resources.index')"
-                                :active="route().current('grade-resources.index')">
-                        Синфҳо
-                    </b-nav-item>
-                    <b-nav-item :href="route('category-resources.index')"
-                                :active="route().current('category-resources.index')">
-                        Фанҳо
-                    </b-nav-item>
+<!--                    <b-nav-item-dropdown v-if="$page.user && $page.menu.resources" text="Маводҳо" right>-->
+<!--                        <b-dropdown-item variant="info" :href="route('resources.create')"-->
+<!--                                         :active="route().current('resources.create')">Илова-->
+<!--                        </b-dropdown-item>-->
+<!--                    </b-nav-item-dropdown>-->
+<!--                    <b-nav-item :href="route('grade-resources.index')"-->
+<!--                                :active="route().current('grade-resources.index')">-->
+<!--                        Синфҳо-->
+<!--                    </b-nav-item>-->
+<!--                    <b-nav-item :href="route('category-resources.index')"-->
+<!--                                :active="route().current('category-resources.index')">-->
+<!--                        Фанҳо-->
+<!--                    </b-nav-item>-->
 
-                    <b-nav-item :href="route('theme-resources.index')"
-                                :active="route().current('theme-resources.index')">
-                        Мавзӯҳо
-                    </b-nav-item>
-                    <b-nav-item class="d-md-none" :href="route('about')"
-                                :active="route().current('about')">
-                        Оид ба лоиҳа
-                    </b-nav-item>
-                    <b-nav-item class="d-md-none" :href="route('user-agreement')"
-                                :active="route().current('user-agreement')">
-                        Талаботҳои истифодабарӣ
-                    </b-nav-item>
-                </b-navbar-nav>
-            </b-collapse>
+<!--                    <b-nav-item :href="route('theme-resources.index')"-->
+<!--                                :active="route().current('theme-resources.index')">-->
+<!--                        Мавзӯҳо-->
+<!--                    </b-nav-item>-->
+<!--                    <b-nav-item class="d-md-none" :href="route('about')"-->
+<!--                                :active="route().current('about')">-->
+<!--                        Оид ба лоиҳа-->
+<!--                    </b-nav-item>-->
+<!--                    <b-nav-item class="d-md-none" :href="route('user-agreement')"-->
+<!--                                :active="route().current('user-agreement')">-->
+<!--                        Талаботҳои истифодабарӣ-->
+<!--                    </b-nav-item>-->
+<!--                </b-navbar-nav>-->
+<!--            </b-collapse>-->
 
-            <b-navbar-nav class="ml-auto">
-                <user-nav-item v-if="$page.user" class="d-none d-md-block"></user-nav-item>
-                <b-nav-item v-else :href="route('login')" class="d-none d-md-block">Воридшавӣ</b-nav-item>
+<!--            <b-navbar-nav class="ml-auto">-->
+<!--                <user-nav-item v-if="$page.user" class="d-none d-md-block"></user-nav-item>-->
+<!--                <b-nav-item v-else :href="route('login')" class="d-none d-md-block">Воридшавӣ</b-nav-item>-->
 
-            </b-navbar-nav>
-        </b-navbar>
+<!--            </b-navbar-nav>-->
+<!--        </b-navbar>-->
+
+        <b-row align-h="center" class="d-none d-md-flex">
+            <div class="MenuBar">
+                <a href="#">СИНФХО</a>
+                <a href="#">ФАНХО</a>
+                <a href="#">МАВЗУХО</a>
+                <div class="animation start-home"></div>
+            </div>
+        </b-row>
+
+        <b-row style="background-color: #01795c" class="d-md-none">
+            <button class="btn-transparent"><img src="/icons/hamburger.svg"> </button>
+        </b-row>
+
         <main>
-            <b-container fluid="md">
-                <b-row class="my-3">
-                    <div class="search-box col-md-4 ml-auto">
-                        <b-input size="sm" placeholder="Ҷустуҷӯи маводҳо" v-model="query" @keyup.enter="search"
-                                 autocomplete="search"></b-input>
-                        <b-icon-search class="search-icon" @click="search"></b-icon-search>
-                    </div>
-                </b-row>
+            <b-container fluid>
+<!--                <b-row class="my-3">-->
+<!--                    <div class="search-box col-md-4 ml-auto">-->
+<!--                        <b-input size="sm" placeholder="Ҷустуҷӯи маводҳо" v-model="query" @keyup.enter="search"-->
+<!--                                 autocomplete="search"></b-input>-->
+<!--                        <b-icon-search class="search-icon" @click="search"></b-icon-search>-->
+<!--                    </div>-->
+<!--                </b-row>-->
                 <b-row>
                     <slot></slot>
                 </b-row>
@@ -107,9 +121,11 @@ import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import UserNavItem from "@/Layouts/UserNavItem";
+import Button from "../Jetstream/Button";
 
 export default {
     components: {
+        Button,
         UserNavItem,
         JetApplicationMark,
         JetDropdown,
@@ -135,3 +151,77 @@ export default {
     }
 }
 </script>
+<style>
+.MenuBar {
+    position: absolute;
+}
+
+.MenuBar a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+.MenuBar .animation {
+    position: absolute;
+    height: 3px;
+    /* height: 5px; */
+    bottom: 0;
+    /* bottom: 0; */
+    z-index: 0;
+    background: white;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+}
+
+.MenuBar a:nth-child(1) {
+    width: 100px;
+}
+
+.MenuBar .start-home, a:nth-child(1):hover ~ .animation {
+    width: 100px;
+    left: 0;
+}
+
+.MenuBar a:nth-child(2) {
+    width: 110px;
+}
+
+.MenuBar a:nth-child(2):hover ~ .animation {
+    width: 110px;
+    left: 100px;
+}
+
+.MenuBar a:nth-child(3) {
+    width: 100px;
+}
+
+.MenuBar a:nth-child(3):hover ~ .animation {
+    width: 100px;
+    left: 210px;
+}
+
+.MenuBar a:nth-child(4) {
+    width: 160px;
+}
+
+.MenuBar a:nth-child(4):hover ~ .animation {
+    width: 160px;
+    left: 310px;
+}
+
+.MenuBar a:nth-child(5) {
+    width: 120px;
+}
+
+.MenuBar a:nth-child(5):hover ~ .animation {
+    width: 120px;
+    left: 470px;
+}
+</style>
