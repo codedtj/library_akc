@@ -9,26 +9,24 @@
             <div class="container-fluid pt-3 pt-md-5" style="background-color: #01795C; color: white">
                 <div class="row pt-md-5">
                     <div class="pl-md-5 col-md-7 pr-md-5">
-                        <h1 class="px-md-4" style="font-size: 2.45rem">“Хонед, омузед ва рушд ёбед” - тавассути ин
-                            китобхонаи
-                            электрони."</h1>
+                        <h1 class="px-md-4" style="font-size: 2.45rem">{{ $t('message.main_page') }}</h1>
                     </div>
                     <div class="col-md-5">
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s,
-                        </p>
-                        <div class="d-flex">
+                        <p> {{ randomQuote }} </p>
+                        <div class="d-flex w-100">
                             <inertia-link :href="route('resources.random')" class="mr-3 text-decoration-none">
-                                <div style="color:black;padding: 5px 20px;background: #edc5eb">
-                                    <img class="mr-2" style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;" src="/icons/dice.svg">
-                                    I feel lucky
+                                <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize" >
+                                    <img class="mr-2"
+                                         style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;"
+                                         src="/icons/dice.svg">
+                                    {{$t('label.i_feel_lucky')}}
                                 </div>
                             </inertia-link>
-                            <inertia-link class="text-decoration-none" :href="route('videos.random')" style="border: solid white 2px">
+                            <inertia-link class="text-decoration-none" :href="route('videos.random')"
+                                          style="border: solid white 2px">
                                 <div style="color:white;padding: 4px 20px;" class="text-capitalize">
                                     <img class="mr-2" style="width: 24px" src="/icons/video.svg">
-                                    video
+                                    {{$t('label.video')}}
                                 </div>
                             </inertia-link>
                         </div>
@@ -202,6 +200,7 @@
 <script>
 import ResourceMasonryWithDataFetching from "@/Components/Resource/ResourceMasonryWithDataFetching";
 import SuggestionInput from "@/Components/Inputs/SuggestionInput";
+import {mapGetters} from "vuex";
 
 export default {
     name: 'Index',
@@ -280,6 +279,41 @@ export default {
             this.$refs['tagInput'].query = '';
             this.$refs['tagInput'].options = [];
         },
+
+    },
+    computed: {
+        randomQuote() {
+
+            let en = [
+                'An investment in knowledge pays the best interest.',
+                'Change is the end result of all true learning.',
+                'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
+                'Education is what remains after one has forgotten what one has learned in school.'
+            ]
+
+            let ru = [
+                'Причина того, что трудно управлять народом, заключается в том, что народ просвещается и в нем много умных.',
+                'Кто достиг высот образования, должен заранее предположить, что большинство будет против него.',
+                'Образованный человек тем и отличается от необразованного, что продолжает считать свое образование незаконченным.',
+                'Человек образованный – тот, кто знает, где найти то, чего он не знает.'
+            ]
+
+            let tj = [
+                'Хонед, хонед боз хонед'
+            ]
+
+            switch (this.LANGUAGE) {
+                case 'tj':
+                    return tj[Math.floor(Math.random() * tj.length)]
+                case 'ru':
+                    return ru[Math.floor(Math.random() * ru.length)]
+                case 'en':
+                    return en[Math.floor(Math.random() * en.length)]
+            }
+        },
+        ...mapGetters([
+            'LANGUAGE',
+        ])
     }
 }
 </script>
@@ -295,17 +329,17 @@ export default {
     height: 100%;
 }
 
-.overlay::after {
-    content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";
-    color: white;
-    position: absolute;
-    text-align: center;
-    top: 30%;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 1.2rem;
-}
+/*.overlay::after {*/
+/*    content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";*/
+/*    color: white;*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    top: 30%;*/
+/*    right: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    font-size: 1.2rem;*/
+/*}*/
 
 .search-btn {
     border-radius: 7px;

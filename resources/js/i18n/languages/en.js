@@ -60,7 +60,12 @@ export default {
         teacher_role: 'teacher',
         admin_role: 'administrator',
         about_us: 'about us',
-        user_agreement: 'user agreement'
+        user_agreement: 'user agreement',
+        video:'video',
+        i_feel_lucky : 'i feel lucky'
 
+    },
+    message:{
+        main_page:'"Study, learn and grow with this electronic library."'
     }
 }

@@ -1,7 +1,7 @@
 export default {
     label: {
         home_btn: 'асосӣ',
-        resource:'мавод | маводҳо',
+        resource: 'мавод | маводҳо',
         library: 'китобхона',
         grade: 'синф | синфҳо',
         subject: 'фан | фанҳо',
@@ -60,6 +60,11 @@ export default {
         teacher_role: 'омӯзгор',
         admin_role: 'администратор',
         about_us: 'оид ба лоиҳа',
-        user_agreement: 'талаботҳои истифодабарӣ'
+        user_agreement: 'талаботҳои истифодабарӣ',
+        video:'видео',
+        i_feel_lucky : 'ман хушбахтам'
     },
+    message: {
+        main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."'
+    }
 }

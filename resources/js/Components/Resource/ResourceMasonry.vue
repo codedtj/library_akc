@@ -8,9 +8,9 @@
                         <div class="title containger-fluid">
                             <div class="form-row">
                                 <div class="col-8">{{ resource.title }}</div>
-                                <a :href="route('resources.open', resource)" class="col-2">
+                                <inertia-link :href="route('resources.open', resource)" class="col-2">
                                     <img class="w-100" src="/icons/book-read.svg">
-                                </a>
+                                </inertia-link>
                                 <a download :href="route('resources.download', resource)" class="col-2">
                                     <img class="w-100" src="/icons/download.svg">
                                 </a>

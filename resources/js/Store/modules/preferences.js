@@ -1,7 +1,11 @@
 const state = {
     language: 'tj'
 };
-const getters = {};
+const getters = {
+    LANGUAGE: state => {
+        return state.language
+    }
+};
 const mutations = {};
 const actions = {
     CHANGE_LANGUAGE: (context, language) => {
