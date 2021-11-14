@@ -56,7 +56,7 @@ export default {
         editor_role: 'редактор',
         parent_role: 'родитель',
         student_role: 'школьник',
-        educator_role: 'educator',
+        educator_role: 'работник системы образования',
         teacher_role: 'учитель',
         admin_role: 'администратор',
         about_us: 'о проекте',
