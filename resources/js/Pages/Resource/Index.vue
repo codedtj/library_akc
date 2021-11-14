@@ -9,7 +9,8 @@
             <div class="container-fluid pt-3 pt-md-5" style="background-color: #01795C; color: white">
                 <div class="row pt-md-5">
                     <div class="pl-md-5 col-md-7 pr-md-5">
-                        <h1 class="px-md-4" style="font-size: 2.45rem">“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи
+                        <h1 class="px-md-4" style="font-size: 2.45rem">“Хонед, омузед ва рушд ёбед” - тавассути ин
+                            китобхонаи
                             электрони."</h1>
                     </div>
                     <div class="col-md-5">
@@ -32,7 +33,8 @@
         </div>
         <b-row class="mt-3">
             <b-container fluid>
-                <button @click="toggleShowFilter" style="color: #01795c; background-color: transparent;border: none; outline: none;">
+                <button @click="toggleShowFilter"
+                        style="color: #01795c; background-color: transparent;border: none; outline: none;">
                     <span>FILTERS</span>
                     <img v-if="showFilter" src="/icons/arrow-down.svg">
                     <img v-else style="transform: rotate(270deg)" src="/icons/arrow-down.svg">
@@ -45,17 +47,21 @@
                     <b-container fluid>
                         <b-row>
                             <b-form-group class="col-sm-12 col-md-3">
-                                <b-form-input size="sm" placeholder="Ном" v-model="filters.title"></b-form-input>
+                                <b-form-input size="sm" :placeholder="$t('label.name')"
+                                              v-model="filters.title"></b-form-input>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
-                                <b-form-input size="sm" placeholder="Муаллиф" v-model="filters.author"></b-form-input>
+                                <b-form-input size="sm" :placeholder="$t('label.author')"
+                                              v-model="filters.author"></b-form-input>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
-                                <b-form-input size="sm" placeholder="Сол" v-model="filters.year"></b-form-input>
+                                <b-form-input size="sm" :placeholder="$t('label.year')"
+                                              v-model="filters.year"></b-form-input>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.type">
-                                    <b-form-select-option :value="null">-- Намудҳо --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $t('label.type') }} --
+                                    </b-form-select-option>
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                     <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
@@ -73,48 +79,53 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.language">
-                                    <b-form-select-option :value="null">-- Забон --</b-form-select-option>
-                                    <b-form-select-option value="ru">Русӣ</b-form-select-option>
-                                    <b-form-select-option value="tj">Тоҷикӣ</b-form-select-option>
-                                    <b-form-select-option value="en">Англисӣ</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $t('label.language') }} --
+                                    </b-form-select-option>
+                                    <b-form-select-option value="ru">{{$t('label.russian_language')}}</b-form-select-option>
+                                    <b-form-select-option value="tj">{{$t('label.tajik_language')}}</b-form-select-option>
+                                    <b-form-select-option value="en">{{$t('label.english_language')}}</b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.category">
-                                    <b-form-select-option :value="null">-- Фан --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $tc('label.subject', 1) }} --
+                                    </b-form-select-option>
                                     <b-form-select-option v-for="category in categories" :value="category.id"
-                                                          :key="category.id">{{ category.name }}
+                                                          :key="category.id">{{ $t('label.' + category.name.replaceAll(' ', '_')) }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.theme">
-                                    <b-form-select-option :value="null">-- Мавзӯъ --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $tc('label.theme', 1) }} --
+                                    </b-form-select-option>
                                     <b-form-select-option v-for="theme in themes" :value="theme.id"
-                                                          :key="theme.id">{{ theme.name }}
+                                                          :key="theme.id">{{theme.name}}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.grade">
-                                    <b-form-select-option :value="null">-- Синф --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $tc('label.grade', 1) }} --
+                                    </b-form-select-option>
                                     <b-form-select-option v-for="grade in grades" :value="grade.id"
-                                                          :key="grade.id">{{ grade.name }}
+                                                          :key="grade.id">{{ $t('label.' + grade.name.replaceAll(' ', '_')) }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.role">
-                                    <b-form-select-option :value="null">-- Истифодабаранда --</b-form-select-option>
+                                    <b-form-select-option :value="null">-- {{ $t('label.user') }} --
+                                    </b-form-select-option>
                                     <b-form-select-option v-for="role in roles" :value="role.id"
-                                                          :key="role.id">{{ role.local_name }}
+                                                          :key="role.id">{{ $t('label.' + role.name + '_role') }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <suggestion-input displayPropertyName="name"
                                                   ref="tagInput"
-                                                  placeholder="Барчаспҳо"
+                                                  :placeholder="$tc('label.tag',2)"
                                                   size="sm"
                                                   @selected="onTagSelected"
                                                   action-url="/tags/filtered/"
@@ -150,8 +161,10 @@
                             </b-form-group>
                         </b-row>
                         <b-row align-h="center">
-<!--                            <b-button size="sm" variant="info" @click="filter">Ҷустуҷӯ</b-button>-->
-                            <button class="py-1 px-4" style=" border-radius: 7px; color: white; border: 3px solid white;background-color: transparent">Ҷустуҷӯ</button>
+                            <button class="text-capitalize py-1 px-4 search-btn"
+                                    @click="filter">
+                                {{ $t('label.search') }}
+                            </button>
                         </b-row>
                     </b-container>
 
@@ -204,7 +217,7 @@ export default {
     },
     methods: {
         toggleShowFilter() {
-          this.showFilter = !this.showFilter
+            this.showFilter = !this.showFilter
         },
         onTagSelected(tag) {
             if (!this.filters.tags.find(t => t.name === tag.name))
@@ -277,6 +290,22 @@ export default {
     font-size: 1.2rem;
 }
 
+.search-btn {
+    border-radius: 7px;
+    color: white;
+    border: 3px solid white;
+    background-color: transparent;
+}
+
+.search-btn:active{
+    box-shadow: inset 0 0 30px -3px rgba(50, 50, 50, 0.75);
+}
+
+.search-btn:focus{
+    outline:none
+}
+
+
 /*@media only screen and (min-width: 300px) {*/
 /*    .overlay::after {*/
 /*        top: 20% !important;*/
@@ -312,7 +341,7 @@ export default {
     }
 }
 
-.main-page-banner-container::after{
+.main-page-banner-container::after {
     position: absolute;
     content: '';
     background-color: #01795c;
@@ -324,7 +353,7 @@ export default {
 }
 
 @media only screen and (min-width: 768px) {
-    .main-page-banner-container::after{
+    .main-page-banner-container::after {
         height: 50%;
     }
 }
