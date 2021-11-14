@@ -19,8 +19,8 @@
                             been the industry's standard dummy text ever since the 1500s,
                         </p>
                         <div class="d-flex">
-                            <button class="btn btn-outline-primary mr-3">Рандом</button>
-                            <button class="btn btn-secondary">Видео</button>
+                            <inertia-link :href="route('resources.random')" class="btn btn-outline-primary mr-3">Рандом</inertia-link>
+                            <inertia-link :href="route('videos.random')" class="btn btn-secondary">Видео</inertia-link>
                         </div>
                     </div>
                 </div>
