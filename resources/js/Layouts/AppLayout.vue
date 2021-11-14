@@ -88,10 +88,10 @@
                   <div class="col-md-4 d-none d-md-flex left-section">
                       <ul>
                           <li>
-                              <a class="text-secondary text-decoration-none" :href="route('about')">Оид ба лоиҳа</a>
+                              <inertia-link class="text-secondary text-decoration-none" :href="route('about')">Оид ба лоиҳа</inertia-link>
                           </li>
                           <li>
-                              <a class="text-secondary text-decoration-none" :href="route('user-agreement')">Талаботҳои истифодабарӣ</a>
+                              <inertia-link class="text-secondary text-decoration-none" :href="route('user-agreement')">Талаботҳои истифодабарӣ</inertia-link>
                           </li>
                       </ul>
                   </div>

@@ -2,9 +2,9 @@
     <b-col md="8" class="mx-auto simple-list">
         <ul>
             <li v-for="grade in grades">
-                <a class="list-item text-capitalize" :href="route('grade-resources.show',grade.id)" :key="grade.id">
+                <inertia-link class="list-item text-capitalize" :href="route('grade-resources.show',grade.id)" :key="grade.id">
                     {{$t('label.' + grade.name.replaceAll(' ', '_')) }}
-                </a>
+                </inertia-link>
             </li>
         </ul>
     </b-col>
