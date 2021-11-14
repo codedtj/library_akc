@@ -7,6 +7,19 @@ export default {
         theme: 'theme | themes',
         sign_in : 'sign in',
         sign_out: 'sign out',
-        dashboard: 'dashboard'
+        dashboard: 'dashboard',
+        preschool: 'preschool',
+        grade_0: 'grade 0',
+        grade_1: 'grade 1',
+        grade_2: 'grade 2',
+        grade_3: 'grade 3',
+        grade_4: 'grade 4',
+        grade_5: 'grade 5',
+        grade_6: 'grade 6',
+        grade_7: 'grade 7',
+        grade_8: 'grade 8',
+        grade_9: 'grade 9',
+        grade_10: 'grade 10',
+        grade_11: 'grade 11',
     }
 }
