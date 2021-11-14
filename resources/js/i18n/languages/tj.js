@@ -1,6 +1,7 @@
 export default {
     label: {
         home_btn: 'асосӣ',
+        resource:'мавод | маводҳо',
         library: 'китобхона',
         grade: 'синф | синфҳо',
         subject: 'фан | фанҳо',

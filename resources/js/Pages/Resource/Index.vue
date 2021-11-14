@@ -19,8 +19,18 @@
                             been the industry's standard dummy text ever since the 1500s,
                         </p>
                         <div class="d-flex">
-                            <inertia-link :href="route('resources.random')" class="btn btn-outline-primary mr-3">Рандом</inertia-link>
-                            <inertia-link :href="route('videos.random')" class="btn btn-secondary">Видео</inertia-link>
+                            <inertia-link :href="route('resources.random')" class="mr-3 text-decoration-none">
+                                <div style="color:black;padding: 5px 20px;background: #edc5eb">
+                                    <img class="mr-2" style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;" src="/icons/dice.svg">
+                                    I feel lucky
+                                </div>
+                            </inertia-link>
+                            <inertia-link class="text-decoration-none" :href="route('videos.random')" style="border: solid white 2px">
+                                <div style="color:white;padding: 4px 20px;" class="text-capitalize">
+                                    <img class="mr-2" style="width: 24px" src="/icons/video.svg">
+                                    video
+                                </div>
+                            </inertia-link>
                         </div>
                     </div>
                 </div>
@@ -81,9 +91,12 @@
                                 <b-form-select size="sm" v-model="filters.language">
                                     <b-form-select-option :value="null">-- {{ $t('label.language') }} --
                                     </b-form-select-option>
-                                    <b-form-select-option value="ru">{{$t('label.russian_language')}}</b-form-select-option>
-                                    <b-form-select-option value="tj">{{$t('label.tajik_language')}}</b-form-select-option>
-                                    <b-form-select-option value="en">{{$t('label.english_language')}}</b-form-select-option>
+                                    <b-form-select-option value="ru">{{ $t('label.russian_language') }}
+                                    </b-form-select-option>
+                                    <b-form-select-option value="tj">{{ $t('label.tajik_language') }}
+                                    </b-form-select-option>
+                                    <b-form-select-option value="en">{{ $t('label.english_language') }}
+                                    </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
@@ -91,7 +104,8 @@
                                     <b-form-select-option :value="null">-- {{ $tc('label.subject', 1) }} --
                                     </b-form-select-option>
                                     <b-form-select-option v-for="category in categories" :value="category.id"
-                                                          :key="category.id">{{ $t('label.' + category.name.replaceAll(' ', '_')) }}
+                                                          :key="category.id">
+                                        {{ $t('label.' + category.name.replaceAll(' ', '_')) }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
@@ -100,7 +114,7 @@
                                     <b-form-select-option :value="null">-- {{ $tc('label.theme', 1) }} --
                                     </b-form-select-option>
                                     <b-form-select-option v-for="theme in themes" :value="theme.id"
-                                                          :key="theme.id">{{theme.name}}
+                                                          :key="theme.id">{{ theme.name }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
@@ -109,7 +123,8 @@
                                     <b-form-select-option :value="null">-- {{ $tc('label.grade', 1) }} --
                                     </b-form-select-option>
                                     <b-form-select-option v-for="grade in grades" :value="grade.id"
-                                                          :key="grade.id">{{ $t('label.' + grade.name.replaceAll(' ', '_')) }}
+                                                          :key="grade.id">
+                                        {{ $t('label.' + grade.name.replaceAll(' ', '_')) }}
                                     </b-form-select-option>
                                 </b-form-select>
                             </b-form-group>
@@ -170,7 +185,9 @@
 
                 </b-jumbotron>
             </div>
-
+        </b-row>
+        <b-row class="text-center">
+            <h2 class="text-uppercase mx-auto">{{ $tc('label.resource', 2) }}</h2>
         </b-row>
         <b-row>
             <resource-masonry-with-data-fetching ref="resources-list"
@@ -297,12 +314,12 @@ export default {
     background-color: transparent;
 }
 
-.search-btn:active{
+.search-btn:active {
     box-shadow: inset 0 0 30px -3px rgba(50, 50, 50, 0.75);
 }
 
-.search-btn:focus{
-    outline:none
+.search-btn:focus {
+    outline: none
 }
 
 

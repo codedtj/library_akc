@@ -1,6 +1,7 @@
 export default {
     label: {
         home_btn: 'home',
+        resource:'resource | resources',
         library: 'library',
         grade: 'grade | grades',
         subject: 'subject | subjects',

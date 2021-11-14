@@ -1,6 +1,7 @@
 export default {
     label: {
         home_btn: 'главная',
+        resource:'ресурс | ресурсы',
         library: 'библиотека',
         grade: 'класс | классы',
         subject: 'предмет | предметы',
