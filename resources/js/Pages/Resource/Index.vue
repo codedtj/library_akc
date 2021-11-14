@@ -6,8 +6,8 @@
         <!--            </div>-->
         <!--        </div>-->
         <div class="row">
-            <div class="container-fluid pt-5" style="background-color: #01795C; color: white">
-                <div class="row pt-5">
+            <div class="container-fluid pt-3 pt-md-5" style="background-color: #01795C; color: white">
+                <div class="row pt-md-5">
                     <div class="pl-md-5 col-md-7 pr-md-5">
                         <h1 class="px-md-4" style="font-size: 2.45rem">“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи
                             электрони."</h1>
@@ -18,7 +18,7 @@
                             been the industry's standard dummy text ever since the 1500s,
                         </p>
                         <div class="d-flex">
-                            <button class="btn btn-outline-primary">Рандом</button>
+                            <button class="btn btn-outline-primary mr-3">Рандом</button>
                             <button class="btn btn-secondary">Видео</button>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="container-fluid pt-5 main-page-banner-container position-relative">
+            <div class="container-fluid pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
                 <img src="/images/main-page-banner.jpg" style="position: relative; z-index: 100" class="w-100">
             </div>
         </div>
@@ -320,6 +320,12 @@ export default {
     left: 0;
     right: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-page-banner-container::after{
+        height: 50%;
+    }
 }
 </style>

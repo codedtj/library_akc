@@ -1,5 +1,6 @@
 <template>
     <div class="position-relative h-200">
+        <navbar></navbar>
 <!--        <b-navbar sticky class="main-nav" toggleable="md" type="light" variant="info">-->
 <!--            <b-navbar-brand :href="route('home')" class="d-none d-md-block"><span style="font-size:1.03rem">КИТОБХОНА</span></b-navbar-brand>-->
 
@@ -50,18 +51,7 @@
 <!--            </b-navbar-nav>-->
 <!--        </b-navbar>-->
 
-        <b-row align-h="center" class="d-none d-md-flex">
-            <div class="MenuBar">
-                <a href="#">СИНФХО</a>
-                <a href="#">ФАНХО</a>
-                <a href="#">МАВЗУХО</a>
-                <div class="animation start-home"></div>
-            </div>
-        </b-row>
 
-        <b-row style="background-color: #01795c" class="d-md-none">
-            <button class="btn-transparent"><img src="/icons/hamburger.svg"> </button>
-        </b-row>
 
         <main>
             <b-container fluid>
@@ -122,9 +112,11 @@ import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import UserNavItem from "@/Layouts/UserNavItem";
 import Button from "../Jetstream/Button";
+import Navbar from "./Navbar";
 
 export default {
     components: {
+        Navbar,
         Button,
         UserNavItem,
         JetApplicationMark,
@@ -152,76 +144,5 @@ export default {
 }
 </script>
 <style>
-.MenuBar {
-    position: absolute;
-}
 
-.MenuBar a {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    line-height: 50px;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    text-align: center;
-}
-
-.MenuBar .animation {
-    position: absolute;
-    height: 3px;
-    /* height: 5px; */
-    bottom: 0;
-    /* bottom: 0; */
-    z-index: 0;
-    background: white;
-    border-radius: 8px;
-    transition: all .5s ease 0s;
-}
-
-.MenuBar a:nth-child(1) {
-    width: 100px;
-}
-
-.MenuBar .start-home, a:nth-child(1):hover ~ .animation {
-    width: 100px;
-    left: 0;
-}
-
-.MenuBar a:nth-child(2) {
-    width: 110px;
-}
-
-.MenuBar a:nth-child(2):hover ~ .animation {
-    width: 110px;
-    left: 100px;
-}
-
-.MenuBar a:nth-child(3) {
-    width: 100px;
-}
-
-.MenuBar a:nth-child(3):hover ~ .animation {
-    width: 100px;
-    left: 210px;
-}
-
-.MenuBar a:nth-child(4) {
-    width: 160px;
-}
-
-.MenuBar a:nth-child(4):hover ~ .animation {
-    width: 160px;
-    left: 310px;
-}
-
-.MenuBar a:nth-child(5) {
-    width: 120px;
-}
-
-.MenuBar a:nth-child(5):hover ~ .animation {
-    width: 120px;
-    left: 470px;
-}
 </style>

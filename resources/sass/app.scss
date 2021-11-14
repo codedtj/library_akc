@@ -1,8 +1,8 @@
-$info: #01795c;
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
-
+@import "variables";
 @import "layout";
 @import "masonry";
 @import "lists";
 @import "main";
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';

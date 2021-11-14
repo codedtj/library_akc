@@ -10,6 +10,7 @@ import { InertiaApp } from '@inertiajs/inertia-vue';
 import { InertiaForm } from 'laravel-jetstream';
 import PortalVue from 'portal-vue';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import {i18n} from './i18n';
 
 
 Vue.use(BootstrapVue)
@@ -22,6 +23,7 @@ Vue.use(PortalVue);
 const app = document.getElementById('app');
 
 new Vue({
+    i18n,
     render: (h) =>
         h(InertiaApp, {
             props: {

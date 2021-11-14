@@ -32,7 +32,6 @@ main {
     padding-bottom: 100px;
 }
 
-
 .supporters {
     width: 100%;
     //display: flex;
@@ -68,15 +67,15 @@ main {
     }
 }
 
-.main-nav {
-    ul {
-        li {
-            .nav-link {
-                text-transform: uppercase;
-            }
-        }
-    }
-}
+//.main-nav {
+//    ul {
+//        li {
+//            .nav-link {
+//                text-transform: uppercase;
+//            }
+//        }
+//    }
+//}
 
 
 @media screen and(max-width: 768px) {
@@ -107,3 +106,11 @@ main {
         padding: 4px 0;
     }
 }
+
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+$hamburger-layer-width:20px;
+$hamburger-layer-spacing:3px;
+$hamburger-layer-color: #ffffff;
+$hamburger-layer-height:3px;
+@import "~hamburgers/_sass/hamburgers/hamburgers";
