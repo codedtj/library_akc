@@ -5,6 +5,7 @@ use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserRolesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect()->route('resources.index');
 })->name('home');
+
+Route::get('/login', function (){
+    return Inertia::render('Auth/Login');
+})->name('login');
 
 Route::resource('users', UsersController::class);
 

@@ -3,13 +3,16 @@
         <b-row align-h="center" align-v="baseline" class="d-none d-md-flex position-relative">
             <div class="c-navbar">
                 <a class="c-nav-item" href="http://maorifvmkb.tj/">{{$t('label.home_btn')}}</a>
-                <a class="c-nav-item" :href="route('home')" :class="{active:route().current('resources.index')}">КИТОБХОНА</a>
-                <a class="c-nav-item" :href="route('grade-resources.index')" :class="{active:route().current('grade-resources.index')}">СИНФХО</a>
-                <a class="c-nav-item" :href="route('category-resources.index')" :class="{active:route().current('category-resources.index')}">ФАНХО</a>
-                <a class="c-nav-item" :href="route('theme-resources.index')" :class="{active:route().current('theme-resources.index')}">МАВЗУХО</a>
+                <inertia-link class="c-nav-item" :href="route('home')" :class="{active:route().current('resources.index')}">
+                    {{ $t('label.library') }}</inertia-link>
+                <inertia-link class="c-nav-item" :href="route('grade-resources.index')" :class="{active:route().current('grade-resources.index')}">
+                    {{ $tc('label.grade', 2) }}</inertia-link>
+                <inertia-link class="c-nav-item" :href="route('category-resources.index')" :class="{active:route().current('category-resources.index')}">{{ $tc('label.subject', 2) }}</inertia-link>
+                <inertia-link class="c-nav-item" :href="route('theme-resources.index')" :class="{active:route().current('theme-resources.index')}">{{ $tc('label.theme', 2) }}</inertia-link>
             </div>
             <div class="c-nav-right">
-                <a class="sign-in-btn text-always-akf-favourite mr-1">Воридшави</a>
+                <user-nav-item v-if="$page.user" class="d-none d-md-block"></user-nav-item>
+                <inertia-link v-else :href="route('login')"  class="sign-in-btn text-always-akf-favourite mr-1">{{ $t('label.sign_in') }}</inertia-link>
                 <lang-selector></lang-selector>
             </div>
 
@@ -32,9 +35,10 @@
 
 <script>
 import LangSelector from "./LangSelector";
+import UserNavItem from "./UserNavItem";
 export default {
     name: "Navbar",
-    components: {LangSelector},
+    components: {UserNavItem, LangSelector},
     data() {
         return {
             menuCollapsed: true

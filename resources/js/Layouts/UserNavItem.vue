@@ -1,32 +1,36 @@
 <template>
-    <b-nav-item-dropdown>
-        <template #button-content>
-            <span class="user-name">{{ $page.user.name }}</span>
-        </template>
-        <b-dropdown-item variant="info" :href="route('dashboard')"
-                         :active="route().current('dashboard')">Шарҳ
-        </b-dropdown-item>
-        <b-dropdown-item variant="info" @click.prevent="logout" href="#">Баромад</b-dropdown-item>
-    </b-nav-item-dropdown>
+  <b-dropdown toggle-class="transparent-btn" right style="padding-top:5px">
+    <template #button-content>
+      <span class="user-name">{{ $page.user.name }}</span>
+    </template>
+    <b-dropdown-item-button variant="info" @click="$inertia.visit(route('dashboard'))"><span
+        class="text-capitalize">{{ $t('label.dashboard') }}</span>
+    </b-dropdown-item-button>
+    <b-dropdown-item-button variant="info" @click.prevent="logout"><span class="text-capitalize">{{
+        $t('label.sign_out')
+      }}</span></b-dropdown-item-button>
+  </b-dropdown>
 </template>
 
 <script>
 export default {
-    name: "UserNavItem",
-    methods: {
-        logout() {
-            axios.post(route('logout').url()).then(_ => {
-                window.location = '/';
-            })
-        },
-    }
+  name: "UserNavItem",
+  methods: {
+    logout() {
+      axios.post(route('logout').url()).then(_ => {
+        this.$inertia.visit(this.route('home'))
+      })
+    },
+  }
 }
 </script>
 <style>
 .user-name {
-    display: inline-block;
-    text-overflow: ellipsis;
-    max-width: 130px;
-    overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  overflow: hidden;
+  color: #ffffffba;
+  text-transform: uppercase;
 }
 </style>
