@@ -1268,6 +1268,23 @@ main {
   color: #01795c;
 }
 
+.transparent-btn {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.transparent-btn:hover,
+.transparent-btn:focus,
+.transparent-btn:active,
+.transparent-btn:active:focus {
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

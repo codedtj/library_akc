@@ -23,3 +23,7 @@
         color: $info
     }
 }
+
+.transparent-btn{
+    @include transparent-btn;
+}

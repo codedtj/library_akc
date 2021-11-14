@@ -4,13 +4,13 @@
             <img class="lng-icon" :src="language.icon">
         </template>
         <b-dropdown-item href="#" @click="changeLanguage('tj')" v-if="language.key !== 'tj'">
-            <img class="lng-icon" src="/images/svg/tj-flag.svg"><span> Тоҷикӣ</span>
+            <img class="lng-icon" src="/icons/tj-flag.svg"><span> Тоҷикӣ</span>
         </b-dropdown-item>
         <b-dropdown-item href="#" @click="changeLanguage('ru')" v-if="language.key !== 'ru'">
-            <img class="lng-icon" src="/images/svg/ru-flag.svg"><span> Русский</span>
+            <img class="lng-icon" src="/icons/ru-flag.svg"><span> Русский</span>
         </b-dropdown-item>
         <b-dropdown-item href="#" @click="changeLanguage('en')" v-if="language.key !== 'en'">
-            <img class="lng-icon" src="/images/svg/gb-flag.svg"><span> English</span>
+            <img class="lng-icon" src="/icons/gb-flag.svg"><span> English</span>
         </b-dropdown-item>
     </b-dropdown>
 </template>
@@ -52,5 +52,7 @@
 </script>
 
 <style scoped>
-
+.lng-icon {
+    width: 28px;
+}
 </style>
