@@ -58,6 +58,8 @@ export default {
         educator_role: 'educator',
         teacher_role: 'teacher',
         admin_role: 'administrator',
+        about_us: 'about us',
+        user_agreement: 'user agreement'
 
     }
 }

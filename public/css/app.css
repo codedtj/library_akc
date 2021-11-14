@@ -1268,6 +1268,14 @@ main {
   color: #01795c;
 }
 
+.first-letter-capitalize {
+  display: block;
+}
+
+.first-letter-capitalize:first-letter {
+  text-transform: uppercase;
+}
+
 .transparent-btn {
   background: none !important;
   outline: none !important;

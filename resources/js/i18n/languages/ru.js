@@ -58,5 +58,7 @@ export default {
         educator_role: 'educator',
         teacher_role: 'учитель',
         admin_role: 'администратор',
+        about_us: 'о проекте',
+        user_agreement: 'пользовательское соглашение'
     }
 }

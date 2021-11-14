@@ -24,6 +24,14 @@
     }
 }
 
-.transparent-btn{
+.first-letter-capitalize{
+    display: block;
+
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.transparent-btn {
     @include transparent-btn;
 }

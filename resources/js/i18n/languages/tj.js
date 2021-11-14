@@ -58,5 +58,7 @@ export default {
         educator_role: 'корманди соҳаи маориф',
         teacher_role: 'омӯзгор',
         admin_role: 'администратор',
+        about_us: 'оид ба лоиҳа',
+        user_agreement: 'талаботҳои истифодабарӣ'
     },
 }

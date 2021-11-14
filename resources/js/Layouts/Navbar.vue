@@ -1,10 +1,13 @@
 <template>
     <b-container fluid class="bg-akf-favourite pb-1">
         <b-row align-h="center" align-v="baseline" class="d-none d-md-flex position-relative">
-            <div class="c-navbar">
-                <a class="c-nav-item" href="http://maorifvmkb.tj/">{{$t('label.home_btn')}}</a>
+            <div class="c-nav-left">
                 <inertia-link class="c-nav-item" :href="route('home')" :class="{active:route().current('resources.index')}">
                     {{ $t('label.library') }}</inertia-link>
+            </div>
+            <div class="c-navbar">
+                <a class="c-nav-item" href="http://maorifvmkb.tj/">{{$t('label.home_btn')}}</a>
+
                 <inertia-link class="c-nav-item" :href="route('grade-resources.index')" :class="{active:route().current('grade-resources.index')}">
                     {{ $tc('label.grade', 2) }}</inertia-link>
                 <inertia-link class="c-nav-item" :href="route('category-resources.index')" :class="{active:route().current('category-resources.index')}">{{ $tc('label.subject', 2) }}</inertia-link>
@@ -52,7 +55,7 @@ export default {
     display: flex;
 }
 
-.c-navbar .c-nav-item {
+.c-nav-item {
     font-size: 1rem;
     color: #ffffffba;
     text-decoration: none;
@@ -99,6 +102,14 @@ export default {
     position: absolute;
     display: flex;
     right: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.c-nav-left{
+    position: absolute;
+    display: flex;
+    left: 0;
     height: 100%;
     align-items: center;
 }
