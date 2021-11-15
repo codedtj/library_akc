@@ -74,7 +74,8 @@ export default {
         my_resources: 'мои ресурсы',
         favourite:'избранное',
         email: 'электронный адрес',
-        add_resource: 'добавить ресурс'
+        add_resource: 'добавить ресурс',
+        filter: 'фильтер | фильтры'
     },
     message: {
         main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”',

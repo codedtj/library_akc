@@ -74,9 +74,8 @@ export default {
         my_resources: 'my resources',
         favourite:'favourite',
         email: 'email',
-        add_resource: 'add resource'
-
-
+        add_resource: 'add resource',
+        filter: 'filter | filters'
     },
     message: {
         main_page: '"Study, learn and grow with this electronic library."',

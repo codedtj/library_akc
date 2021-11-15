@@ -43,7 +43,7 @@
             <b-container fluid>
                 <button @click="toggleShowFilter"
                         style="color: #01795c; background-color: transparent;border: none; outline: none;">
-                    <span>FILTERS</span>
+                    <span class="text-uppercase font-weight-bold">{{$tc('label.filter',2)}}</span>
                     <img v-if="showFilter" src="/icons/arrow-down.svg">
                     <img v-else style="transform: rotate(270deg)" src="/icons/arrow-down.svg">
                 </button>

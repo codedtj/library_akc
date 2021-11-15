@@ -74,7 +74,8 @@ export default {
         my_resources: 'маводҳои ман',
         favourite:'интихобшуда',
         email: 'суроғаи электронӣ',
-        add_resource: 'иловаи мавод'
+        add_resource: 'иловаи мавод',
+        filter: 'филтр | филтрҳо'
     },
     message: {
         main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."',
