@@ -73,7 +73,8 @@ export default {
         my_page: 'my page',
         my_resources: 'my resources',
         favourite:'favourite',
-        email: 'email'
+        email: 'email',
+        add_resource: 'add resource'
 
 
     },

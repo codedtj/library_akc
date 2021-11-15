@@ -5,6 +5,14 @@
                 <b-jumbotron>
                     <b-container fluid>
                         <b-row>
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('resources.create')">
+                                <b-aspect aspect="square" class="tile  shadow-light" style="background: #FFCC33">
+                                    <b-icon-plus-circle font-scale="2" class="tile-icon text-white">
+                                    </b-icon-plus-circle>
+                                    <span class="tile-content first-letter-capitalize">{{$t('label.add_resource')}}</span>
+                                </b-aspect>
+                            </inertia-link>
+
                             <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('profile.show')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #3399CC">
                                     <b-icon-person font-scale="2" class="tile-icon text-white">
