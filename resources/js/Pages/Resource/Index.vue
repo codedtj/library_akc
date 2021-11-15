@@ -12,7 +12,7 @@
                         <h1 class="px-md-4" style="font-size: 2.45rem">{{ $t('message.main_page') }}</h1>
                     </div>
                     <div class="col-md-5">
-                        <p> {{ randomQuote }} </p>
+                        <blockquote><p>"{{ randomQuote }}" </p></blockquote>
                         <div class="d-flex w-100">
                             <inertia-link :href="route('resources.random')" class="mr-3 text-decoration-none">
                                 <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize" >
