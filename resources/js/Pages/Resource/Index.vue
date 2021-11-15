@@ -36,7 +36,21 @@
         </div>
         <div class="row">
             <div class="container-fluid pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
-                <img src="/images/main-page-banner.jpg" style="position: relative; z-index: 100" class="w-100">
+                <b-carousel
+                    id="carousel-fade"
+                    style="text-shadow: 0px 0px 2px #000"
+                    fade
+                    indicators
+                    img-width="1024"
+                    img-height="480"
+                >
+                    <b-carousel-slide
+                        img-src="/images/main-page-carousel-1.JPG"
+                    ></b-carousel-slide>
+                    <b-carousel-slide
+                        img-src="/images/main-page-carousel-2.JPG"
+                    ></b-carousel-slide>
+                </b-carousel>
             </div>
         </div>
         <b-row class="mt-3">
