@@ -33,7 +33,7 @@
                                 <label for="remember_me"></label>
                                 <input id="remember_me" type="checkbox" v-model="form.remember" class="form-checkbox"
                                        name="remember">
-                                <span class="ml-2 first-letter-capitalize">{{$t('label.remember_me')}}</span>
+                                <span class="ml-2">{{$t('label.remember_me')}}</span>
                             </div>
 
                             <div>
