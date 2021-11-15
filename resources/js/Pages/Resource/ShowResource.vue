@@ -51,7 +51,7 @@
                                 {{ $t('label.limited_access') }}</p>
                             <p v-if="resource.year" class="first-letter-capitalize">{{ $t('label.year') }}:
                                 {{ resource.year }}</p>
-                            <p v-if="resource.category" class="first-letter-capitalize">{{$tc('label.subject',1)}}: {{ resource.category.name }}</p>
+                            <p v-if="resource.category" class="first-letter-capitalize">{{$tc('label.subject',1)}}:  {{ $t('label.' + resource.category.name.replaceAll(' ', '_')) }}</p>
                             <p v-if="resource.theme" class="first-letter-capitalize">{{ $tc('label.theme', 1) }}: {{ resource.theme.name }}</p>
                             <p v-if="resource.description">{{ resource.description }}</p>
                             <b-container fluid>
