@@ -1,20 +1,26 @@
 <template>
-    <b-col cols="12">
+    <b-col cols="12 mt-5">
         <b-container fluid class="mb-3">
             <b-row>
                 <b-col class="ml-auto mb-2 mb-md-0" cols="md-3">
-                    <b-input size="sm" placeholder="Ном" v-model="name"></b-input>
+                    <b-input size="sm" :placeholder="$tc('label.name')" v-model="name"></b-input>
                 </b-col>
                 <b-col class="mb-2 mb-md-0" cols="md-3">
-                    <b-input size="sm" placeholder="Суроғаи электронӣ" v-model="email"></b-input>
+                    <b-input size="sm" :placeholder="$tc('label.email')" v-model="email"></b-input>
                 </b-col>
-                <b-button size="sm" class="ml-auto ml-md-0 mr-3 mr-md-0" variant="info" @click="filter">Ҷустуҷӯ</b-button>
+                <b-button size="sm" class="ml-auto ml-md-0 mr-3 mr-md-0 first-letter-capitalize" variant="info" @click="filter">{{ $t('label.search') }}</b-button>
             </b-row>
         </b-container>
         <b-table primary-key="id" stacked="sm" head-variant="info" responsive
                  bordered striped hover :items="users"
                  :fields="fields">
 
+            <template #head(name)>
+                <span class="first-letter-capitalize">{{$tc('label.name')}}</span>
+            </template>
+            <template #head(email)>
+                <span class="first-letter-capitalize">{{$tc('label.email')}}</span>
+            </template>
             <template #cell(actions)="row">
                 <b-button variant="info" size="sm" @click="row.toggleDetails">
                     <b-icon-people></b-icon-people>
@@ -31,8 +37,8 @@
                             </option>
                         </select>
                         <div class="d-flex">
-                            <b-button size="sm" class="ml-auto mt-3" variant="info" @click="submit(row.item.id)">
-                                Маҳфуз
+                            <b-button size="sm" class="ml-auto mt-3 first-letter-capitalize" variant="info" @click="submit(row.item.id)">
+                                {{$t('label.submit')}}
                             </b-button>
                         </div>
                     </div>
@@ -63,11 +69,11 @@ export default {
             fields: [
                 {
                     key: 'name',
-                    label: 'Ном'
+                    label: this.$t('label.name')
                 },
                 {
                     key: 'email',
-                    label: 'Суроғаи электронӣ'
+                    label: this.$t('label.email')
                 },
                 {
                     key: 'actions',

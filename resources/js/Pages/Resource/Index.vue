@@ -68,7 +68,7 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.type">
-                                    <b-form-select-option :value="null">-- {{ $t('label.type') }} --
+                                    <b-form-select-option :value="null">-- {{ $tc('label.type') }} --
                                     </b-form-select-option>
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
@@ -128,7 +128,7 @@
                             </b-form-group>
                             <b-form-group class="col-sm-12 col-md-3">
                                 <b-form-select size="sm" v-model="filters.role">
-                                    <b-form-select-option :value="null">-- {{ $t('label.user') }} --
+                                    <b-form-select-option :value="null">-- {{ $tc('label.user') }} --
                                     </b-form-select-option>
                                     <b-form-select-option v-for="role in roles" :value="role.id"
                                                           :key="role.id">{{ $t('label.' + role.name + '_role') }}

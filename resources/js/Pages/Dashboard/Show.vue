@@ -5,29 +5,29 @@
                 <b-jumbotron>
                     <b-container fluid>
                         <b-row>
-                            <a class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('profile.show')">
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('profile.show')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #3399CC">
                                     <b-icon-person font-scale="2" class="tile-icon text-white">
                                     </b-icon-person>
                                     <span class="tile-content first-letter-capitalize">{{$t('label.my_page')}}</span>
                                 </b-aspect>
-                            </a>
+                            </inertia-link>
 
-                            <a class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('my-resources')">
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('my-resources')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #339999">
                                     <b-icon-collection font-scale="2" class="tile-icon text-white">
                                     </b-icon-collection>
                                     <span class="tile-content first-letter-capitalize">{{$t('label.my_resources')}}</span>
                                 </b-aspect>
-                            </a>
+                            </inertia-link>
 
-                            <a class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('favourite.index')">
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('favourite.index')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #ff0099">
                                     <b-icon-bookmark-heart font-scale="2" class="tile-icon text-white">
                                     </b-icon-bookmark-heart>
                                     <span class="tile-content first-letter-capitalize">{{$t('label.favourite')}}</span>
                                 </b-aspect>
-                            </a>
+                            </inertia-link>
                         </b-row>
                     </b-container>
                 </b-jumbotron>
@@ -36,13 +36,13 @@
                 <b-jumbotron>
                     <b-container fluid>
                         <b-row>
-                            <a class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('users.index')">
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('users.index')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #33CCCC">
                                     <b-icon-people font-scale="2" class="tile-icon text-white">
                                     </b-icon-people>
                                     <span class="tile-content first-letter-capitalize">{{$tc('label.user',2)}}</span>
                                 </b-aspect>
-                            </a>
+                            </inertia-link>
                         </b-row>
                     </b-container>
                 </b-jumbotron>
