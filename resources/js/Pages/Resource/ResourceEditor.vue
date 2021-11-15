@@ -1,5 +1,5 @@
 <template>
-    <b-col md="8" class="mx-auto">
+    <b-col md="8" class="mx-auto mt-5">
         <b-card header="Иловаи мавод">
             <b-overlay :show="form.processing" rounded="lg">
                 <template #overlay class="w-100">

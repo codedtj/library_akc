@@ -1,5 +1,5 @@
 <template>
-    <b-container>
+    <b-container style="height: 100vh">
         <iframe allowfullscreen :src="route('files.open', resource.file_id)"/>
     </b-container>
 
@@ -25,6 +25,6 @@ iframe {
     left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 60px;
+    padding-top: 46px;
 }
 </style>

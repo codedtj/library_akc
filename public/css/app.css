@@ -2,9 +2,8 @@
 
 html,
 body {
-  height: 100%;
   width: 100%;
-  background: #f8f8f8;
+  background: #9c9696;
 }
 
 main {
@@ -36,8 +35,9 @@ main {
 }
 
 .supporters {
+  border-top: solid #01795c;
+  border-bottom: solid #01795c;
   width: 100%;
-  height: 80px;
   padding: 5px;
   background: #ffffff;
 }

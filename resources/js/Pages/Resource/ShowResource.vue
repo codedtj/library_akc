@@ -1,5 +1,5 @@
 <template>
-    <b-col class="mx-auto" lg="10">
+    <b-col class="mx-auto mt-5" lg="10">
         <b-card>
             <b-container fluid>
                 <b-row>

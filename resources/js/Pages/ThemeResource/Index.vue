@@ -1,5 +1,5 @@
 <template>
-    <b-col md="8" class="mx-auto simple-list">
+    <b-col md="8" class="mx-auto mt-5 simple-list">
         <ul>
             <li v-for="theme in themes">
                 <inertia-link class="list-item" :href="route('theme-resources.show',theme.id)" :key="theme.id">

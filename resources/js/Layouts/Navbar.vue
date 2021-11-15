@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid class="bg-akf-favourite pb-1">
+    <b-container fluid class="bg-akf-favourite pb-1 position-relative" style="z-index: 100">
         <b-row align-h="center" align-v="baseline" class="d-none d-md-flex position-relative">
             <div class="c-nav-left">
                 <inertia-link class="c-nav-item" :href="route('home')"
