@@ -87,7 +87,7 @@ export default {
         max_resource_size_error: 'максимально допустимый размер ресурса 300 мб.',
         max_cover_size_error: 'максимально допустимый размер обложки 1 мб.',
         no_file_chosen: 'файл не выбран',
-        sign_up_if_needed: 'Запомнить меня'
+        sign_up_if_needed: 'Нет аккаунта? Зарегистрирурйтесь'
     }
 
 }
