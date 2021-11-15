@@ -46,6 +46,7 @@ export default {
         physical_culture: 'физкультура',
         other: 'другие',
         name: 'название',
+        person_name: 'имя',
         author: 'автор',
         year: 'год',
         type: 'тип | типы',

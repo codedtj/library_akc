@@ -46,6 +46,7 @@ export default {
         physical_culture: 'physical culture',
         other: 'other',
         name: 'name',
+        person_name: 'name',
         author: 'author',
         year: 'year',
         type: 'type | types',

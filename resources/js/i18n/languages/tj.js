@@ -46,6 +46,7 @@ export default {
         physical_culture: 'тарбияи ҷисмонӣ',
         other: 'дигарҳо',
         name: 'ном',
+        person_name: 'ном',
         author: 'муаллиф',
         year: 'сол',
         type: 'намуд | намудҳо',

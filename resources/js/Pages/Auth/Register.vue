@@ -14,7 +14,7 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name" class="first-letter-capitalize">{{ $tc('label.name') }}</label>
+                            <label for="name" class="first-letter-capitalize">{{ $tc('label.person_name') }}</label>
                             <input class="form-control"
                                    :class="{'is-invalid': form.error('name')}" id="name" name="name"
                                    v-model="form.name" required autofocus
