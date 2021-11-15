@@ -1,12 +1,12 @@
 export default {
     label: {
         home_btn: 'home',
-        resource:'resource | resources',
+        resource: 'resource | resources',
         library: 'library',
         grade: 'grade | grades',
         subject: 'subject | subjects',
         theme: 'theme | themes',
-        sign_in : 'sign in',
+        sign_in: 'sign in',
         sign_out: 'sign out',
         dashboard: 'dashboard',
         preschool: 'preschool',
@@ -36,22 +36,23 @@ export default {
         tajik_literature: 'tajik literature',
         world_literature: 'world literature',
         information_technology: 'information technology',
-        economy:'economy',
-        management:'management',
-        science_of_nature:'science of nature',
-        law:'law',
-        reading:'reading',
-        labor_technology:'labor technology',
-        physical_culture:'physical culture',
-        other:'other',
+        economy: 'economy',
+        management: 'management',
+        science_of_nature: 'science of nature',
+        law: 'law',
+        reading: 'reading',
+        labor_technology: 'labor technology',
+        physical_culture: 'physical culture',
+        other: 'other',
         name: 'name',
         author: 'author',
         year: 'year',
-        type: 'type',
+        type: 'type | types',
         language: 'language',
         user: 'user',
         tag: 'tag | tags',
         search: 'search',
+        role: 'role | roles',
         moderator_role: 'moderator',
         editor_role: 'editor',
         parent_role: 'parent',
@@ -61,12 +62,20 @@ export default {
         admin_role: 'administrator',
         about_us: 'about us',
         user_agreement: 'user agreement',
-        video:'video',
-        i_feel_lucky : 'i feel lucky',
-        limited_access: 'limited access'
+        video: 'video',
+        i_feel_lucky: 'i feel lucky',
+        limited_access: 'limited access',
+        cover: 'cover',
+        description: 'description',
+        public_access: 'public access',
+        browse: 'browse',
+        submit:'submit'
 
     },
-    message:{
-        main_page:'"Study, learn and grow with this electronic library."'
+    message: {
+        main_page: '"Study, learn and grow with this electronic library."',
+        max_resource_size_error: 'resource cannot be greater than 300 mb',
+        max_cover_size_error: 'cover cannot be greater than 1 mb',
+        no_file_chosen: 'no file chosen'
     }
 }

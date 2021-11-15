@@ -1,7 +1,7 @@
 export default {
     label: {
         home_btn: 'главная',
-        resource:'ресурс | ресурсы',
+        resource: 'ресурс | ресурсы',
         library: 'библиотека',
         grade: 'класс | классы',
         subject: 'предмет | предметы',
@@ -47,11 +47,12 @@ export default {
         name: 'название',
         author: 'автор',
         year: 'год',
-        type: 'тип',
+        type: 'тип | типы',
         language: 'язык',
         user: 'пользователь',
         tag: 'тег | теги',
         search: 'поиск',
+        role:'роль | роли',
         moderator_role: 'модератор',
         editor_role: 'редактор',
         parent_role: 'родитель',
@@ -61,11 +62,20 @@ export default {
         admin_role: 'администратор',
         about_us: 'о проекте',
         user_agreement: 'пользовательское соглашение',
-        video:'видео',
-        i_feel_lucky : 'мне повезет',
-        limited_access: 'ограниченный доступ'
+        video: 'видео',
+        i_feel_lucky: 'мне повезет',
+        limited_access: 'ограниченный доступ',
+        cover:'обложка',
+        description: 'описание',
+        public_access: 'открытый доступ',
+        browse: 'обзор',
+        submit:'отправить'
     },
     message: {
-        main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”'
+        main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”',
+        max_resource_size_error: 'максимально допустимый размер ресурса 300 мб.',
+        max_cover_size_error: 'максимально допустимый размер обложки 1 мб.',
+        no_file_chosen: 'файл не выбран'
     }
+
 }

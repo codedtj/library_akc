@@ -1,7 +1,7 @@
 <template>
     <b-container fluid>
         <b-row>
-            <b-form-file :accept="accept" v-bind:value="value"
+            <b-form-file :browse-text="$t('label.browse')" :placeholder="$t('message.no_file_chosen')" :accept="accept" v-bind:value="value"
                          v-on:change="onChange">
             </b-form-file>
         </b-row>

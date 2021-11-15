@@ -47,11 +47,12 @@ export default {
         name: 'ном',
         author: 'муаллиф',
         year: 'сол',
-        type: 'намуд',
+        type: 'намуд | намудҳо',
         language: 'забон',
         user: 'истифодабаранда',
         tag: 'барчасп | барчаспҳо',
         search: 'ҷустуҷӯ',
+        role:'нақш | нақшҳо',
         moderator_role: 'модератор',
         editor_role: 'редактор',
         parent_role: 'волидайн',
@@ -61,11 +62,19 @@ export default {
         admin_role: 'администратор',
         about_us: 'оид ба лоиҳа',
         user_agreement: 'талаботҳои истифодабарӣ',
-        video:'видео',
-        i_feel_lucky : 'ман хушбахтам',
-        limited_access: 'дастрасии маҳдуд'
+        video: 'видео',
+        i_feel_lucky: 'ман хушбахтам',
+        limited_access: 'дастрасии маҳдуд',
+        cover: 'расм',
+        description: 'тавсиф',
+        public_access: 'дастрас ба ҳама',
+        browse: 'назар гузаронед',
+        submit:'маҳфуз'
     },
     message: {
-        main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."'
+        main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."',
+        max_resource_size_error: 'Ҷоизи андозаи мавод 300 Мб.',
+        max_cover_size_error: 'Ҷоизи андозаи расм 1 Мб.',
+        no_file_chosen: 'файл интихоб нашудааст'
     }
 }
