@@ -1,6 +1,9 @@
 <template>
     <b-col md="8" class="mx-auto mt-5">
-        <b-card header="Иловаи мавод">
+        <b-card>
+            <template #header>
+                <h6 class="first-letter-capitalize">{{$t('label.add_resource')}}</h6>
+            </template>
             <b-overlay :show="form.processing" rounded="lg">
                 <template #overlay class="w-100">
                     <b-progress variant="info" style="width: 250px" :value="form.progress"
