@@ -7,6 +7,7 @@ export default {
         subject: 'subject | subjects',
         theme: 'theme | themes',
         sign_in: 'sign in',
+        sign_up: 'sign up',
         sign_out: 'sign out',
         dashboard: 'dashboard',
         preschool: 'preschool',
@@ -77,6 +78,7 @@ export default {
         add_resource: 'add resource',
         filter: 'filter | filters',
         password: 'password',
+        confirm_password: 'confirm password',
         remember_me: 'remember me'
     },
     message: {

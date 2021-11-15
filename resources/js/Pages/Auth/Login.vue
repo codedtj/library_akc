@@ -37,7 +37,7 @@
                             </div>
 
                             <div>
-                                <a :href="route('register')">{{$t('message.sign_up_if_needed')}}</a>
+                                <inertia-link :href="route('register')">{{$t('message.sign_up_if_needed')}}</inertia-link>
                             </div>
 
                             <div class="flex items-center justify-end mt-4">

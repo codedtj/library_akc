@@ -7,6 +7,7 @@ export default {
         subject: 'предмет | предметы',
         theme: 'тема | темы',
         sign_in: 'войти',
+        sign_up: 'регистрация',
         sign_out: 'выйти',
         dashboard: 'обзор',
         preschool: 'дошкольное',
@@ -77,6 +78,7 @@ export default {
         add_resource: 'добавить ресурс',
         filter: 'фильтер | фильтры',
         password: 'пароль',
+        confirm_password: 'подтвердите пароль',
         remember_me: 'запомнить меня'
     },
     message: {

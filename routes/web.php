@@ -26,6 +26,10 @@ Route::get('/login', function (){
     return Inertia::render('Auth/Login');
 })->name('login');
 
+Route::get('/register', function (){
+    return Inertia::render('Auth/Register');
+})->name('register');
+
 Route::resource('users', UsersController::class);
 
 Route::post('/roles/{user}', [UserRolesController::class, 'update'])->name('user-roles.update');

@@ -7,6 +7,7 @@ export default {
         subject: 'фан | фанҳо',
         theme: 'мавзӯ | мавзӯҳо',
         sign_in: 'воридшави',
+        sign_up: 'бақайдгирӣ',
         sign_out: 'баромад',
         dashboard: 'шарҳ',
         preschool: 'томактабӣ',
@@ -77,6 +78,7 @@ export default {
         add_resource: 'иловаи мавод',
         filter: 'филтр | филтрҳо',
         password: 'рамз',
+        confirm_password: 'рамзро тасдиқ кунед',
         remember_me: 'дар хотира маро нигаҳ дор'
     },
     message: {
