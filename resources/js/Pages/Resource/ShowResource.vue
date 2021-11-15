@@ -26,16 +26,16 @@
                             </b-row>
                         </b-container>
 
-                        <a class="btn btn-info mr-2" target="_blank" :href="route('resources.open', resource.id)">
+                        <inertia-link class="btn btn-info mr-2" target="_blank" :href="route('resources.open', resource.id)">
                             <b-icon-file-earmark-text></b-icon-file-earmark-text>
-                        </a>
-                        <a class="btn btn-info mr-2" download :href="route('resources.download', resource.id)">
+                        </inertia-link>
+                        <inertia-link class="btn btn-info mr-2" download :href="route('resources.download', resource.id)">
                             <b-icon-arrow-down></b-icon-arrow-down>
-                        </a>
+                        </inertia-link>
                         <template v-if="resource.is_editable">
-                            <a class="btn btn-info mr-2" :href="route('resources.edit', resource.id)">
+                            <inertia-link class="btn btn-info mr-2" :href="route('resources.edit', resource.id)">
                                 <b-icon-pencil></b-icon-pencil>
-                            </a>
+                            </inertia-link>
                             <b-button @click="destroy">
                                 <b-icon-trash></b-icon-trash>
                             </b-button>
