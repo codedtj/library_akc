@@ -62,7 +62,8 @@ export default {
         about_us: 'о проекте',
         user_agreement: 'пользовательское соглашение',
         video:'видео',
-        i_feel_lucky : 'мне повезет'
+        i_feel_lucky : 'мне повезет',
+        limited_access: 'ограниченный доступ'
     },
     message: {
         main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”'

@@ -62,7 +62,8 @@ export default {
         about_us: 'оид ба лоиҳа',
         user_agreement: 'талаботҳои истифодабарӣ',
         video:'видео',
-        i_feel_lucky : 'ман хушбахтам'
+        i_feel_lucky : 'ман хушбахтам',
+        limited_access: 'дастрасии маҳдуд'
     },
     message: {
         main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."'

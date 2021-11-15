@@ -19,38 +19,40 @@
                         <b-container fluid class="text-secondary mb-2">
                             <b-row align-v="baseline">
                                 <b-icon-eye class="mr-1" shift-v="-2"></b-icon-eye>
-                                <span class="mr-3">{{resource.views}}</span>
+                                <span class="mr-3">{{ resource.views }}</span>
 
                                 <b-icon-download class="mr-1" shift-v="-2"></b-icon-download>
-                                <span>{{resource.downloads}}</span>
+                                <span>{{ resource.downloads }}</span>
                             </b-row>
                         </b-container>
 
-                            <a class="btn btn-info mr-2" target="_blank" :href="route('resources.open', resource.id)">
-                                <b-icon-file-earmark-text></b-icon-file-earmark-text>
+                        <a class="btn btn-info mr-2" target="_blank" :href="route('resources.open', resource.id)">
+                            <b-icon-file-earmark-text></b-icon-file-earmark-text>
+                        </a>
+                        <a class="btn btn-info mr-2" download :href="route('resources.download', resource.id)">
+                            <b-icon-arrow-down></b-icon-arrow-down>
+                        </a>
+                        <template v-if="resource.is_editable">
+                            <a class="btn btn-info mr-2" :href="route('resources.edit', resource.id)">
+                                <b-icon-pencil></b-icon-pencil>
                             </a>
-                            <a class="btn btn-info mr-2" download :href="route('resources.download', resource.id)">
-                                <b-icon-arrow-down></b-icon-arrow-down>
-                            </a>
-                            <template v-if="resource.is_editable">
-                                <a class="btn btn-info mr-2" :href="route('resources.edit', resource.id)">
-                                    <b-icon-pencil></b-icon-pencil>
-                                </a>
-                                <b-button @click="destroy">
-                                    <b-icon-trash></b-icon-trash>
-                                </b-button>
-                            </template>
+                            <b-button @click="destroy">
+                                <b-icon-trash></b-icon-trash>
+                            </b-button>
+                        </template>
 
 
                     </b-col>
                     <b-col>
                         <div>
                             <h1>{{ resource.title }}</h1>
-                            <h3>Муаллиф: {{ resource.author }}</h3>
-                            <p class="bg-danger pb-1 px-1" v-if="!resource.is_public">Дастрасии маҳдуд</p>
-                            <p v-if="resource.year">Сол: {{ resource.year }}</p>
-                            <p v-if="resource.category">Фан: {{ resource.category.name }}</p>
-                            <p v-if="resource.theme">Мавзӯ: {{ resource.theme.name }}</p>
+                            <h3 class="first-letter-capitalize">{{ $t('label.author') }}:{{ resource.author }}</h3>
+                            <p class="bg-danger pb-1 px-1 first-letter-capitalize" v-if="!resource.is_public">
+                                {{ $t('label.limited_access') }}</p>
+                            <p v-if="resource.year" class="first-letter-capitalize">{{ $t('label.year') }}:
+                                {{ resource.year }}</p>
+                            <p v-if="resource.category" class="first-letter-capitalize">{{$tc('label.subject',1)}}: {{ resource.category.name }}</p>
+                            <p v-if="resource.theme" class="first-letter-capitalize">{{ $tc('label.theme', 1) }}: {{ resource.theme.name }}</p>
                             <p v-if="resource.description">{{ resource.description }}</p>
                             <b-container fluid>
                                 <b-row>

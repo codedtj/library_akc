@@ -62,7 +62,8 @@ export default {
         about_us: 'about us',
         user_agreement: 'user agreement',
         video:'video',
-        i_feel_lucky : 'i feel lucky'
+        i_feel_lucky : 'i feel lucky',
+        limited_access: 'limited access'
 
     },
     message:{
