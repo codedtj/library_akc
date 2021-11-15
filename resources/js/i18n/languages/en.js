@@ -49,7 +49,7 @@ export default {
         year: 'year',
         type: 'type | types',
         language: 'language',
-        user: 'user',
+        user: 'user | users',
         tag: 'tag | tags',
         search: 'search',
         role: 'role | roles',
@@ -69,7 +69,11 @@ export default {
         description: 'description',
         public_access: 'public access',
         browse: 'browse',
-        submit:'submit'
+        submit:'submit',
+        my_page: 'my page',
+        my_resources: 'my resources',
+        favourite:'favourite',
+
 
     },
     message: {

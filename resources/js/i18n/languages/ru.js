@@ -49,7 +49,7 @@ export default {
         year: 'год',
         type: 'тип | типы',
         language: 'язык',
-        user: 'пользователь',
+        user: 'пользователь | пользователи',
         tag: 'тег | теги',
         search: 'поиск',
         role:'роль | роли',
@@ -69,7 +69,10 @@ export default {
         description: 'описание',
         public_access: 'открытый доступ',
         browse: 'обзор',
-        submit:'отправить'
+        submit:'отправить',
+        my_page: 'мой профиль',
+        my_resources: 'мои ресурсы',
+        favourite:'избранное',
     },
     message: {
         main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”',
