@@ -35,8 +35,8 @@
 
 
         <div class="d-md-none">
-            <b-row align-h="center" class="py-3">
-                <button class="hamburger hamburger--spin js-hamburger mr-3"
+            <b-row class="py-3 position-relative">
+                <button class="hamburger hamburger--spin js-hamburger mx-3"
                         @click="menuCollapsed = !menuCollapsed"
                         :class="{'is-active': !menuCollapsed}"
                         type="button">
@@ -44,6 +44,14 @@
                         <span class="hamburger-inner"></span>
                       </span>
                 </button>
+
+                <div class="c-nav-right">
+                    <user-nav-item v-if="$page.user"></user-nav-item>
+                    <inertia-link v-else :href="route('login')" class="sign-in-btn text-always-akf-favourite mr-1">
+                        {{ $t('label.sign_in') }}
+                    </inertia-link>
+                    <lang-selector></lang-selector>
+                </div>
             </b-row>
 
             <div class="collapsed-menu pb-3" v-show="!menuCollapsed">
@@ -138,6 +146,7 @@ export default {
     position: absolute;
     display: flex;
     right: 0;
+    top:0;
     height: 100%;
     align-items: center;
 }
