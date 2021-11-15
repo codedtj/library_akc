@@ -75,12 +75,15 @@ export default {
         favourite:'интихобшуда',
         email: 'суроғаи электронӣ',
         add_resource: 'иловаи мавод',
-        filter: 'филтр | филтрҳо'
+        filter: 'филтр | филтрҳо',
+        password: 'рамз',
+        remember_me: 'дар хотира маро нигаҳ дор'
     },
     message: {
         main_page: '“Хонед, омузед ва рушд ёбед” - тавассути ин китобхонаи электрони."',
         max_resource_size_error: 'Ҷоизи андозаи мавод 300 Мб.',
         max_cover_size_error: 'Ҷоизи андозаи расм 1 Мб.',
-        no_file_chosen: 'файл интихоб нашудааст'
+        no_file_chosen: 'файл интихоб нашудааст',
+        sign_up_if_needed: 'Суроға надоред? Худро ба қайд гиред.'
     }
 }

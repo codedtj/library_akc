@@ -75,12 +75,15 @@ export default {
         favourite:'favourite',
         email: 'email',
         add_resource: 'add resource',
-        filter: 'filter | filters'
+        filter: 'filter | filters',
+        password: 'password',
+        remember_me: 'remember me'
     },
     message: {
         main_page: '"Study, learn and grow with this electronic library."',
         max_resource_size_error: 'resource cannot be greater than 300 mb',
         max_cover_size_error: 'cover cannot be greater than 1 mb',
-        no_file_chosen: 'no file chosen'
+        no_file_chosen: 'no file chosen',
+        sign_up_if_needed: 'Not registered? Create an account'
     }
 }

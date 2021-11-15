@@ -75,13 +75,16 @@ export default {
         favourite:'избранное',
         email: 'электронный адрес',
         add_resource: 'добавить ресурс',
-        filter: 'фильтер | фильтры'
+        filter: 'фильтер | фильтры',
+        password: 'пароль',
+        remember_me: 'запомнить меня'
     },
     message: {
         main_page: '“Учитесь и растите вместе с нашей электронной библиотекой”',
         max_resource_size_error: 'максимально допустимый размер ресурса 300 мб.',
         max_cover_size_error: 'максимально допустимый размер обложки 1 мб.',
-        no_file_chosen: 'файл не выбран'
+        no_file_chosen: 'файл не выбран',
+        sign_up_if_needed: 'Запомнить меня'
     }
 
 }
