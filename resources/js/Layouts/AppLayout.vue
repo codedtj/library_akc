@@ -70,20 +70,17 @@
             <b-container fluid>
                 <b-form-row>
                     <div class="col-6 col-md-4">
-                        <a href="https://parlament.tj/ru" class="text-decoration-none">
-                            <div id="wrapper-for-tjk-logo">
-                                <b-img class="mx-auto mx-md-0" style="padding: 6px"
-                                       src="/images/emblem-tjk.png"></b-img>
-                                <div class="d-none d-md-flex"><span class="my-auto">Вазорати маориф ва илми Ҷумҳурии Тоҷикистон</span>
-                                </div>
+                        <div id="wrapper-for-tjk-logo">
+                            <b-img class="mx-auto mx-md-0" style="padding: 6px"
+                                   src="/images/emblem-tjk.png"></b-img>
+                            <div class="d-none d-md-flex"><span class="my-auto first-letter-capitalize">{{$t('label.ministry_of_education')}}</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <div class="col-6 col-md-4 d-flex">
-                        <a href="https://www.akdn.org/our-agencies/aga-khan-foundation">
-                            <b-img class="mx-auto" src="/images/akf-logo-tjk.png"></b-img>
-                        </a>
+                        <b-img class="mx-auto"
+                               :src="`/images/akf-logo-${$store.state.preferences.language}.png`"></b-img>
                     </div>
 
                     <div class="col-md-4 d-none d-md-flex left-section">

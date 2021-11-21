@@ -6,20 +6,20 @@
         <!--            </div>-->
         <!--        </div>-->
         <div class="row">
-            <div class="container-fluid pt-3 pt-md-5" style="background-color: #01795C; color: white">
+            <div class="container-fluid pt-3 pt-md-5 bg-akf-favourite" style="color: white">
                 <div class="row pt-md-5">
                     <div class="pl-md-5 col-md-7 pr-md-5">
                         <h1 class="px-md-4" style="font-size: 2.45rem">{{ $t('message.main_page') }}</h1>
                     </div>
                     <div class="col-md-5">
-                        <blockquote><p>"{{ randomQuote }}" </p></blockquote>
+                        <p>{{ $t('message.random_buttons_instruction')}}</p>
                         <div class="d-flex w-100">
                             <inertia-link :href="route('resources.random')" class="mr-3 text-decoration-none">
                                 <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize" >
                                     <img class="mr-2"
                                          style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;"
                                          src="/icons/dice.svg">
-                                    {{$t('label.i_feel_lucky')}}
+                                    {{$tc('label.resource')}}
                                 </div>
                             </inertia-link>
                             <inertia-link class="text-decoration-none" :href="route('videos.random')"
@@ -38,8 +38,8 @@
             <div class="container-fluid pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
                 <b-carousel
                     id="carousel-fade"
-                    style="text-shadow: 0px 0px 2px #000"
                     fade
+                    style="text-shadow: 0px 0px 2px #000"
                     indicators
                     img-width="1024"
                     img-height="480"
@@ -295,131 +295,43 @@ export default {
         },
 
     },
-    computed: {
-        randomQuote() {
-
-            let en = [
-                'An investment in knowledge pays the best interest.',
-                'Change is the end result of all true learning.',
-                'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
-                'Education is what remains after one has forgotten what one has learned in school.'
-            ]
-
-            let ru = [
-                'Причина того, что трудно управлять народом, заключается в том, что народ просвещается и в нем много умных.',
-                'Кто достиг высот образования, должен заранее предположить, что большинство будет против него.',
-                'Образованный человек тем и отличается от необразованного, что продолжает считать свое образование незаконченным.',
-                'Человек образованный – тот, кто знает, где найти то, чего он не знает.'
-            ]
-
-            let tj = [
-                'Хонед, хонед боз хонед'
-            ]
-
-            switch (this.LANGUAGE) {
-                case 'tj':
-                    return tj[Math.floor(Math.random() * tj.length)]
-                case 'ru':
-                    return ru[Math.floor(Math.random() * ru.length)]
-                case 'en':
-                    return en[Math.floor(Math.random() * en.length)]
-            }
-        },
-        ...mapGetters([
-            'LANGUAGE',
-        ])
-    }
+    // computed: {
+    //     randomQuote() {
+    //
+    //         let en = [
+    //             'An investment in knowledge pays the best interest.',
+    //             'Change is the end result of all true learning.',
+    //             'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
+    //             'Education is what remains after one has forgotten what one has learned in school.'
+    //         ]
+    //
+    //         let ru = [
+    //             'Причина того, что трудно управлять народом, заключается в том, что народ просвещается и в нем много умных.',
+    //             'Кто достиг высот образования, должен заранее предположить, что большинство будет против него.',
+    //             'Образованный человек тем и отличается от необразованного, что продолжает считать свое образование незаконченным.',
+    //             'Человек образованный – тот, кто знает, где найти то, чего он не знает.'
+    //         ]
+    //
+    //         let tj = [
+    //             'Хонед, хонед боз хонед'
+    //         ]
+    //
+    //         switch (this.LANGUAGE) {
+    //             case 'tj':
+    //                 return tj[Math.floor(Math.random() * tj.length)]
+    //             case 'ru':
+    //                 return ru[Math.floor(Math.random() * ru.length)]
+    //             case 'en':
+    //                 return en[Math.floor(Math.random() * en.length)]
+    //         }
+    //     },
+    //     ...mapGetters([
+    //         'LANGUAGE',
+    //     ])
+    // }
 }
 </script>
 
 <style>
-.overlay::before {
-    content: "";
-    position: absolute;
-    background-color: #00000066;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
 
-/*.overlay::after {*/
-/*    content: "“Хонед, омӯзед ва рушд ёбед” – тавассути ин китобхонаи электронӣ.";*/
-/*    color: white;*/
-/*    position: absolute;*/
-/*    text-align: center;*/
-/*    top: 30%;*/
-/*    right: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    font-size: 1.2rem;*/
-/*}*/
-
-.search-btn {
-    border-radius: 7px;
-    color: white;
-    border: 3px solid white;
-    background-color: transparent;
-}
-
-.search-btn:active {
-    box-shadow: inset 0 0 30px -3px rgba(50, 50, 50, 0.75);
-}
-
-.search-btn:focus {
-    outline: none
-}
-
-
-/*@media only screen and (min-width: 300px) {*/
-/*    .overlay::after {*/
-/*        top: 20% !important;*/
-/*        font-size: 1rem !important;*/
-/*    }*/
-/*}*/
-
-@media only screen and (min-width: 400px) {
-    .overlay::after {
-        top: 50% !important;
-        font-size: 1.5rem !important;
-    }
-}
-
-@media only screen and (min-width: 500px) {
-    .overlay::after {
-        top: 40% !important;
-        font-size: 1.7rem !important;
-    }
-}
-
-@media only screen and (min-width: 680px) {
-    .overlay::after {
-        top: 50% !important;
-        font-size: 2rem !important;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .overlay::after {
-        font-size: 1.8rem !important;
-        /*top: 80% !important;*/
-    }
-}
-
-.main-page-banner-container::after {
-    position: absolute;
-    content: '';
-    background-color: #01795c;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-    .main-page-banner-container::after {
-        height: 50%;
-    }
-}
 </style>

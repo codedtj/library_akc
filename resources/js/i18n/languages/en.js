@@ -80,13 +80,15 @@ export default {
         filter: 'filter | filters',
         password: 'password',
         confirm_password: 'confirm password',
-        remember_me: 'remember me'
+        remember_me: 'remember me',
+        ministry_of_education: 'ministry of education and science of the Republic of Tajikistan'
     },
     message: {
-        main_page: '"Study, learn and grow with this electronic library."',
+        main_page: '“Read, learn, and develop with the electronic library.”',
         max_resource_size_error: 'resource cannot be greater than 300 mb',
         max_cover_size_error: 'cover cannot be greater than 1 mb',
         no_file_chosen: 'no file chosen',
-        sign_up_if_needed: 'Not registered? Create an account'
+        sign_up_if_needed: 'Not registered? Create an account',
+        random_buttons_instruction:'Use the following buttons, if you are not sure what would you like to read or watch'
     }
 }
