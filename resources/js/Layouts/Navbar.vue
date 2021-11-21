@@ -1,14 +1,18 @@
 <template>
     <b-container fluid class="bg-akf-favourite pb-1 position-relative" style="z-index: 100">
         <b-row align-h="center" align-v="baseline" class="d-none d-md-flex position-relative">
-            <div class="c-nav-left">
+<!--            <div class="c-nav-left">-->
+<!--                <inertia-link class="c-nav-item" :href="route('home')"-->
+<!--                              :class="{active:route().current('resources.index')}">-->
+<!--                    {{ $t('label.library') }}-->
+<!--                </inertia-link>-->
+<!--            </div>-->
+            <div class="c-navbar">
+                <a class="c-nav-item" href="http://maorifvmkb.tj/">{{ $t('label.home_btn') }}</a>
                 <inertia-link class="c-nav-item" :href="route('home')"
                               :class="{active:route().current('resources.index')}">
                     {{ $t('label.library') }}
                 </inertia-link>
-            </div>
-            <div class="c-navbar">
-                <a class="c-nav-item" href="http://maorifvmkb.tj/">{{ $t('label.home_btn') }}</a>
 
                 <inertia-link class="c-nav-item" :href="route('grade-resources.index')"
                               :class="{active:route().current('grade-resources.index')}">
