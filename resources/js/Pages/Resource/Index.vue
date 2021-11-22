@@ -18,7 +18,7 @@
                                 <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize" >
                                     <img class="mr-2"
                                          style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;"
-                                         src="/icons/dice.svg">
+                                         src="/icons/material.svg">
                                     {{$tc('label.resource')}}
                                 </div>
                             </inertia-link>
