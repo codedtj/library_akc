@@ -53,16 +53,20 @@ class ResourceService
 
     private function destroyResourceFile(Resource $resource)
     {
-        $file = $resource->file->replicate();
-        $resource->file()->dissociate();
-        $this->fileService->destroy($file);
+        if($resource->file){
+            $file = $resource->file->replicate();
+            $resource->file()->dissociate();
+            $this->fileService->destroy($file);
+        }
     }
 
     private function destroyResourceCover(Resource $resource)
     {
-        $cover = $resource->cover->replicate();
-        $resource->cover()->dissociate();
-        $this->imageService->destroy($cover);
+        if($resource->cover){
+            $cover = $resource->cover->replicate();
+            $resource->cover()->dissociate();
+            $this->imageService->destroy($cover);
+        }
     }
 
     private function getAttributesArray(ResourceDto $data): array

@@ -17,6 +17,7 @@ class UploadedFileService extends FileService
     public function store(UploadedFile $file, string $rootPath, File $entity, string $disk = 'local'): File
     {
 //        $entity->setHash(hash('sha256', file_get_contents($file->path())));
+        $entity->setHash('');
         $entity->setMimeType($file->getClientMimeType());
         $entity->setOriginalFilename($file->getClientOriginalName());
         $entity->setExtension($file->getClientOriginalExtension());
