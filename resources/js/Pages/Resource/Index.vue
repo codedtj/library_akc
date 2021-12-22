@@ -87,6 +87,7 @@
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                     <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
+                                    <b-form-select-option value="Дарсҳои амалии виртуалӣ">Дарсҳои амалии виртуалӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ
                                     </b-form-select-option>
                                     <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
