@@ -1,10 +1,5 @@
 <template>
     <div class="container-fluid">
-        <!--        <div class="position-relative">-->
-        <!--            <div class="overlay">-->
-        <!--                <b-img class="w-100" src="/images/main-page-banner.jpg"></b-img>-->
-        <!--            </div>-->
-        <!--        </div>-->
         <div class="row">
             <div class="container-fluid pt-3 pt-md-5 bg-akf-favourite" style="color: white">
                 <div class="row pt-md-5">
@@ -34,25 +29,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Carousel -->
         <div class="row">
             <div class="container-fluid pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
-                <b-carousel
-                    id="carousel-fade"
-                    fade
-                    style="text-shadow: 0px 0px 2px #000"
-                    indicators
-                    img-width="1024"
-                    img-height="480"
-                >
-                    <b-carousel-slide
-                        img-src="/images/main-page-carousel-1.JPG"
-                    ></b-carousel-slide>
-                    <b-carousel-slide
-                        img-src="/images/main-page-carousel-2.JPG"
-                    ></b-carousel-slide>
-                </b-carousel>
+                <div class="container">
+                    <b-carousel
+                        id="carousel-fade"
+                        fade
+                        style="text-shadow: 0px 0px 2px #000"
+                        indicators
+                        img-width="1024"
+                        img-height="480"
+                    >
+                        <b-carousel-slide
+                            img-src="/images/main-page-carousel-1.JPG"
+                        ></b-carousel-slide>
+                        <b-carousel-slide
+                            img-src="/images/main-page-carousel-2.JPG"
+                        ></b-carousel-slide>
+                    </b-carousel>
+                </div>
             </div>
         </div>
+        <!--End Carousel-->
         <b-row class="mt-3">
             <b-container fluid>
                 <button @click="toggleShowFilter"
