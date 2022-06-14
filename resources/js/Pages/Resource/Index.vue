@@ -7,21 +7,21 @@
                         <h1 class="px-md-4" style="font-size: 2.45rem">{{ $t('message.main_page') }}</h1>
                     </div>
                     <div class="col-md-5">
-                        <p>{{ $t('message.random_buttons_instruction')}}</p>
+                        <p>{{ $t('message.random_buttons_instruction') }}</p>
                         <div class="d-flex w-100">
                             <inertia-link :href="route('resources.random')" class="mr-3 text-decoration-none">
-                                <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize" >
+                                <div style="color:black;padding: 5px 20px;background: #edc5eb" class="text-capitalize">
                                     <img class="mr-2"
                                          style="filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); width:24px;"
                                          src="/icons/material.svg">
-                                    {{$tc('label.resource')}}
+                                    {{ $tc('label.resource') }}
                                 </div>
                             </inertia-link>
                             <inertia-link class="text-decoration-none" :href="route('videos.random')"
                                           style="border: solid white 2px">
                                 <div style="color:white;padding: 4px 20px;" class="text-capitalize">
                                     <img class="mr-2" style="width: 24px" src="/icons/video.svg">
-                                    {{$t('label.video')}}
+                                    {{ $t('label.video') }}
                                 </div>
                             </inertia-link>
                         </div>
@@ -53,11 +53,13 @@
             </div>
         </div>
         <!--End Carousel-->
+
+        <!-- Filters -->
         <b-row class="mt-3">
             <b-container fluid>
                 <button @click="toggleShowFilter"
                         style="color: #01795c; background-color: transparent;border: none; outline: none;">
-                    <span class="text-uppercase font-weight-bold">{{$tc('label.filter',2)}}</span>
+                    <span class="text-uppercase font-weight-bold">{{ $tc('label.filter', 2) }}</span>
                     <img v-if="showFilter" src="/icons/arrow-down.svg">
                     <img v-else style="transform: rotate(270deg)" src="/icons/arrow-down.svg">
                 </button>
@@ -87,7 +89,8 @@
                                     <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
                                     <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
                                     <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
-                                    <b-form-select-option value="Дарсҳои амалии виртуалӣ">Дарсҳои амалии виртуалӣ</b-form-select-option>
+                                    <b-form-select-option value="Дарсҳои амалии виртуалӣ">Дарсҳои амалии виртуалӣ
+                                    </b-form-select-option>
                                     <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ
                                     </b-form-select-option>
                                     <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
@@ -199,8 +202,13 @@
                 </b-jumbotron>
             </div>
         </b-row>
+        <!-- End Filters -->
+
         <b-row class="text-center">
             <h2 class="text-uppercase mx-auto">{{ $tc('label.resource', 2) }}</h2>
+        </b-row>
+        <b-row v-if="showStrangeResources">
+            <strange-resources-tab></strange-resources-tab>
         </b-row>
         <b-row>
             <resource-masonry-with-data-fetching ref="resources-list"
@@ -216,10 +224,11 @@
 import ResourceMasonryWithDataFetching from "@/Components/Resource/ResourceMasonryWithDataFetching";
 import SuggestionInput from "@/Components/Inputs/SuggestionInput";
 import {mapGetters} from "vuex";
+import StrangeResourcesTab from "./StrangeResourcesTab";
 
 export default {
     name: 'Index',
-    components: {ResourceMasonryWithDataFetching, SuggestionInput},
+    components: {StrangeResourcesTab, ResourceMasonryWithDataFetching, SuggestionInput},
     props: {
         pagination: Object,
         categories: Array,
@@ -296,6 +305,11 @@ export default {
         },
 
     },
+    computed: {
+        showStrangeResources() {
+            return this.filters.type === 'Маводҳои такмили ихтисоси омӯзгорон' && this.roles.find(r => r.name === 'teacher' && r.id === this.filters.role)
+        }
+    }
     // computed: {
     //     randomQuote() {
     //
