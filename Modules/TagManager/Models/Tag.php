@@ -2,12 +2,11 @@
 
 namespace Modules\TagManager\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Modules\Library\Models\Resource;
 use Modules\Shared\Models\BaseModel;
-use Modules\Shared\Models\BaseMorphPivot;
+use Modules\Shared\Pivots\BaseMorphPivot;
 
 class Tag extends BaseModel
 {

@@ -15,7 +15,7 @@ use Wildside\Userstamps\Userstamps;
 class BaseModel extends Model
 {
     use UsesUUID;
-    use Userstamps;
+//    use Userstamps;
 
     public $incrementing = false;
     protected $primaryKey = 'id';
