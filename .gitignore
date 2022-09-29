@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/css/app.css
+/public/js/app.js
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
@@ -10,10 +13,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea/.gitignore
-/.idea/library.iml
-/.idea/modules.xml
-/.idea/php.xml
-/.idea/phpunit.xml
-/.idea/vcs.xml
-/.idea/watcherTasks.xml
+/.idea
