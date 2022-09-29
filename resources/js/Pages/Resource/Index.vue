@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row d-none">
             <div class="container-fluid pt-3 pt-md-5 bg-akf-favourite" style="color: white">
                 <div class="row pt-md-5">
                     <div class="pl-md-5 col-md-7 pr-md-5">
@@ -32,13 +32,12 @@
 
         <!-- Carousel -->
         <div class="row">
-            <div class="container-fluid pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
-                <div class="container">
+            <div class="container-fluid d-flex pt-5 pb-3 pb-md-0 main-page-banner-container position-relative">
+                <div class="carousel-container mx-auto">
                     <b-carousel
                         id="carousel-fade"
                         fade
                         style="text-shadow: 0px 0px 2px #000"
-                        indicators
                         img-width="1024"
                         img-height="480"
                     >
@@ -204,7 +203,7 @@
         </b-row>
         <!-- End Filters -->
 
-        <b-row class="text-center">
+        <b-row class="text-center d-none">
             <h2 class="text-uppercase mx-auto">{{ $tc('label.resource', 2) }}</h2>
         </b-row>
         <b-row v-if="showStrangeResources">
@@ -212,7 +211,7 @@
         </b-row>
         <b-row>
             <resource-masonry-with-data-fetching ref="resources-list"
-                                                 :resources="this.pagination.data"
+                                                 :resources="[]"
                                                  :url="fetchUrl">
             </resource-masonry-with-data-fetching>
         </b-row>

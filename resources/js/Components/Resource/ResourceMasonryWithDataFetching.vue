@@ -35,7 +35,7 @@ export default {
     ],
     methods: {
         fetchResources: function () {
-            if (this.stopFetching || !this.imagesLoaded || this.fetching)
+            if (this.stopFetching || this.fetching)
                 return;
 
             this.page++;
