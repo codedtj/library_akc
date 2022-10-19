@@ -27,7 +27,7 @@ export default {
             imagesLoaded: false,
             page: 1,
             fetching: false,
-            stopFetching: false
+            stopFetching: true
         }
     },
     mixins: [

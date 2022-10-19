@@ -4,6 +4,7 @@
             <b-col cols="12">
                 <b-jumbotron>
                     <b-container fluid>
+
                         <b-row>
                             <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('resources.create')">
                                 <b-aspect aspect="square" class="tile  shadow-light" style="background: #FFCC33">
@@ -34,6 +35,14 @@
                                     <b-icon-bookmark-heart font-scale="2" class="tile-icon text-white">
                                     </b-icon-bookmark-heart>
                                     <span class="tile-content first-letter-capitalize">{{$t('label.favourite')}}</span>
+                                </b-aspect>
+                            </inertia-link>
+
+                            <inertia-link class="col-sm-4 col-md-4 col-lg-3 p-0 mr-sm-4 mb-4" :href="route('statistic.index')">
+                                <b-aspect aspect="square" class="tile  shadow-light" style="background: #ff0099">
+                                    <b-icon-kanban-fill font-scale="2" class="tile-icon text-white">
+                                    </b-icon-kanban-fill>
+                                    <span class="tile-content first-letter-capitalize">{{$t('label.statistics')}}</span>
                                 </b-aspect>
                             </inertia-link>
                         </b-row>

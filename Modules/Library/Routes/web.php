@@ -42,4 +42,5 @@ Route::prefix('core')->group(function () {
     Route::resource('favourite', 'FavouriteResourceController')->only([
         'index', 'store', 'destroy'
     ]);
+    Route::resource('statistic', 'StatisticResourceController');
 });

@@ -56,7 +56,7 @@
                                 <b-form-select-option :value="null" disabled>-- {{ $tc('label.theme',2) }} --</b-form-select-option>
                                 <b-form-select-option v-for="theme in themes" :value="theme.id"
                                                       :key="theme.id">
-                                    {{ theme.name }}
+                                    {{ $t('label.' + theme.name.replaceAll(' ', '_')) }}
                                 </b-form-select-option>
                             </b-form-select>
                         </b-form-group>
@@ -64,20 +64,16 @@
                                       :invalid-feedback="form.error('type')">
                             <b-form-select v-model="form.type" required>
                                 <b-form-select-option :value="null" disabled>-- {{ $tc('label.type',2) }} --</b-form-select-option>
-                                <b-form-select-option value="Китобҳои бадеӣ">Китобҳои бадеӣ</b-form-select-option>
-                                <b-form-select-option value="Китобҳои дарсӣ">Китобҳои дарсӣ</b-form-select-option>
-                                <b-form-select-option value="Дарсҳои видеоӣ">Дарсҳои видеоӣ</b-form-select-option>
-                                <b-form-select-option value="Дарсҳои амалии виртуалӣ">Дарсҳои амалии виртуалӣ</b-form-select-option>
-                                <b-form-select-option value="Китобҳои интерактивӣ">Китобҳои интерактивӣ
-                                </b-form-select-option>
-                                <b-form-select-option value="Намоишномаҳо">Намоишномаҳо</b-form-select-option>
-                                <b-form-select-option value="Маводҳои аудиоӣ">Маводҳои аудиоӣ</b-form-select-option>
-                                <b-form-select-option value="Маводҳои соҳавӣ">Маводҳои соҳавӣ</b-form-select-option>
-                                <b-form-select-option value="Маводҳои дарсҳои иловагӣ">Маводҳои дарсҳои иловагӣ
-                                </b-form-select-option>
-                                <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">Маводҳои такмили
-                                    ихтисоси омӯзгорон
-                                </b-form-select-option>
+                                <b-form-select-option value="Китобҳои бадеӣ">{{$t('label.fiction_books')}}</b-form-select-option>
+                                <b-form-select-option value="Китобҳои дарсӣ">{{$t('label.textbooks')}}</b-form-select-option>
+                                <b-form-select-option value="Дарсҳои видеоӣ">{{$t('label.video_lessons')}}</b-form-select-option>
+                                <b-form-select-option value="Дарсҳои амалии виртуалӣ">{{$t('label.practical_virtual_lessons')}}</b-form-select-option>
+                                <b-form-select-option value="Китобҳои интерактивӣ">{{$t('label.interactive_books')}}</b-form-select-option>
+                                <b-form-select-option value="Намоишномаҳо">{{$t('label.demonstrations')}}</b-form-select-option>
+                                <b-form-select-option value="Маводҳои аудиоӣ">{{$t('label.audio_materials')}}</b-form-select-option>
+                                <b-form-select-option value="Маводҳои соҳавӣ">{{$t('label.industry_materials')}}</b-form-select-option>
+                                <b-form-select-option value="Маводҳои дарсҳои иловагӣ">{{$t('label.additional_course_materials')}}</b-form-select-option>
+                                <b-form-select-option value="Маводҳои такмили ихтисоси омӯзгорон">{{$t('label.teacher_training_materials')}}</b-form-select-option>
                             </b-form-select>
                         </b-form-group>
                         <b-form-group label-class="first-letter-capitalize" :label="'*' + $tc('label.language')"  :state="!form.error('language')"

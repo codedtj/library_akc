@@ -18,22 +18,22 @@ class ThemeSeeder extends Seeder
         Model::unguard();
 
         $themes = [
-            'Сайёҳат',
-            'Ғизо',
-            'Оила',
-            'Табиат',
-            'Муҳандисӣ',
-            'Саломатӣ',
-            'Варзиш',
-            'Ҳайвонот',
-            'Кайҳон',
-            'Тарзи ҳаёти солим',
-            'Равоншиносӣ',
-            'Саргузашт',
-            'Афсона',
-            'Рассомӣ',
-            'Фарҳанг',
-            'Дигар'
+            'travel',
+            'food',
+            'family',
+            'nature',
+            'engineering',
+            'health',
+            'sport',
+            'animals',
+            'space',
+            'healthy lifestyle',
+            'psychology',
+            'adventure',
+            'tale',
+            'painting',
+            'culture',
+            'other'
         ];
 
         foreach ($themes as $name) {
