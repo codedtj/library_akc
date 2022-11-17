@@ -3,7 +3,7 @@
         <ul>
             <li v-for="theme in themes">
                 <inertia-link class="list-item" :href="route('theme-resources.show',theme.id)" :key="theme.id">
-                    {{ theme.name }}</inertia-link>
+                    {{ $t('label.' + theme.name.replaceAll(' ', '_')) }} </inertia-link>
             </li>
         </ul>
     </b-col>
