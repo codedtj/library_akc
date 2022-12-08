@@ -108,6 +108,7 @@ export default {
         industry_materials: 'industry materials',
         additional_course_materials: 'additional course materials',
         teacher_training_materials: 'teacher training materials',
+        about_the_project: 'About the project',
     },
     message: {
         main_page: '“Read, learn, and develop with the electronic library.”',

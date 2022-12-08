@@ -108,7 +108,7 @@ export default {
         industry_materials: 'маводҳои соҳавӣ',
         additional_course_materials: 'маводҳои дарсҳои иловагӣ',
         teacher_training_materials: 'маводҳои такмили ихтисоси омӯзгорон',
-
+        about_the_project: 'Оид ба лоиҳа',
     },
     message: {
         main_page: '“Хонед, омузед ва рушд ёбед - тавассути китобхонаи электронӣ.”',
