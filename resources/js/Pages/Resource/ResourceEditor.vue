@@ -265,8 +265,8 @@ export default {
         'form.file'() {
             // let extension = getFileExtension(this.form.file.name);
             let size = this.form.file.size / 1024 / 1024;
-            console.log(size);
-            this.validation.file = size <= 300;
+
+            this.validation.file = size <= 1000;
         }
     }
 }
