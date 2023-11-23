@@ -1,5 +1,5 @@
 const state = {
-    language: 'tj'
+    language: 'en'
 };
 const getters = {
     LANGUAGE: state => {
